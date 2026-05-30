@@ -130,7 +130,7 @@ QUANTIDADE: XXXX
             elif q == 3:
                 cod = int(input('Digite o código do produto: '))
 
-                if cod in lista : # CASO O PRODUTO ESTEJA NO ESTOQUE 
+                if cod in lista : 
                     print('''
 Produto encontrado:
 CÓDIGO: XXXX
@@ -167,7 +167,7 @@ QUANTIDADE:
             elif q == 4:
                 print('VOCÊ ENTROU NO MODO DE PESQUISA: ')
                 codigo = int(input('DIGITE O CÓDIGO DO PRODUTO'))
-                if codigo in lista: #VERIFICANDO SE O CÓDIGO DO PRODUTO VAI ESTA NA LISTA
+                if codigo in lista: 
                     print('''
 ### PRODUTO ENCONTRADO ###
                           
@@ -231,10 +231,11 @@ QUANTIDADE:
 ###################################################              
               ''')
         print('''
-### PROJETO DA DISCIPLINA DCT1101                           ###
-### TEMA: SISTEMA DE GERENCIAMENTO DE UMA LOJA DE BICICLETA ###
-### DOCENTE RESPONSÁVEL: FLAVIUS GORGÔNIO                   ###
-### DISCENTE: JOSÉ EMANUEL DA CÂMARA SILVA                  ### 
+### PROJETO DA DISCIPLINA DCT1101                                  ###
+### TEMA: SISTEMA DE GERENCIAMENTO DE UMA LOJA DE BICICLETA        ###
+### DOCENTE RESPONSÁVEL: FLAVIUS GORGÔNIO                          ###
+### DISCENTE: JOSÉ EMANUEL DA CÂMARA SILVA                         ### 
+### GITHUB: https://github.com/joseemanuelcsilva-spec/Projetos.git ###
               ''')
     elif resp == 0:
         print('''
