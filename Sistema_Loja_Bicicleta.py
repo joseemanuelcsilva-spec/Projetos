@@ -72,12 +72,12 @@ while resp != 0:
                         codigo_roupa = int(input('Digite o código da sapatilha: '))
                         quant_roupa = int(input('Quantas unidades:  '))
                 
-            if q == 2:
+            elif q == 2:
                 q = ' '
                 while q != 5:
                     print('''
 ################################################                      
-#####   QUAL PRODUTO VOCÊ QUER LISTAR ?    #####
+#####   QUAL ESTOQUE VOCÊ QUER LISTAR      #####
 ################################################                      
 ######### 1 - BICICLETA              ###########
 ######### 2 - CAPACETE               ###########
@@ -97,7 +97,7 @@ QUANTIDADE: XXXX
                           ''')
 
 
-                    if q == 2:
+                    elif q == 2:
                         print('LISTANDO TODOS OS CAPACETES DO ESTOQUE.....')
                         print('''
 CÓDIGO: XXXXX
@@ -108,7 +108,7 @@ QUANTIDADE: XXXX
                           ''')
 
 
-                    if q == 3:
+                    elif q == 3:
                         print('LISTANDO TODAS AS SAPATILHAS DO ESTOQUE.....')
                         print('''
 CÓDIGO: XXXXX
@@ -118,7 +118,7 @@ VALOR: XXXXX
 QUANTIDADE: XXXX
                           ''')
 
-                    if q == 4:
+                    elif q == 4:
                         print('LISTANDO TODAS AS ROUPAS DE CICLISMO.....')
                         print('''
 CÓDIGO: XXXXX
@@ -127,7 +127,7 @@ MODELO: XXXXXX
 VALOR: XXXXX
 QUANTIDADE: XXXX
                           ''')
-            if q == 3:
+            elif q == 3:
                 cod = int(input('Digite o código do produto: '))
 
                 if cod in lista : # CASO O PRODUTO ESTEJA NO ESTOQUE 
@@ -155,16 +155,16 @@ QUANTIDADE:
                         q = int(input('Qual opção você deseja?'))
                         if q == 1:
                             marc = input('DIgite a marca: ')
-                        if q == 2:
+                        elif q == 2:
                             mod = input('Digite o modelo: ')
-                        if q == 3:
+                        elif q == 3:
                             preco = float(input('Digite o valor:R$ '))
-                        if q == 4:
+                        elif q == 4:
                             quantidade = int(input('Digite a quantidade: '))
-                        if q == 5:
+                        elif q == 5:
                             new_cod = int('DIgite o novo código: ')
             
-            if q == 4:
+            elif q == 4:
                 print('VOCÊ ENTROU NO MODO DE PESQUISA: ')
                 codigo = int(input('DIGITE O CÓDIGO DO PRODUTO'))
                 if codigo in lista: #VERIFICANDO SE O CÓDIGO DO PRODUTO VAI ESTA NA LISTA
@@ -180,7 +180,7 @@ QUANTIDADE:
                 else:
                     print('### PRODUTO NÃO ENCONTRADO ###')
 
-            if q == 5:
+            elif q == 5:
                 remove = int(input('DIGITE O CÓDIGO DO PRODUTO QUE VOCÊ DESEJA DELETAR: '))
                 crtz = input('TEM CERTEZA QUE QUER DELETAR ESSE PRODUTO [S/N]:').upper()
 
@@ -189,7 +189,7 @@ QUANTIDADE:
                 else:
                     remove2 = int(input('DIGITE O CÓDIGO CORRETO DO PRODUTO QUE VOCÊ DESEJA DELETAR: '))
                     print('DELETANDO PRODUTO')
-
+            
 
     elif resp == 2:
         print('''
@@ -223,5 +223,24 @@ QUANTIDADE:
 ############ 5 - VOLTAR                    ########
               ''')
         q = int(input('Qual opção você deseja: '))
+
+    elif resp == 5:
+        print('''
+###################################################
+##########      MÓDULO INFORMAÇÕES       ##########
+###################################################              
+              ''')
+        print('''
+### PROJETO DA DISCIPLINA DCT1101                           ###
+### TEMA: SISTEMA DE GERENCIAMENTO DE UMA LOJA DE BICICLETA ###
+### DOCENTE RESPONSÁVEL: FLAVIUS GORGÔNIO                   ###
+### DISCENTE: JOSÉ EMANUEL DA CÂMARA SILVA                  ### 
+              ''')
+    elif resp == 0:
+        print('''
+##### PROGRAMA ENCERRADO #####
+              ''')
+    else:
+        print('OPÇÃO INVÁLIDA')
     
 
