@@ -1,5 +1,5 @@
 resp = ' '
-lista = []
+estoque = []
 while resp != 0:
     print('#'*31)
     print('##### Projeto - PedalFlow #####')
@@ -46,32 +46,76 @@ while resp != 0:
                 ''')
                     q = int(input('Qual opção você deseja: '))
                     if q == 1:
-                        marca_bike = input('Digite a marca da Bicicleta: ')
-                        modelo_bike = input('Digite o modelo da Bicicleta: ')
-                        valor_bike = int(input('Digite o valor da Bicicleta: '))
-                        codigo_bike = int(input('Digite o código da Bicicleta: '))
-                        quant_bike = int(input('Quantas unidades: '))
-
+                        marca = input('Digite a marca da Bicicleta: ')
+                        modelo = input('Digite o modelo da Bicicleta: ')
+                        valor = float(input('Digite o valor da Bicicleta: '))
+                        cod = str(input('Digite o código da Bicicleta: '))
+                        quant = int(input('Quantas unidades: '))
+                        cat = 'Bicicleta'
+                        produto = {
+        'codigo': cod,
+        'categoria': cat,
+        'marca': marca,
+        'modelo': modelo,
+        'valor': valor,
+        'quantidade': quant
+    }
+                        estoque.append(produto) 
+                        print('Produto cadastrado com sucesso!')
+    
                     elif q == 2:
-                        marca_capacete = input('Digite a marca da capacete: ')
-                        modelo_capacete = input('Digite o modelo da capacete: ')
-                        valor_capacete = int(input('Digite o valor da capacete: '))
-                        codigo_capacete = int(input('Digite o código da capacete: '))
-                        quant_capacete = int(input('Quantas unidades:  '))
+                        marca= input('Digite a marca da capacete: ')
+                        modelo = input('Digite o modelo da capacete: ')
+                        valor = float(input('Digite o valor da capacete: '))
+                        cod = str(input('Digite o código da capacete: '))
+                        quant = int(input('Quantas unidades:  '))
+                        cat = 'Capacete'
+                        produto = {
+        'codigo': cod,
+        'categoria': cat,
+        'marca': marca,
+        'modelo': modelo,
+        'valor': valor,
+        'quantidade': quant
+    }
+                        estoque.append(produto) 
+                        print('Produto cadastrado com sucesso!')
                     
                     elif q == 3:
-                        marca_sapatilha = input('Digite a marca da sapatilha: ')
-                        modelo_sapatilha = input('Digite o modelo da sapatilha: ')
-                        valor_sapatilha = int(input('Digite o valor da sapatilha: '))
-                        codigo_sapatilha = int(input('Digite o código da sapatilha: '))
-                        quant_sapatilha = int(input('Quantas unidades:  '))
+                        marca = input('Digite a marca da sapatilha: ')
+                        modelo = input('Digite o modelo da sapatilha: ')
+                        valor= float(input('Digite o valor da sapatilha: '))
+                        cod= str(input('Digite o código da sapatilha: '))
+                        cat ='Sapatilha'
+                        quant = int(input('Quantas unidades:  '))
+                        produto = {
+        'codigo': cod,
+        'categoria': cat,
+        'marca': marca,
+        'modelo': modelo,
+        'valor': valor,
+        'quantidade': quant
+    }
+                        estoque.append(produto) 
+                        print('Produto cadastrado com sucesso!')
                     elif q == 4:
-                        marca_roupa = input('Digite a marca da sapatilha: ')
-                        modelo_roupa = input('Digite o modelo da sapatilha: ')
-                        valor_roupa = int(input('Digite o valor da sapatilha: '))
-                        codigo_roupa = int(input('Digite o código da sapatilha: '))
-                        quant_roupa = int(input('Quantas unidades:  '))
-                
+                        marca = input('Digite a marca da roupa: ')
+                        valor= float(input('Digite o valor da roupa: '))
+                        tam = input('Digite o tamanho da roupa: ').upper()
+                        cod = input('Digite o código da roupa: ')
+                        quant = int(input('Quantas unidades:  '))
+                        cat = 'Roupa'
+                        produto = {
+        'codigo': cod,
+        'categoria': cat,
+        'marca': marca,
+        'tamanho': tam,
+        'valor': valor,
+        'quantidade': quant
+    }
+                        estoque.append(produto) 
+                        print('Produto cadastrado com sucesso!')
+   
             elif q == 2:
                 q = ' '
                 while q != 5:
@@ -88,58 +132,65 @@ while resp != 0:
                     q = int(input('Qual opção você deseja: '))
                     if q == 1:
                         print('LISTANDO TODAS AS BICICLETAS DO ESTOQUE.....')
-                        print('''
-CÓDIGO: XXXXX
-MARCA: XXXXXX
-MODELO: XXXXXX
-VALOR: XXXXX
-QUANTIDADE: XXXX
-                          ''')
-
+                        for produto in estoque:
+                            if produto['categoria'] == 'Bicicleta':
+                                print('--------------------')
+                                print('Código:', produto['codigo'])
+                                print('Categoria:', produto['categoria'])
+                                print('Marca:', produto['marca'])
+                                print('Modelo:', produto['modelo'])
+                                print('Valor: R$', produto['valor'])
+                                print('Quantidade:', produto['quantidade'])
 
                     elif q == 2:
                         print('LISTANDO TODOS OS CAPACETES DO ESTOQUE.....')
-                        print('''
-CÓDIGO: XXXXX
-MARCA: XXXXXX
-MODELO: XXXXXX
-VALOR: XXXXX
-QUANTIDADE: XXXX
-                          ''')
-
+                        for produto in estoque:
+                            if produto['categoria'] == 'Capacete':
+                                print('--------------------')
+                                print('Código:', produto['codigo'])
+                                print('Categoria:', produto['categoria'])
+                                print('Marca:', produto['marca'])
+                                print('Modelo:', produto['modelo'])
+                                print('Valor: R$', produto['valor'])
+                                print('Quantidade:', produto['quantidade'])
 
                     elif q == 3:
                         print('LISTANDO TODAS AS SAPATILHAS DO ESTOQUE.....')
-                        print('''
-CÓDIGO: XXXXX
-MARCA: XXXXXX
-MODELO: XXXXXX
-VALOR: XXXXX
-QUANTIDADE: XXXX
-                          ''')
-
+                        for produto in estoque:
+                            if produto['categoria'] == 'Sapatilha':
+                                print('--------------------')
+                                print('Código:', produto['codigo'])
+                                print('Categoria:', produto['categoria'])
+                                print('Marca:', produto['marca'])
+                                print('Modelo:', produto['modelo'])
+                                print('Valor: R$', produto['valor'])
+                                print('Quantidade:', produto['quantidade'])
+                        
                     elif q == 4:
-                        print('LISTANDO TODAS AS ROUPAS DE CICLISMO.....')
-                        print('''
-CÓDIGO: XXXXX
-MARCA: XXXXXX
-MODELO: XXXXXX
-VALOR: XXXXX
-QUANTIDADE: XXXX
-                          ''')
+                        print('LISTANDO TODAS AS ROUPAS DO ESTOQUE.....')
+                        for produto in estoque:
+                            if produto['categoria'] == 'Roupa':
+                                print('--------------------')
+                                print('Código:', produto['codigo'])
+                                print('Categoria:', produto['categoria'])
+                                print('Marca:', produto['marca'])
+                                print('Tamanho:', produto['tamanho'])
+                                print('Valor: R$', produto['valor'])
+                                print('Quantidade:', produto['quantidade'])
+                       
             elif q == 3:
-                cod = int(input('Digite o código do produto: '))
+                cod = input('Digite o código do produto: ')
+                for produto in estoque:
+                    if produto['codigo'] == cod:
+                        print('Produto Encontrado')
+                        print('--------------------')
+                        print('Código:', produto['codigo'])
+                        print('Categoria:', produto['categoria'])
+                        print('Marca:', produto['marca'])
+                        print('Modelo:', produto['modelo'])
+                        print('Valor: R$', produto['valor'])
+                        print('Quantidade:', produto['quantidade'])
 
-                if cod in lista : 
-                    print('''
-Produto encontrado:
-CÓDIGO: XXXX
-Marca: XXXX
-MODELO : XXXX
-VALOR: XXXX
-QUANTIDADE: 
-                          ''')
-                    
                     q = ' '
                     while q != 6:
                         print('''
@@ -152,45 +203,44 @@ QUANTIDADE:
 ########## 5 - Código          ######
 ########## 6 - Voltar          ######
                               ''')
-                        q = int(input('Qual opção você deseja?'))
+                        q = int(input('Qual opção você deseja: '))
                         if q == 1:
-                            marc = input('DIgite a marca: ')
+                            produto['marca'] = input('Digite a nova marca: ') 
                         elif q == 2:
-                            mod = input('Digite o modelo: ')
+                            produto['modelo'] = input('Digite o novo modelo: ')
                         elif q == 3:
-                            preco = float(input('Digite o valor:R$ '))
+                            produto['preco'] = float(input('Digite o novo preço desejado R$: '))
                         elif q == 4:
-                            quantidade = int(input('Digite a quantidade: '))
+                            produto['quantidade'] = int(input('Digite a nova quantidade itens desse produto: '))
                         elif q == 5:
-                            new_cod = int('DIgite o novo código: ')
-            
+                            produto['codigo'] = str(input('Digite o novo código'))
+
             elif q == 4:
-                print('VOCÊ ENTROU NO MODO DE PESQUISA: ')
-                codigo = int(input('DIGITE O CÓDIGO DO PRODUTO'))
-                if codigo in lista: 
-                    print('''
-### PRODUTO ENCONTRADO ###
-                          
-CÓDIGO: XXXX
-Marca: XXXX
-MODELO : XXXX
-VALOR: XXXX
-QUANTIDADE: 
-                          ''')
-                else:
-                    print('### PRODUTO NÃO ENCONTRADO ###')
+                print('##### VOCÊ ENTROU NO MODO DE PESQUISA ####### ')
+                cod = input('Digite o código do produto: ')
+                for produto in estoque:
+                    if produto['codigo'] == cod:
+                        print('Produto Encontrado')
+                        print('--------------------')
+                        print('Código:', produto['codigo'])
+                        print('Categoria:', produto['categoria'])
+                        print('Marca:', produto['marca'])
+                        print('Modelo:', produto['modelo'])
+                        print('Valor: R$', produto['valor'])
+                        print('Quantidade:', produto['quantidade'])
+                    else:
+                        print('### PRODUTO NÃO ENCONTRADO ###')
 
             elif q == 5:
-                remove = int(input('DIGITE O CÓDIGO DO PRODUTO QUE VOCÊ DESEJA DELETAR: '))
-                crtz = input('TEM CERTEZA QUE QUER DELETAR ESSE PRODUTO [S/N]:').upper()
-
-                if crtz == 'S':
-                    print('DELETANDO PRODUTO')
-                else:
-                    remove2 = int(input('DIGITE O CÓDIGO CORRETO DO PRODUTO QUE VOCÊ DESEJA DELETAR: '))
-                    print('DELETANDO PRODUTO')
-            
-
+                remover = str(input('Digite o código do produto que você deseja deletar: '))
+                for produto in estoque:
+                    if produto['codigo'] == remover:
+                        print('### PRODUTO ENCONTRADO ###')
+                        certeza = input('TEM CERTEZA QUE DESEJA DELETAR [S/N]:').upper()
+                        if certeza == 'S':
+                            print('DELETANDO PRODUTO')
+                            estoque.remove(produto)
+                        
     elif resp == 2:
         print('''
 ###############################################
@@ -244,4 +294,11 @@ QUANTIDADE:
     else:
         print('OPÇÃO INVÁLIDA')
     
-
+for produto in estoque:
+    print('--------------------')
+    print('Código:', produto['codigo'])
+    print('Categoria:' )
+    print('Marca:', produto['marca'])
+    print('Modelo:', produto['modelo'])
+    print('Valor:', produto['valor'])
+    print('Quantidade:', produto['quantidade'])
