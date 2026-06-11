@@ -600,7 +600,7 @@ while resp != 0:
                 ''')
         elif resp == 0:
             print('''
-    ##### PROGRAMA ENCERRADO #####
+    ##### PROGRAMA ENCERRADOOOOO #####
                 ''')
         else:
             print('OPÇÃO INVÁLIDA')
