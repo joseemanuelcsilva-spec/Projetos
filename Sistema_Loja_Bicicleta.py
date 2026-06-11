@@ -17,7 +17,7 @@ while resp != 0:
 ############ 3 - GERENCIAR VENDAS      ########     
 ############ 4 - RELATÓRIOS            ########
 ############ 5 - INFORMAÇÕES           ########
-############ 0 - SAIR                  ########
+############ 0 - SAIRRRRR                 ########
             ''')
         resp = int(input('Qual opção você deseja: '))
 
@@ -600,7 +600,7 @@ while resp != 0:
                 ''')
         elif resp == 0:
             print('''
-    ##### PROGRAMA ENCERRADOOOOO #####
+    ##### PROGRAMA ENCERRADo#####
                 ''')
         else:
             print('OPÇÃO INVÁLIDA')
