@@ -120,7 +120,7 @@ while resp != 0:
 ######### 2 - CAPACETE               ###########
 ######### 3 - SAPATILHA              ###########
 ######### 4 - ROUPA DE CICLISMO      ###########
-######### 5 - BACK                   ###########
+######### 5 - VOLTAR                 ###########
                         ''')
                         q = int(input('Qual opção você deseja: '))
                         if q == 1:
