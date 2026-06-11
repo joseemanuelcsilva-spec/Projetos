@@ -11,13 +11,13 @@ while resp != 0:
         print('##### Projeto - PedalFlow #####')
         print('#'*31)    
         print('''
-    ###############################################
-    ############ 1 - GERENCIAR ESTOQUE     ########
-    ############ 2 - GERENCIAR CLIENTES    ########      
-    ############ 3 - GERENCIAR VENDAS      ########     
-    ############ 4 - RELATÓRIOS            ########
-    ############ 5 - INFORMAÇÕES           ########
-    ############ 0 - SAIR                  ########
+###############################################
+############ 1 - GERENCIAR ESTOQUE     ########
+############ 2 - GERENCIAR CLIENTES    ########      
+############ 3 - GERENCIAR VENDAS      ########     
+############ 4 - RELATÓRIOS            ########
+############ 5 - INFORMAÇÕES           ########
+############ 0 - SAIR                  ########
             ''')
         resp = int(input('Qual opção você deseja: '))
 
@@ -26,15 +26,15 @@ while resp != 0:
             q = ' '
             while q != 6:
                 print('''
-    ###############################################
-    #         GERENCIAMENTO DE ESTOQUE            #
-    ###############################################
-    ############ 1 - CADASTRAR PRODUTO     ########
-    ############ 2 - LISTAR PRODUTOS       ########      
-    ############ 3 - ATUALIZAR PRODUTO     ########     
-    ############ 4 - BUSCAR PRODUTO        ########
-    ############ 5 - REMOVER PRODUTO       ########
-    ############ 6 - VOLTAR                ########            
+###############################################
+#         GERENCIAMENTO DE ESTOQUE            #
+###############################################
+############ 1 - CADASTRAR PRODUTO     ########
+############ 2 - LISTAR PRODUTOS       ########      
+############ 3 - ATUALIZAR PRODUTO     ########     
+############ 4 - BUSCAR PRODUTO        ########
+############ 5 - REMOVER PRODUTO       ########
+############ 6 - VOLTAR                ########            
                     ''')
                 q = int(input('Qual opção você deseja: '))
 
@@ -43,14 +43,14 @@ while resp != 0:
                     q = ' '
                     while q != 5: 
                         print('''
-    ################################################
-    ##          PRODUTOS PARA CADASTRAR           ##
-    ################################################                      
-    ######### 1 - BICICLETA              ###########
-    ######### 2 - CAPACETE               ###########
-    ######### 3 - SAPATILHA              ###########
-    ######### 4 - ROUPA DE CICLISMO      ###########
-    ######### 5 - VOLTAR                 ###########
+################################################
+##          PRODUTOS PARA CADASTRAR           ##
+################################################                      
+######### 1 - BICICLETA              ###########
+######### 2 - CAPACETE               ###########
+######### 3 - SAPATILHA              ###########
+######### 4 - ROUPA DE CICLISMO      ###########
+######### 5 - VOLTAR                 ###########
                     ''')
                         q = int(input('Qual opção você deseja: '))
                         if q == 1:
@@ -113,14 +113,14 @@ while resp != 0:
                     q = ' '
                     while q != 5:
                         print('''
-    ################################################                      
-    #####   QUAL ESTOQUE VOCÊ QUER LISTAR      #####
-    ################################################                      
-    ######### 1 - BICICLETA              ###########
-    ######### 2 - CAPACETE               ###########
-    ######### 3 - SAPATILHA              ###########
-    ######### 4 - ROUPA DE CICLISMO      ###########
-    ######### 5 - VOLTAR                 ###########
+################################################                      
+#####   QUAL ESTOQUE VOCÊ QUER LISTAR      #####
+################################################                      
+######### 1 - BICICLETA              ###########
+######### 2 - CAPACETE               ###########
+######### 3 - SAPATILHA              ###########
+######### 4 - ROUPA DE CICLISMO      ###########
+######### 5 - VOLTAR                 ###########
                         ''')
                         q = int(input('Qual opção você deseja: '))
                         if q == 1:
@@ -160,14 +160,14 @@ while resp != 0:
                         q = ' '
                         while q != 5:
                             print('''
-    ###############################
-    ###### ATUALIZAR PRODUTO ######
-    ###############################
-    ### 1 - BICICLETAS       ######
-    ### 2 - CAPACETES        ######
-    ### 3 - SAPATILHAS       ######
-    ### 4 - ROUPAS           ###### 
-    ### 5 - SAIR             ######
+###############################
+###### ATUALIZAR PRODUTO ######
+###############################
+### 1 - BICICLETAS       ######
+### 2 - CAPACETES        ######
+### 3 - SAPATILHAS       ######
+### 4 - ROUPAS           ###### 
+### 5 - SAIR             ######
                             
                                 ''')
                         q = int(input('Qual opção você deseja:'))
@@ -185,16 +185,16 @@ while resp != 0:
                                     print('Bicicleta não encotrada')
                                 while q != 6:
                                     print('''
-    ##############################                                  
-    ### O QUE DESEJA ALTERAR ? ###
-    ##############################
-    ### 1 - MARCA              ###
-    ### 2 - MODELO             ###
-    ### 3 - VALOR              ###
-    ### 4 - QUANTIDADE         ###
-    ### 5 - CÓDIGO             ###
-    ### 6 - VOLTAR             ###
-    ##############################
+##############################                                  
+### O QUE DESEJA ALTERAR ? ###
+##############################
+### 1 - MARCA              ###
+### 2 - MODELO             ###
+### 3 - VALOR              ###
+### 4 - QUANTIDADE         ###
+### 5 - CÓDIGO             ###
+### 6 - VOLTAR             ###
+##############################
                                     ''')
                                     q = int(input('QUAL OPÇÃO VOCÊ DESEJA: '))
                                     if q == 1:
@@ -230,16 +230,16 @@ while resp != 0:
 
                                     while q != 6:
                                         print('''
-    ##############################                                  
-    ### O QUE DESEJA ALTERAR ? ###
-    ##############################
-    ### 1 - MARCA              ###
-    ### 2 - MODELO             ###
-    ### 3 - VALOR              ###
-    ### 4 - QUANTIDADE         ###
-    ### 5 - CÓDIGO             ###
-    ### 6 - VOLTAR             ###
-    ##############################
+##############################                                  
+### O QUE DESEJA ALTERAR ? ###
+##############################
+### 1 - MARCA              ###
+### 2 - MODELO             ###
+### 3 - VALOR              ###
+### 4 - QUANTIDADE         ###
+### 5 - CÓDIGO             ###
+### 6 - VOLTAR             ###
+##############################
                                             ''')
                                         if q == 1:
                                             nova_marca = input('Digite a nova marca do produto:')
@@ -273,16 +273,16 @@ while resp != 0:
 
                                     while q != 6:
                                         print('''
-    ##############################                                  
-    ### O QUE DESEJA ALTERAR ? ###
-    ##############################
-    ### 1 - MARCA              ###
-    ### 2 - MODELO             ###
-    ### 3 - VALOR              ###
-    ### 4 - QUANTIDADE         ###
-    ### 5 - CÓDIGO             ###
-    ### 6 - VOLTAR             ###
-    ##############################
+##############################                                  
+### O QUE DESEJA ALTERAR ? ###
+##############################
+### 1 - MARCA              ###
+### 2 - MODELO             ###
+### 3 - VALOR              ###
+### 4 - QUANTIDADE         ###
+### 5 - CÓDIGO             ###
+### 6 - VOLTAR             ###
+##############################
                                             ''')
                                         q = int(input('Digite a opção que vc deseja: '))
 
@@ -322,16 +322,16 @@ while resp != 0:
 
                                 while q != 6:
                                         print('''
-    ##############################                                  
-    ### O QUE DESEJA ALTERAR ? ###
-    ##############################
-    ### 1 - MARCA              ###
-    ### 2 - MODELO             ###
-    ### 3 - VALOR              ###
-    ### 4 - QUANTIDADE         ###
-    ### 5 - CÓDIGO             ###
-    ### 6 - VOLTAR             ###
-    ##############################
+##############################                                  
+### O QUE DESEJA ALTERAR ? ###
+##############################
+### 1 - MARCA              ###
+### 2 - MODELO             ###
+### 3 - VALOR              ###
+### 4 - QUANTIDADE         ###
+### 5 - CÓDIGO             ###
+### 6 - VOLTAR             ###
+##############################
                                             ''')
                                         q = int(input('Digite a opção que vc deseja: '))    
                                         if q == 1:
@@ -356,7 +356,8 @@ while resp != 0:
                                             del roupas[codigo]
                                                                 
                 elif q == 4:
-                    os.system("clear")
+                    os.system('clear')
+                    q = ' '
                     while q != 5:
                         print('''
 ##############################
@@ -447,19 +448,119 @@ while resp != 0:
                              
         elif resp == 2:
             os.system("clear")
-            print('''
-    ###############################################
-    ############ 1 - CADASTRAR CLIENTES    ########
-    ############ 2 - LISTAR CLIENTES       ########      
-    ############ 3 - BUSCAR CLIENTES       ########     
-    ############ 4 - ATUALIZAR CADASTRO    ########
-    ############ 5 - REMOVER CADASTRO      ########
-    ############ 6 - VOLTAR                ########            
+            q = ' '
+            while q != 6:
+                print('''
+###############################################
+############ 1 - CADASTRAR CLIENTES    ########
+############ 2 - LISTAR CLIENTES       ########      
+############ 3 - BUSCAR CLIENTES       ########     
+############ 4 - ATUALIZAR CADASTRO    ########
+############ 5 - REMOVER CADASTRO      ########
+############ 6 - VOLTAR                ########            
                 ''')
-            q = int(input('Qual opção você deseja: '))
-            
-                 
-
+                q = int(input('Qual opção você deseja: '))
+                if q == 1:
+                    nome = input('Digite o nome do cliente: ')
+                    sobrenome = input('Digite o sobrenome do cliente: ')
+                    tel = input('Digite o telefone do cliente; xx xxxxx-xxxx ')
+                    cpf = input('Digite o cpf do cliente:XXX.XXX.XXX-XX ')
+                    cod = input('Digite o código do cliente: ')
+                    clientes[cod] = {
+                    'código': cod,
+                    'nome': nome,
+                    'sobrenome': sobrenome,
+                    'telefone': tel,
+                    'cpf': cpf,
+                    }
+                    print('CLIENTE CADASTRADO COM SUCESSO')
+                elif q == 2:
+                    print('LISTANDO OS CLIENTES ....')
+                    for cod in clientes:
+                        print('Código:', cod)
+                        print('Nome:', clientes[cod]['nome'])
+                        print('Sobrenome:', clientes[cod]['sobrenome'])
+                        print('Telefone:', clientes[cod]['telefone'])
+                        print('CPF:', clientes[cod]['cpf'])
+                        print('-------------------------------------')
+                elif q == 3:
+                    print('''
+##### PESQUISAR CLIENTE #####
+                           ''')
+                    cod = input('Digite o código do cliente: ')
+                    if cod in clientes:
+                        print('### CLIENTE ENCONTRADO ###')
+                        print('código:', cod) 
+                        print('Nome:', clientes[cod]['nome'])
+                        print('Sobrenome:',clientes[cod]['sobrenome'])
+                        print('Telefone:', clientes[cod]['telefone'])
+                        print('CPF:', clientes[cod]['cpf'])
+                    else:
+                         print('#### CLIENTE NÃO FOI ENCONTRADO ####')
+                elif q == 4:
+                    print('''
+###############################
+#### MÓDULO DE ATUALIZAÇÃO ####
+###############################
+                           ''')
+                    cod = input('Digite o código do cliente: ')
+                    if cod in clientes:
+                        print(
+                             '### CLIENTE ENCONTRADO ###')
+                        print('código:', cod) 
+                        print('Nome:', clientes[cod]['nome'])
+                        print('Sobrenome:',clientes[cod]['sobrenome'])
+                        print('Telefone:', clientes[cod]['telefone'])
+                        print('CPF:', clientes[cod]['cpf'])
+                        print('')
+                        while q != 6:
+                            q = ' '
+                            print('''
+##############################                              
+### O QUE DESEJA ALTERAR ? ###
+##############################
+### 1 - NOME               ###
+### 2 - SOBRENOME          ###
+### 3 - TELEFONE           ###
+### 4 - CPF                ###
+### 5 - CÓDIGO               ###
+### 6 - VOLTAR             ###
+                              ''')
+                            q = int(input('Qual opção você deseja: '))
+                                
+                            if q == 1:
+                                        novo_nome = input('DIgite o novo nome: ')
+                                        clientes[cod]['nome'] = novo_nome
+                            elif q == 2:
+                                        novo_sobrenome = input('Digite o novo sobrenome desejado: ')
+                                        clientes[cod]['sobrenome'] = novo_sobrenome
+                            elif q == 3:
+                                        novo_tel = input('DIgite o novo número XX XXXXX-XXX: ')
+                                        clientes[cod]['telefone']= novo_tel
+                            elif q == 4: 
+                                        novo_cpf = input('Digite o novo cpf XXX.XXX.XXX-XX:')
+                                        clientes[cod]['cpf'] = novo_cpf
+                            elif q == 5:
+                                        novo_codigo = input('Digite o novo codigo:')
+                                        clientes[novo_codigo] = clientes[cod]
+                                        del clientes[cod]
+                    else:
+                        print('CLIENTE NÃO ENCONTRADO')
+                    
+                elif q == 5:
+                    print('''
+###########################                          
+##### DELETAR CADASTRO ####
+###########################                          
+                          ''')
+                    r = input('Digite o código do cliente que você deseja deletar o cadastro: ')
+                    if r in clientes:
+                        print('CLIENTE ENCONTRADO')
+                        crtz = input('TEM CERTEZA QUE DESEJA REMOVER O CADASTRO [S/N]: ').upper()
+                        if crtz == 'S':
+                            del clientes[r]
+                        else:
+                            print('ESSE CLIENTE NÃO ESTÁ PRESENTE NO NOSSO BANCO DE DADOS...')
         elif resp == 3:
             os.system("clear")
             print('''
