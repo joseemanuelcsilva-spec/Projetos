@@ -120,7 +120,7 @@ while resp != 0:
 ######### 2 - CAPACETE               ###########
 ######### 3 - SAPATILHA              ###########
 ######### 4 - ROUPA DE CICLISMO      ###########
-######### 5 - VOLTAR                 ###########
+######### 5 - BACK                   ###########
                         ''')
                         q = int(input('Qual opção você deseja: '))
                         if q == 1:
@@ -576,7 +576,7 @@ while resp != 0:
             os.system("clear")
             print('''
     ###################################################
-    ############ 1 - TOTAL FATURADO            ########
+    ############ 1 - TOTAL FATURADOO            ########
     ############ 2 - PRODUTO MAIS VENDIDO      ########      
     ############ 3 - CLIENTES QUE MAIS COMPRAM ########     
     ############ 4 - QUANTIDADE DE VENDAS      ########
