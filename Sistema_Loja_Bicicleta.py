@@ -5,6 +5,7 @@ capacetes = {}
 sapatilhas = {}
 roupas = {}
 clientes = {}
+vendas = {}
 while resp != 0:
         os.system("clear")
         print('#'*31)
@@ -17,7 +18,7 @@ while resp != 0:
 ############ 3 - GERENCIAR VENDAS      ########     
 ############ 4 - RELATÓRIOS            ########
 ############ 5 - INFORMAÇÕES           ########
-############ 0 - SAIRR                 ########
+############ 0 - SAIR                  ########
             ''')
         resp = int(input('Qual opção você deseja: '))
 
@@ -445,7 +446,10 @@ while resp != 0:
                         elif q == 4: 
                              cod = input('DIgite o código da roupa que você deseja remover: ')
                              del roupas[cod]
-                             
+
+
+
+
         elif resp == 2:
             os.system("clear")
             q = ' '
@@ -523,7 +527,7 @@ while resp != 0:
 ### 2 - SOBRENOME          ###
 ### 3 - TELEFONE           ###
 ### 4 - CPF                ###
-### 5 - CÓDIGO               ###
+### 5 - CÓDIGO             ###
 ### 6 - VOLTAR             ###
                               ''')
                             q = int(input('Qual opção você deseja: '))
@@ -553,24 +557,39 @@ while resp != 0:
 ##### DELETAR CADASTRO ####
 ###########################                          
                           ''')
-                    r = input('Digite o código do cliente que você deseja deletar o cadastro: ')
-                    if r in clientes:
-                        print('CLIENTE ENCONTRADO')
-                        crtz = input('TEM CERTEZA QUE DESEJA REMOVER O CADASTRO [S/N]: ').upper()
-                        if crtz == 'S':
-                            del clientes[r]
-                        else:
-                            print('ESSE CLIENTE NÃO ESTÁ PRESENTE NO NOSSO BANCO DE DADOS...')
+                    novo_codigo = input('Digite o novo codigo: ')
+
+                    clientes[novo_codigo] = clientes[cod]
+                    clientes[novo_codigo]['código'] = novo_codigo
+                    del clientes[cod]
+                    cod = novo_codigo
+                    print('Código alterado com sucesso!')
+
         elif resp == 3:
             os.system("clear")
             print('''
-    ###############################################
-    ############ 1 - NOVA VENDA            ########
-    ############ 2 - HISTÓRICO DE VENDAS   ########      
-    ############ 3 - BUSCAR VENDAS         ########     
-    ############ 4 - VOLTAR                ########       
+###############################################
+############ 1 - NOVA VENDA            ########
+############ 2 - HISTÓRICO DE VENDAS   ########      
+############ 3 - BUSCAR VENDAS         ########     
+############ 4 - VOLTAR                ########       
                 ''')
             q = int(input('Qual opção você deseja: '))
+            if q == 1:
+                print('#### VAMOS INCIAR UMA VENDA ####')
+                cod_cliente = input('Digite o código do cliente: ')
+                if cod_cliente in clientes: 
+                    print('Cliente encontrado')
+                    while q != 6:
+                        print('''
+O QUE DESEJA COMPRAR :
+1 - BICICLETA
+2 - SAPATILHA
+3 - CAPACETE 
+4 - ROUPA 
+                          ''')
+                        q = int(input('Digite a opção desejada: '))
+                        
         
         elif resp == 4:
             os.system("clear")
