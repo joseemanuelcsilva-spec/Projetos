@@ -635,10 +635,12 @@ while resp != 0:
                                         print(f'O total ficou de R${total-((total*5)/100)}')
                                         print('### VENDA FINALIZADA ###')
                                         bicicletas[cod]['quantidade']-= desejada
+                                        cod_venda= input('Digite o código da venda: ')
                                         vendas[cod_venda]={
                                             'cliente': cod_cliente,
                                             'nome': clientes[cod_cliente]['nome'],
-                                            'produto': bicicletas[cod]['marca']['modelo'],
+                                            'produto': bicicletas[cod]['marca'],
+                                            'modelo': bicicletas[cod]['modelo'],
                                             'valor': total,
                                             'pagamento': 'ESPÉCIE'
                                         }
@@ -647,10 +649,12 @@ while resp != 0:
                                         print(f'O VALOR FINAL FICOU DE {total} dividio em {vezes}x de R${total/vezes} sem juros')
                                         print('VENDA FINALIZADA')
                                         bicicletas[cod]['quantidade']-= desejada
+                                        cod_venda= input('Digite o código da venda: ')
                                         vendas[cod_venda]={
                                             'cliente': cod_cliente,
                                             'nome': clientes[cod_cliente]['nome'],
-                                            'produto': bicicletas[cod]['marca']['modelo'],
+                                            'produto': bicicletas[cod]['marca'],
+                                            'modelo': bicicletas[cod]['modelo'],
                                             'valor': total,
                                             'pagamento': 'CARTÃO'
                                         }
@@ -682,15 +686,42 @@ while resp != 0:
                                         print(f'O total ficou de R$ {total - ((total * 10) / 100)}')
                                         print('### VENDA FINALIZADA ###')
                                         sapatilhas[cod]['quantidade'] -= desejada
+                                        cod_venda= input('Digite o código da venda: ')
+                                        vendas[cod_venda] = {
+                                            'cliente': cod_cliente,
+                                            'nome': clientes[cod_cliente]['nome'],
+                                            'produto': sapatilhas[cod]['marca'],
+                                            'modelo': sapatilhas[cod]['modelo'],
+                                            'valor': total,
+                                            'pagamento': 'PIX'
+                                        }
                                     elif pg == 2:
                                         print(f'O total ficou de R$ {total - ((total * 5) / 100)}')
                                         print('### VENDA FINALIZADA ###')
                                         sapatilhas[cod]['quantidade'] -= desejada
+                                        cod_venda= input('Digite o código da venda: ')
+                                        vendas[cod_venda] = {
+                                            'cliente': cod_cliente,
+                                            'nome': clientes[cod_cliente]['nome'],
+                                            'produto': sapatilhas[cod]['marca'],
+                                            'modelo': sapatilhas[cod]['modelo'],
+                                            'valor': total,
+                                            'pagamento': 'ESPÉCIE'
+                                        }
                                     elif pg == 3:
                                         vezes = int(input('Deseja dividir em quantas vezes: '))
                                         print(f'O VALOR FINAL FICOU DE {total} dividido em {vezes}x de R$ {total/vezes}')
                                         print('VENDA FINALIZADA')
                                         sapatilhas[cod]['quantidade'] -= desejada
+                                        cod_venda= input('Digite o código da venda: ')
+                                        vendas[cod_venda] = {
+                                            'cliente': cod_cliente,
+                                            'nome': clientes[cod_cliente]['nome'],
+                                            'produto': sapatilhas[cod]['marca'],
+                                            'modelo': sapatilhas[cod]['modelo'],
+                                            'valor': total,
+                                            'pagamento': 'CARTÃO'
+                                        }
 
                         elif q == 3:
                             cod = input('Digite o código do capacete: ')
@@ -717,15 +748,40 @@ while resp != 0:
                                         print(f'O total ficou de R$ {total - ((total * 10) / 100)}')
                                         print('### VENDA FINALIZADA ###')
                                         capacetes[cod]['quantidade'] -= desejada
+                                        cod_venda= input('Digite o código da venda: ')
+                                        vendas[cod_venda] = {
+                                            'cliente': cod_cliente,
+                                            'nome': clientes[cod_cliente]['nome'],
+                                            'produto': capacetes[cod]['marca'],
+                                            'modelo': capacetes[cod]['modelo'],
+                                            'valor': total,
+                                            'pagamento': 'PIX'
+                                        }
                                     elif pg == 2:
                                         print(f'O total ficou de R$ {total - ((total * 5) / 100)}')
                                         print('### VENDA FINALIZADA ###')
                                         capacetes[cod]['quantidade'] -= desejada
+                                        vendas[cod_venda] = {
+                                            'cliente': cod_cliente,
+                                            'nome': clientes[cod_cliente]['nome'],
+                                            'produto': capacetes[cod]['marca'],
+                                            'modelo': capacetes[cod]['modelo'],
+                                            'valor': total,
+                                            'pagamento': 'ESPÉCIE'
+                                        }
                                     elif pg == 3:
                                         vezes = int(input('Deseja dividir em quantas vezes: '))
                                         print(f'O VALOR FINAL FICOU DE {total} dividido em {vezes}x de R$ {total/vezes}')
                                         print('VENDA FINALIZADA')
                                         capacetes[cod]['quantidade'] -= desejada
+                                        vendas[cod_venda] = {
+                                            'cliente': cod_cliente,
+                                            'nome': clientes[cod_cliente]['nome'],
+                                            'produto': capacetes[cod]['marca'],
+                                            'modelo': capacetes[cod]['modelo'],
+                                            'valor': total,
+                                            'pagamento': 'CARTÃO'
+                                        }
 
                         elif q == 4:
                             cod = input('Digite o código da roupa: ')
@@ -754,16 +810,39 @@ while resp != 0:
                                         print(f'O total ficou de R$ {total - ((total * 10) / 100)}')
                                         print('### VENDA FINALIZADA ###')
                                         roupas[cod]['quantidade'] -= desejada
+                                        vendas[cod_venda] = {
+                                            'cliente': cod_cliente,
+                                            'nome': clientes[cod_cliente]['nome'],
+                                            'produto': roupas[cod]['marca'],
+                                            'tamanho': capacetes[cod]['tamanho'],
+                                            'valor': total,
+                                            'pagamento': 'PIX'
+                                        }
                                     elif pg == 2:
                                         print(f'O total ficou de R$ {total - ((total * 5) / 100)}')
                                         print('### VENDA FINALIZADA ###')
                                         roupas[cod]['quantidade'] -= desejada
+                                        vendas[cod_venda] = {
+                                            'cliente': cod_cliente,
+                                            'nome': clientes[cod_cliente]['nome'],
+                                            'produto': roupas[cod]['marca'],
+                                            'tamanho': capacetes[cod]['tamanho'],
+                                            'valor': total,
+                                            'pagamento': 'ESPÉCIE'
+                                        }
                                     elif pg == 3:
                                         vezes = int(input('Deseja dividir em quantas vezes: '))
                                         print(f'O VALOR FINAL FICOU DE {total} dividido em {vezes}x de R$ {total/vezes}')
                                         print('VENDA FINALIZADA')            
                                         roupas[cod]['quantidade'] -= desejada  
-
+                                        vendas[cod_venda] = {
+                                            'cliente': cod_cliente,
+                                            'nome': clientes[cod_cliente]['nome'],
+                                            'produto': roupas[cod]['marca'],
+                                            'tamanho': capacetes[cod]['tamanho'],
+                                            'valor': total,
+                                            'pagamento': 'CARTÃO'
+                                        }
         elif resp == 4:
             os.system("clear")
             print('''
