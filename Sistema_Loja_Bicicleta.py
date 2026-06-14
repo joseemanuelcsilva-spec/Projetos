@@ -1,12 +1,15 @@
 import os
 from datetime import datetime
+import time
 resp = ' '
 bicicletas = {
-     'b001':{'codigo': 'b001', 'marca': 'Caloi', 'modelo': 'Adv', 'valor':  2000.00, 'quantidade': 10}
+     'b001':{'codigo': 'b001', 'marca': 'Caloi', 'modelo': 'Adv', 'valor': 2000, 'quantidade': 10}            
 }
 capacetes = {}
 sapatilhas = {}
-roupas = {}
+roupas = {
+     'r001':{'codigo': 'r001', 'marca': 'jose clothers', 'tamanho': 'GG', 'valor': 250.50, 'quantidade': 3, 'STATUS': 'CANCELADA'}
+}
 clientes = {
      'c001':{'código': 'c001', 'nome': 'jose', 'sobrenome': 'silva', 'telefone': '84 99948-2525', 'cpf': '110.557.644-29',}
 }
@@ -66,6 +69,7 @@ while resp != 0:
                             cod = str(input('Digite o código da Bicicleta: '))
                             quant = int(input('Quantas unidades: '))
                             bicicletas[cod] = {
+        'codigo': cod,
         'marca': marca,
         'modelo': modelo,
         'valor': valor,
@@ -80,6 +84,7 @@ while resp != 0:
                             cod = str(input('Digite o código da capacete: '))
                             quant = int(input('Quantas unidades:  '))
                             capacetes[cod] = {
+        'codigo': cod,                         
         'marca': marca,
         'modelo': modelo,
         'valor': valor,
@@ -94,6 +99,7 @@ while resp != 0:
                             cod= str(input('Digite o código da sapatilha: '))
                             quant = int(input('Quantas unidades:  '))
                             sapatilhas[cod] = {
+        'codigo': cod,                         
         'marca': marca,
         'modelo': modelo,
         'valor': valor,
@@ -107,6 +113,7 @@ while resp != 0:
                             cod = input('Digite o código da roupa: ')
                             quant = int(input('Quantas unidades:  '))
                             roupas[cod] = {
+        'codigo': cod,                         
         'marca': marca,
         'tamanho': tam,
         'valor': valor,
@@ -569,13 +576,14 @@ while resp != 0:
         elif resp == 3:
             os.system("clear")
             q = ' '
-            while q != 4:
+            while q != 5:
                 print('''
 ###############################################
 ############ 1 - NOVA VENDA            ########
 ############ 2 - HISTÓRICO DE VENDAS   ########      
-############ 3 - BUSCAR VENDAS         ########     
-############ 4 - VOLTAR                ########       
+############ 3 - BUSCAR VENDAS         ######## 
+############ 4 - CANCELAR VENDA        ########    
+############ 5 - VOLTAR                ########       
                     ''')
                 q = int(input('Qual opção você deseja: '))
                 agora = datetime.now()
@@ -589,14 +597,14 @@ while resp != 0:
                         print(f"Seja bem vindo {clientes[cod_cliente]['nome']}")
                         while q != 5:
                             print('''
-    #############################
-    ### O QUE DESEJA COMPRAR ?###    
-    #############################
-    ### 1 - BICICLETA         ###
-    ### 2 - SAPATILHA         ###
-    ### 3 - CAPACETE          ###
-    ### 4 - ROUPA             ###
-    ### 5 - VOLTAR            ###
+#############################
+### O QUE DESEJA COMPRAR ?###    
+#############################
+### 1 - BICICLETA         ###
+### 2 - SAPATILHA         ###
+### 3 - CAPACETE          ###
+### 4 - ROUPA             ###
+### 5 - VOLTAR            ###
                             ''')
                             q = int(input('Digite a opção desejada: '))
                             if q == 1:
@@ -613,11 +621,11 @@ while resp != 0:
                                         total = bicicletas[cod]['valor'] * desejada
                                         print(f"O VALOR TOTAL FICARÁ DE R$ {total}")
                                         print('''
-    #################################
-    ### QUAL A FORMA DE PAGAMENTO ###
-    ### 1 - PIX (10% OFF)         ###
-    ### 2 - ESPÉCIE (5% OFF)      ###
-    ### 3 - CARTÃO                ###
+#################################
+### QUAL A FORMA DE PAGAMENTO ###
+### 1 - PIX (10% OFF)         ###
+### 2 - ESPÉCIE (5% OFF)      ###
+### 3 - CARTÃO                ###
                                             ''')
                                         
                                         pg = int(input('Qual opção você deseja: '))
@@ -635,6 +643,7 @@ while resp != 0:
                                                 'valor': total,
                                                 'pagamento': 'PIX',
                                                 'datahora': data_hora,
+                                                'STATUS': 'ATIVA'
                                             }
                                         elif pg == 2:
                                             print(f'O total ficou de R${total-((total*5)/100)}')
@@ -647,7 +656,9 @@ while resp != 0:
                                                 'produto': bicicletas[cod]['marca'],
                                                 'modelo': bicicletas[cod]['modelo'],
                                                 'valor': total,
-                                                'pagamento': 'ESPÉCIE'
+                                                'pagamento': 'ESPÉCIE',
+                                                'datahora': data_hora,
+                                                'STATUS': 'ATIVA'
                                             }
                                         elif pg == 3:
                                             vezes = int(input('Deseja dividir em quantas vezes: '))
@@ -661,7 +672,9 @@ while resp != 0:
                                                 'produto': bicicletas[cod]['marca'],
                                                 'modelo': bicicletas[cod]['modelo'],
                                                 'valor': total,
-                                                'pagamento': 'CARTÃO'
+                                                'pagamento': 'CARTÃO',
+                                                'datahora': data_hora,
+                                                'STATUS': 'ATIVA'
                                             }
 
                                         
@@ -679,11 +692,11 @@ while resp != 0:
                                         total = sapatilhas[cod]['valor'] * desejada
                                         print(f"O VALOR TOTAL FICARÁ DE R$ {total}")
                                         print('''
-    #################################
-    ### QUAL A FORMA DE PAGAMENTO ###
-    ### 1 - PIX (10% OFF)         ###
-    ### 2 - ESPÉCIE (5% OFF)      ###
-    ### 3 - CARTÃO                ###
+#################################
+### QUAL A FORMA DE PAGAMENTO ###
+### 1 - PIX (10% OFF)         ###
+### 2 - ESPÉCIE (5% OFF)      ###
+### 3 - CARTÃO                ###
                                         ''')
 
                                         pg = int(input('Qual opção você deseja: '))
@@ -698,7 +711,9 @@ while resp != 0:
                                                 'produto': sapatilhas[cod]['marca'],
                                                 'modelo': sapatilhas[cod]['modelo'],
                                                 'valor': total,
-                                                'pagamento': 'PIX'
+                                                'pagamento': 'PIX',
+                                                'datahora': data_hora,
+                                                'STATUS': 'ATIVA'
                                             }
                                         elif pg == 2:
                                             print(f'O total ficou de R$ {total - ((total * 5) / 100)}')
@@ -711,7 +726,9 @@ while resp != 0:
                                                 'produto': sapatilhas[cod]['marca'],
                                                 'modelo': sapatilhas[cod]['modelo'],
                                                 'valor': total,
-                                                'pagamento': 'ESPÉCIE'
+                                                'pagamento': 'ESPÉCIE',
+                                                'datahora': data_hora,
+                                                'STATUS': 'ATIVA'
                                             }
                                         elif pg == 3:
                                             vezes = int(input('Deseja dividir em quantas vezes: '))
@@ -725,7 +742,9 @@ while resp != 0:
                                                 'produto': sapatilhas[cod]['marca'],
                                                 'modelo': sapatilhas[cod]['modelo'],
                                                 'valor': total,
-                                                'pagamento': 'CARTÃO'
+                                                'pagamento': 'CARTÃO',
+                                                'datahora': data_hora,
+                                                'STATUS': 'ATIVA'
                                             }
 
                             elif q == 3:
@@ -742,11 +761,11 @@ while resp != 0:
                                         total = capacetes[cod]['valor'] * desejada
                                         print(f"O VALOR TOTAL FICARÁ DE R$ {total}")
                                         print('''
-    #################################
-    ### QUAL A FORMA DE PAGAMENTO ###
-    ### 1 - PIX (10% OFF)         ###
-    ### 2 - ESPÉCIE (5% OFF)      ###
-    ### 3 - CARTÃO                ###
+#################################
+### QUAL A FORMA DE PAGAMENTO ###
+### 1 - PIX (10% OFF)         ###
+### 2 - ESPÉCIE (5% OFF)      ###
+### 3 - CARTÃO                ###
                                         ''')
                                         pg = int(input('Qual opção você deseja: '))
                                         if pg == 1:
@@ -760,7 +779,9 @@ while resp != 0:
                                                 'produto': capacetes[cod]['marca'],
                                                 'modelo': capacetes[cod]['modelo'],
                                                 'valor': total,
-                                                'pagamento': 'PIX'
+                                                'pagamento': 'PIX',
+                                                'datahora': data_hora,
+                                                'STATUS': 'ATIVA'
                                             }
                                         elif pg == 2:
                                             print(f'O total ficou de R$ {total - ((total * 5) / 100)}')
@@ -772,7 +793,9 @@ while resp != 0:
                                                 'produto': capacetes[cod]['marca'],
                                                 'modelo': capacetes[cod]['modelo'],
                                                 'valor': total,
-                                                'pagamento': 'ESPÉCIE'
+                                                'pagamento': 'ESPÉCIE',
+                                                'datahora': data_hora,
+                                                'STATUS': 'ATIVA'
                                             }
                                         elif pg == 3:
                                             vezes = int(input('Deseja dividir em quantas vezes: '))
@@ -785,7 +808,9 @@ while resp != 0:
                                                 'produto': capacetes[cod]['marca'],
                                                 'modelo': capacetes[cod]['modelo'],
                                                 'valor': total,
-                                                'pagamento': 'CARTÃO'
+                                                'pagamento': 'CARTÃO',
+                                                'datahora': data_hora,
+                                                'STATUS': 'ATIVA'
                                             }
 
                             elif q == 4:
@@ -802,11 +827,11 @@ while resp != 0:
                                         total = roupas[cod]['valor'] * desejada
                                         print(f"O VALOR TOTAL FICARÁ DE R$ {total}")
                                         print('''
-    #################################
-    ### QUAL A FORMA DE PAGAMENTO ###
-    ### 1 - PIX (10% OFF)         ###
-    ### 2 - ESPÉCIE (5% OFF)      ###
-    ### 3 - CARTÃO                ###
+#################################
+### QUAL A FORMA DE PAGAMENTO ###
+### 1 - PIX (10% OFF)         ###
+### 2 - ESPÉCIE (5% OFF)      ###
+### 3 - CARTÃO                ###
                                         ''')
 
                                         pg = int(input('Qual opção você deseja: '))
@@ -819,9 +844,11 @@ while resp != 0:
                                                 'cliente': cod_cliente,
                                                 'nome': clientes[cod_cliente]['nome'],
                                                 'produto': roupas[cod]['marca'],
-                                                'tamanho': capacetes[cod]['tamanho'],
+                                                'tamanho': roupas[cod]['tamanho'],
                                                 'valor': total,
-                                                'pagamento': 'PIX'
+                                                'pagamento': 'PIX',
+                                                'datahora': data_hora,
+                                                'STATUS': 'ATIVA'
                                             }
                                         elif pg == 2:
                                             print(f'O total ficou de R$ {total - ((total * 5) / 100)}')
@@ -831,9 +858,11 @@ while resp != 0:
                                                 'cliente': cod_cliente,
                                                 'nome': clientes[cod_cliente]['nome'],
                                                 'produto': roupas[cod]['marca'],
-                                                'tamanho': capacetes[cod]['tamanho'],
+                                                'tamanho': roupas[cod]['tamanho'],
                                                 'valor': total,
-                                                'pagamento': 'ESPÉCIE'
+                                                'pagamento': 'ESPÉCIE',
+                                                'datahora': data_hora,
+                                                'STATUS': 'ATIVA'
                                             }
                                         elif pg == 3:
                                             vezes = int(input('Deseja dividir em quantas vezes: '))
@@ -844,12 +873,55 @@ while resp != 0:
                                                 'cliente': cod_cliente,
                                                 'nome': clientes[cod_cliente]['nome'],
                                                 'produto': roupas[cod]['marca'],
-                                                'tamanho': capacetes[cod]['tamanho'],
+                                                'tamanho': roupas[cod]['tamanho'],
                                                 'valor': total,
-                                                'pagamento': 'CARTÃO'
+                                                'pagamento': 'CARTÃO',
+                                                'datahora': data_hora,
+                                                'STATUS': 'ATIVA'
                                             }
                 elif q == 2:
-                    print('se fudeo')            
+                    for cod_venda in vendas:
+                        print('------------------------')
+                        print('Código da Venda:', cod_venda)
+                        print('Cliente:', vendas[cod_venda]['nome'])
+                        print('Código Cliente:', vendas[cod_venda]['cliente'])
+                        print('Produto:', vendas[cod_venda]['produto'])
+                        print('Valor: R$', vendas[cod_venda]['valor'])
+                        print('Pagamento:', vendas[cod_venda]['pagamento'])
+                        print('Data/Hora:', vendas[cod_venda]['datahora'])
+                        print('Status:', vendas[cod_venda]['STATUS'])
+                        print('------------------------')      
+                elif q == 3:
+                    print('''
+##############################
+#######   BUSCAR VENDA  ######
+##############################
+                           ''')
+                    cod = input('DIGITE O CÓDIGO DA VENDA QUE VOCÊ DESEJA CONSULTAR: ') 
+                    if cod in vendas:
+                        print('LISTANDO VENDA....')
+                        time.sleep(1)
+                        print('------------------------')
+                        print('Código da Venda:', cod_venda)
+                        print('Cliente:', vendas[cod_venda]['nome'])
+                        print('Código Cliente:', vendas[cod_venda]['cliente'])
+                        print('Produto:', vendas[cod_venda]['produto'])
+                        print('Valor: R$', vendas[cod_venda]['valor'])
+                        print('Pagamento:', vendas[cod_venda]['pagamento'])
+                        print('Data/Hora:', vendas[cod_venda]['datahora'])
+                        print('Status:', vendas[cod_venda]['STATUS'])
+                        print('------------------------')      
+                elif q == 4:
+                    print('######## CANCELAR VENDA #########')
+                    cod = input('Digite o código da venda que você deseja cancelar: ')
+                    if cod in vendas:
+                        print('CANCELANDO VENDA')
+                        time.sleep(1)
+                        print('VENDA CANCELADA')
+                        vendas[cod]['STATUS'] = 'CANCELADA'
+                    else:
+                        print('VENDA NÃO ESTÁ NO NOSSO HISTÓRICO')
+                     
         elif resp == 4:
             os.system("clear")
             print('''
@@ -882,13 +954,3 @@ while resp != 0:
                 ''')
         else:
             print('OPÇÃO INVÁLIDA')
-for cod_venda in vendas:
-    print('------------------------')
-    print('Código da Venda:', cod_venda)
-    print('Cliente:', vendas[cod_venda]['nome'])
-    print('Código Cliente:', vendas[cod_venda]['cliente'])
-    print('Produto:', vendas[cod_venda]['produto'])
-    print('Valor: R$', vendas[cod_venda]['valor'])
-    print('Pagamento:', vendas[cod_venda]['pagamento'])
-    print('Data/Hora:', vendas[cod_venda]['datahora'])
-    print('------------------------')
