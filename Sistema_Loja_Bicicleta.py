@@ -3,17 +3,25 @@ from datetime import datetime
 import time
 resp = ' '
 bicicletas = {
-     'b001':{'codigo': 'b001', 'marca': 'Caloi', 'modelo': 'Adv', 'valor': 2000, 'quantidade': 10}            
+     'b001':{'codigo': 'b001', 'marca': 'Caloi', 'modelo': 'Adv', 'valor': 2000, 'quantidade': 10},
+     'b002':{'codigo': 'b002', 'marca': 'Oggi', 'modelo': 'cavalo', 'valor':25000, 'quantidade': 5}         
 }
-capacetes = {}
-sapatilhas = {}
+capacetes = {
+     'c001':{'codigo': 'c001', 'marca': 'Cabeça de gelo', 'modelo': 'cocô duro', 'valor': 200, 'quantidade': 10}
+}
+sapatilhas = {
+     's001':{'codigo': 's001', 'marca': 'Pe de Pano', 'modelo': 'MDF', 'valor': 400, 'quantidade': 5}
+}
 roupas = {
      'r001':{'codigo': 'r001', 'marca': 'jose clothers', 'tamanho': 'GG', 'valor': 250.50, 'quantidade': 3, 'STATUS': 'CANCELADA'}
 }
 clientes = {
-     'c001':{'código': 'c001', 'nome': 'jose', 'sobrenome': 'silva', 'telefone': '84 99948-2525', 'cpf': '110.557.644-29',}
+     'c001':{'código': 'c001', 'nome': 'jose', 'sobrenome': 'silva', 'telefone': '84 99948-2525', 'cpf': '110.557.644-29',},
+     'c002':{'código': 'c002', 'nome': 'artur', 'sobrenome': 'pereira', 'telefone': '84 99999-3355', 'cpf': '777.888.999-58',}
 }
-vendas = {}
+vendas = {
+     'v001':{'client': 'c001', 'nome': 'jose', 'produto': 'Caloi', 'modelo': 'Adv', 'valor': 2000, 'pagmento': 'PIX', 'datahora': '15/06/2026 23:00:00', 'STATUS': 'ATIVA' }
+}
 while resp != 0:
         os.system("clear")
         print('#'*31)
@@ -787,6 +795,7 @@ while resp != 0:
                                             print(f'O total ficou de R$ {total - ((total * 5) / 100)}')
                                             print('### VENDA FINALIZADA ###')
                                             capacetes[cod]['quantidade'] -= desejada
+                                            cod_venda= input('Digite o código da venda: ')
                                             vendas[cod_venda] = {
                                                 'cliente': cod_cliente,
                                                 'nome': clientes[cod_cliente]['nome'],
@@ -954,3 +963,4 @@ while resp != 0:
                 ''')
         else:
             print('OPÇÃO INVÁLIDA')
+print(vendas)
