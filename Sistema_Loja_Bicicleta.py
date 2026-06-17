@@ -6,9 +6,47 @@ bicicletas = {
      'b001':{'codigo': 'b001', 'marca': 'Caloi', 'modelo': 'Adv', 'valor': 2000, 'quantidade': 10},
      'b002':{'codigo': 'b002', 'marca': 'Oggi', 'modelo': 'cavalo', 'valor':25000, 'quantidade': 5}         
 }
+try:
+    with open('bicicletas.txt', 'r') as arquivo:
+        for linha in arquivo:
+            dados = linha.strip().split(',')
+            codigo = dados[0]
+            marca = dados[1]
+            modelo = dados[2]
+            valor = float(dados[3])
+            quantidade = int(dados[4])
+            bicicletas[codigo] = {
+                'codigo': codigo,
+                'marca': marca,
+                'modelo': modelo,
+                'valor': valor,
+                'quantidade': quantidade
+            }
+except FileNotFoundError:
+    pass
+
 capacetes = {
      'c001':{'codigo': 'c001', 'marca': 'Cabeça de gelo', 'modelo': 'cocô duro', 'valor': 200, 'quantidade': 10}
 }
+try:
+     with open('capacetes.txt', 'r') as arquivo:
+          for linha in arquivo:
+               dado = linha.strip().split(',')
+               codigo = dados[0]
+               marca = dados[1]
+               modelo = dados [2] 
+               valor = float(dados[3])
+               quantidade = int(dados[4])
+               capacetes[codigo] = {
+                    'codigo': codigo,
+                    'marca': marca,
+                    'modelo': modelo,
+                    'valor': valor, 
+                    'quantidade': quantidade
+               }
+except FileNotFoundError:
+     pass
+
 sapatilhas = {
      's001':{'codigo': 's001', 'marca': 'Pe de Pano', 'modelo': 'MDF', 'valor': 400, 'quantidade': 5}
 }
@@ -22,6 +60,9 @@ clientes = {
 vendas = {
      'v001':{'client': 'c001', 'nome': 'jose', 'produto': 'Caloi', 'modelo': 'Adv', 'valor': 2000, 'pagmento': 'PIX', 'datahora': '15/06/2026 23:00:00', 'STATUS': 'ATIVA' }
 }
+bicicletas = {}
+
+
 while resp != 0:
         os.system("clear")
         print('#'*31)
@@ -83,6 +124,15 @@ while resp != 0:
         'valor': valor,
         'quantidade': quant
     }
+                            with open('bicicletas.txt', 'w') as arquivo:
+                                for codigo in bicicletas:
+                                    arquivo.write(
+                                        f"{codigo},"
+                                        f"{bicicletas[codigo]['marca']},"
+                                        f"{bicicletas[codigo]['modelo']},"
+                                        f"{bicicletas[codigo]['valor']},"
+                                        f"{bicicletas[codigo]['quantidade']}\n"
+            )
                             print('Produto cadastrado com sucesso!')
         
                         elif q == 2:
@@ -98,6 +148,15 @@ while resp != 0:
         'valor': valor,
         'quantidade': quant
     } 
+                            with open('capacetes.txt', 'w') as arquivo:
+                                for codigo in capacetes:
+                                    arquivo.write(
+                                        f"{codigo},"
+                                        f"{capacetes[codigo]['marca']},"
+                                        f"{capacetes[codigo]['modelo']},"
+                                        f"{capacetes[codigo]['valor']},"
+                                        f"{capacetes[codigo]['quantidade']}\n"
+            )
                             print('Produto cadastrado com sucesso!')
                         
                         elif q == 3:
@@ -113,6 +172,15 @@ while resp != 0:
         'valor': valor,
         'quantidade': quant
     }
+                            with open('capacetes.txt', 'w') as arquivo:
+                                for codigo in capacetes:
+                                    arquivo.write(
+                                        f"{codigo},"
+                                        f"{capacetes[codigo]['marca']},"
+                                        f"{capacetes[codigo]['modelo']},"
+                                        f"{capacetes[codigo]['valor']},"
+                                        f"{capacetes[codigo]['quantidade']}\n"
+            )
                             print('Produto cadastrado com sucesso!')
                         elif q == 4:
                             marca = input('Digite a marca da roupa: ')
@@ -127,6 +195,15 @@ while resp != 0:
         'valor': valor,
         'quantidade': quant
     } 
+                            with open('capacetes.txt', 'w') as arquivo:
+                                for codigo in capacetes:
+                                    arquivo.write(
+                                        f"{codigo},"
+                                        f"{capacetes[codigo]['marca']},"
+                                        f"{capacetes[codigo]['modelo']},"
+                                        f"{capacetes[codigo]['valor']},"
+                                        f"{capacetes[codigo]['quantidade']}\n"
+            )
                             print('Produto cadastrado com sucesso!')
     
                 elif q == 2:
@@ -222,19 +299,64 @@ while resp != 0:
                                         os.system("clear")
                                         nova_marca = input('Digite a nova marca da bicicleta: ')
                                         bicicletas[cod]["marca"] = nova_marca
+                                        with open('bicicletas.txt', 'w') as arquivo:
+                                            for codigo in bicicletas:
+                                                arquivo.write(
+                                                    f"{codigo},"
+                                                    f"{bicicletas[codigo]['marca']},"
+                                                    f"{bicicletas[codigo]['modelo']},"
+                                                    f"{bicicletas[codigo]['valor']},"
+                                                    f"{bicicletas[codigo]['quantidade']}\n"
+        )
                                     elif q == 2:
                                         novo_modelo = input('Digite o novo modelo da bicicleta: ')
                                         bicicletas[cod]["modelo"] = novo_modelo
+                                        with open('bicicletas.txt', 'w') as arquivo:
+                                            for codigo in bicicletas:
+                                                arquivo.write(
+                                                    f"{codigo},"
+                                                    f"{bicicletas[codigo]['marca']},"
+                                                    f"{bicicletas[codigo]['modelo']},"
+                                                    f"{bicicletas[codigo]['valor']},"
+                                                    f"{bicicletas[codigo]['quantidade']}\n"
+                                                    )
                                     elif q == 3:
                                         novo_valor = float(input('Digite o novo valor: R$ '))
                                         bicicletas[cod]["valor"] = novo_valor
+                                        with open('bicicletas.txt', 'w') as arquivo:
+                                            for codigo in bicicletas:
+                                                arquivo.write(
+                                                    f"{codigo},"
+                                                    f"{bicicletas[codigo]['marca']},"
+                                                    f"{bicicletas[codigo]['modelo']},"
+                                                    f"{bicicletas[codigo]['valor']},"
+                                                    f"{bicicletas[codigo]['quantidade']}\n"
+                                                    )
                                     elif q == 4:
                                         nova_quant = int(input('Digite a nova quantidade no estoque: '))
                                         bicicletas[cod]["quantidade"] = nova_quant
+                                        with open('bicicletas.txt', 'w') as arquivo:
+                                            for codigo in bicicletas:
+                                                arquivo.write(
+                                                    f"{codigo},"
+                                                    f"{bicicletas[codigo]['marca']},"
+                                                    f"{bicicletas[codigo]['modelo']},"
+                                                    f"{bicicletas[codigo]['valor']},"
+                                                    f"{bicicletas[codigo]['quantidade']}\n"
+                                                    )
                                     elif q == 5:
                                         novo_cod = input('Novo código: ')
                                         bicicletas[novo_cod] = bicicletas[cod]
                                         del bicicletas[cod]
+                                        with open('bicicletas.txt', 'w') as arquivo:
+                                            for codigo in bicicletas:
+                                                arquivo.write(
+                                                    f"{codigo},"
+                                                    f"{bicicletas[codigo]['marca']},"
+                                                    f"{bicicletas[codigo]['modelo']},"
+                                                    f"{bicicletas[codigo]['valor']},"
+                                                    f"{bicicletas[codigo]['quantidade']}\n"
+                                                    )
 
                         elif q == 2:
                                     codigo = input('Digite o código do capacete: ')
@@ -963,4 +1085,3 @@ while resp != 0:
                 ''')
         else:
             print('OPÇÃO INVÁLIDA')
-print(vendas)
