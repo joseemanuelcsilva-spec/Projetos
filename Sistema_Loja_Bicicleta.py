@@ -2,103 +2,21 @@ import os
 from datetime import datetime
 import time
 resp = ' '
+# Dicionários 
 bicicletas = {
-     'b001':{'codigo': 'b001', 'marca': 'Caloi', 'modelo': 'Adv', 'valor': 2000, 'quantidade': 10},
-     'b002':{'codigo': 'b002', 'marca': 'Oggi', 'modelo': 'cavalo', 'valor':25000, 'quantidade': 5}         
+     'b001':['caloi', 'adv', 200, 10]
 }
-try:
-    with open('bicicletas.txt', 'r') as arquivo:
-        for linha in arquivo:
-            dados = linha.strip().split(',')
-            codigo = dados[0]
-            marca = dados[1]
-            modelo = dados[2]
-            valor = float(dados[3])
-            quantidade = int(dados[4])
-            bicicletas[codigo] = {
-                'codigo': codigo,
-                'marca': marca,
-                'modelo': modelo,
-                'valor': valor,
-                'quantidade': quantidade
-            }
-except FileNotFoundError:
-    pass
-
 capacetes = {
-     'c001':{'codigo': 'c001', 'marca': 'Cabeça de gelo', 'modelo': 'cocô duro', 'valor': 200, 'quantidade': 10}
+     'c001':['assasa','sasasa', 90, 10]
 }
-try:
-     with open('capacetes.txt', 'r') as arquivo:
-          for linha in arquivo:
-               dado = linha.strip().split(',')
-               codigo = dados[0]
-               marca = dados[1]
-               modelo = dados [2] 
-               valor = float(dados[3])
-               quantidade = int(dados[4])
-               capacetes[codigo] = {
-                    'codigo': codigo,
-                    'marca': marca,
-                    'modelo': modelo,
-                    'valor': valor, 
-                    'quantidade': quantidade
-               }
-except FileNotFoundError:
-     pass
-
 sapatilhas = {
-     's001':{'codigo': 's001', 'marca': 'Pe de Pano', 'modelo': 'MDF', 'valor': 400, 'quantidade': 5}
+     's001':['pe de pano', 'asaasa', 9, 3]
 }
-try:
-     with open('sapatilhas.txt', 'r') as arquivo:
-          for linha in arquivo:
-               dado = linha.strip().split(',')
-               codigo = dados[0]
-               marca = dados[1]
-               modelo = dados [2] 
-               valor = float(dados[3])
-               quantidade = int(dados[4])
-               capacetes[codigo] = {
-                    'codigo': codigo,
-                    'marca': marca,
-                    'modelo': modelo,
-                    'valor': valor, 
-                    'quantidade': quantidade
-               }
-except FileNotFoundError:
-     pass
-     
 roupas = {
-     'r001':{'codigo': 'r001', 'marca': 'jose clothers', 'tamanho': 'GG', 'valor': 250.50, 'quantidade': 3, 'STATUS': 'ATIVA'}
+     'r001':['specialized', 'GG', 10, 4]
 }
-try:
-    with open('roupas.txt', 'r') as arquivo:
-        for linha in arquivo:
-            dados = linha.strip().split(',')
-            codigo = dados[0]
-            marca = dados[1]
-            tamanho = dados[2]
-            valor = float(dados[3])
-            quantidade = int(dados[4])
-            bicicletas[codigo] = {
-                'codigo': codigo,
-                'marca': marca,
-                'modelo': modelo,
-                'valor': valor,
-                'quantidade': quantidade
-            }
-except FileNotFoundError:
-    pass
-clientes = {
-     'c001':{'código': 'c001', 'nome': 'jose', 'sobrenome': 'silva', 'telefone': '84 99948-2525', 'cpf': '110.557.644-29',},
-     'c002':{'código': 'c002', 'nome': 'artur', 'sobrenome': 'pereira', 'telefone': '84 99999-3355', 'cpf': '777.888.999-58',}
-}
-vendas = {
-     'v001':{'client': 'c001', 'nome': 'jose', 'produto': 'Caloi', 'modelo': 'Adv', 'valor': 2000, 'pagmento': 'PIX', 'datahora': '15/06/2026 23:00:00', 'STATUS': 'ATIVA' }
-}
-bicicletas = {}
-
+clientes = {}
+vendas = {}
 
 while resp != 0:
         os.system("clear")
@@ -154,22 +72,8 @@ while resp != 0:
                             valor = float(input('Digite o valor da Bicicleta: '))
                             cod = str(input('Digite o código da Bicicleta: '))
                             quant = int(input('Quantas unidades: '))
-                            bicicletas[cod] = {
-        'codigo': cod,
-        'marca': marca,
-        'modelo': modelo,
-        'valor': valor,
-        'quantidade': quant
-    }
-                            with open('bicicletas.txt', 'w') as arquivo:
-                                for codigo in bicicletas:
-                                    arquivo.write(
-                                        f"{codigo},"
-                                        f"{bicicletas[codigo]['marca']},"
-                                        f"{bicicletas[codigo]['modelo']},"
-                                        f"{bicicletas[codigo]['valor']},"
-                                        f"{bicicletas[codigo]['quantidade']}\n"
-            )
+                            bicicletas[cod] = [marca, modelo, valor, quant]
+
                             print('Produto cadastrado com sucesso!')
         
                         elif q == 2:
@@ -178,22 +82,8 @@ while resp != 0:
                             valor = float(input('Digite o valor da capacete: '))
                             cod = str(input('Digite o código da capacete: '))
                             quant = int(input('Quantas unidades:  '))
-                            capacetes[cod] = {
-        'codigo': cod,                         
-        'marca': marca,
-        'modelo': modelo,
-        'valor': valor,
-        'quantidade': quant
-    } 
-                            with open('capacetes.txt', 'w') as arquivo:
-                                for codigo in capacetes:
-                                    arquivo.write(
-                                        f"{codigo},"
-                                        f"{capacetes[codigo]['marca']},"
-                                        f"{capacetes[codigo]['modelo']},"
-                                        f"{capacetes[codigo]['valor']},"
-                                        f"{capacetes[codigo]['quantidade']}\n"
-            )
+                            capacetes[cod] = [marca, modelo, valor, quant]
+
                             print('Produto cadastrado com sucesso!')
                         
                         elif q == 3:
@@ -202,22 +92,8 @@ while resp != 0:
                             valor= float(input('Digite o valor da sapatilha: '))
                             cod= str(input('Digite o código da sapatilha: '))
                             quant = int(input('Quantas unidades:  '))
-                            sapatilhas[cod] = {
-        'codigo': cod,                         
-        'marca': marca,
-        'modelo': modelo,
-        'valor': valor,
-        'quantidade': quant
-    }
-                            with open('sapatilhas.txt', 'w') as arquivo:
-                                for codigo in sapatilhas:
-                                    arquivo.write(
-                                        f"{codigo},"
-                                        f"{sapatilhas[codigo]['marca']},"
-                                        f"{sapatilhas[codigo]['modelo']},"
-                                        f"{sapatilhas[codigo]['valor']},"
-                                        f"{sapatilhas[codigo]['quantidade']}\n"
-            )
+                            sapatilhas[cod] = [marca, modelo, valor, quant]
+
                             print('Produto cadastrado com sucesso!')
                         elif q == 4:
                             marca = input('Digite a marca da roupa: ')
@@ -225,22 +101,8 @@ while resp != 0:
                             tam = input('Digite o tamanho da roupa: ').upper()
                             cod = input('Digite o código da roupa: ')
                             quant = int(input('Quantas unidades:  '))
-                            roupas[cod] = {
-        'codigo': cod,                         
-        'marca': marca,
-        'tamanho': tam,
-        'valor': valor,
-        'quantidade': quant
-    }
-                            with open('roupas.txt', 'w') as arquivo:
-                                for codigo in roupas:
-                                    arquivo.write(
-                                        f"{codigo},"
-                                        f"{roupas[codigo]['marca']},"
-                                        f"{roupas[codigo]['tamanho']},"
-                                        f"{roupas[codigo]['valor']},"
-                                        f"{roupas[codigo]['quantidade']}\n"
-            ) 
+                            roupas[cod] = [marca, tam, valor, quant]
+
                             print('Produto cadastrado com sucesso!')
     
                 elif q == 2:
@@ -261,40 +123,40 @@ while resp != 0:
                         if q == 1:
                             for codigo in bicicletas:
                                 print('--------------------')
-                                print('Código:', codigo)
-                                print('Marca:', bicicletas[codigo]['marca'])
-                                print('Modelo:', bicicletas[codigo]['modelo'])
-                                print('Valor: R$', bicicletas[codigo]['valor'])
-                                print('Quantidade:', bicicletas[codigo]['quantidade'])
+                                print('Marca:', bicicletas[codigo][0])
+                                print('Modelo:', bicicletas[codigo][1])
+                                print('Valor:', bicicletas[codigo][2])
+                                print('Quantidade:', bicicletas[codigo][3])
+                                print('--------------------')
                         elif q == 2:
                             for codigo in capacetes:
                                 print('--------------------')
-                                print('Código:', codigo)
-                                print('Marca:', capacetes[codigo]['marca'])
-                                print('Modelo:', capacetes[codigo]['modelo'])
-                                print('Valor: R$', capacetes[codigo]['valor'])
-                                print('Quantidade:', capacetes[codigo]['quantidade'])
+                                print('Marca:', capacetes[codigo][0])
+                                print('Modelo:', capacetes[codigo][1])
+                                print('Valor:', capacetes[codigo][2])
+                                print('Quantidade:', capacetes[codigo][3])
+                                print('--------------------')
                         elif q == 3:
                             for codigo in sapatilhas:
                                 print('--------------------')
-                                print('Código:', codigo)
-                                print('Marca:', sapatilhas[codigo]['marca'])
-                                print('Modelo:', sapatilhas[codigo]['modelo'])
-                                print('Valor: R$', sapatilhas[codigo]['valor'])
-                                print('Quantidade:', sapatilhas[codigo]['quantidade'])
+                                print('Marca:', sapatilhas[codigo][0])
+                                print('Modelo:',sapatilhas[codigo][1])
+                                print('Valor:', sapatilhas[codigo][2])
+                                print('Quantidade:', sapatilhas[codigo][3])
+                                print('--------------------')
                         elif q == 4:
                             for codigo in roupas:
                                 print('--------------------')
-                                print('Código:', codigo)
-                                print('Marca:', roupas[codigo]['marca'])
-                                print('Tamanho:', roupas[codigo]['tamanho'])
-                                print('Valor: R$', roupas[codigo]['valor'])
-                                print('Quantidade:', roupas[codigo]['quantidade'])
+                                print('Marca:', roupas[codigo][0])
+                                print('Tamanho:', roupas[codigo][1])
+                                print('Valor:', roupas[codigo][2])
+                                print('Quantidade:', roupas[codigo][3])
+                                print('--------------------')
                 elif q == 3:
-                        os.system("clear")
-                        q = ' '
-                        while q != 5:
-                            print('''
+                    os.system("clear")
+                    q = ' '
+                    while q != 5:
+                        print('''
 ###############################
 ###### ATUALIZAR PRODUTO ######
 ###############################
@@ -306,109 +168,19 @@ while resp != 0:
                             
                                 ''')
                         q = int(input('Qual opção você deseja:'))
-                        
                         if q == 1:
                                 codigo = input('Digite o código da bicicleta que você deseja alterar as informações:')
                                 if codigo in bicicletas:
                                     print('### Bicicleta encontrada ###')
                                     print('-----------------------')
-                                    print(bicicletas[cod]['marca'])
-                                    print(bicicletas[cod]['modelo'])
-                                    print(bicicletas[cod]['valor'])
-                                    print(bicicletas[cod]['quantidade'])
+                                    print(bicicletas[codigo])
+                                    print(bicicletas[codigo][0])
+                                    print(bicicletas[codigo][1])
+                                    print(bicicletas[codigo][2])
+                                    print(bicicletas[codigo][3])
                                 else:
                                     print('Bicicleta não encotrada')
                                 while q != 6:
-                                    print('''
-##############################                                  
-### O QUE DESEJA ALTERAR ? ###
-##############################
-### 1 - MARCA              ###
-### 2 - MODELO             ###
-### 3 - VALOR              ###
-### 4 - QUANTIDADE         ###
-### 5 - CÓDIGO             ###
-### 6 - VOLTAR             ###
-##############################
-                                    ''')
-                                    q = int(input('QUAL OPÇÃO VOCÊ DESEJA: '))
-                                    if q == 1:
-                                        os.system("clear")
-                                        nova_marca = input('Digite a nova marca da bicicleta: ')
-                                        bicicletas[cod]["marca"] = nova_marca
-                                        with open('bicicletas.txt', 'w') as arquivo:
-                                            for codigo in bicicletas:
-                                                arquivo.write(
-                                                    f"{codigo},"
-                                                    f"{bicicletas[codigo]['marca']},"
-                                                    f"{bicicletas[codigo]['modelo']},"
-                                                    f"{bicicletas[codigo]['valor']},"
-                                                    f"{bicicletas[codigo]['quantidade']}\n"
-        )
-                                    elif q == 2:
-                                        novo_modelo = input('Digite o novo modelo da bicicleta: ')
-                                        bicicletas[cod]["modelo"] = novo_modelo
-                                        with open('bicicletas.txt', 'w') as arquivo:
-                                            for codigo in bicicletas:
-                                                arquivo.write(
-                                                    f"{codigo},"
-                                                    f"{bicicletas[codigo]['marca']},"
-                                                    f"{bicicletas[codigo]['modelo']},"
-                                                    f"{bicicletas[codigo]['valor']},"
-                                                    f"{bicicletas[codigo]['quantidade']}\n"
-                                                    )
-                                    elif q == 3:
-                                        novo_valor = float(input('Digite o novo valor: R$ '))
-                                        bicicletas[cod]["valor"] = novo_valor
-                                        with open('bicicletas.txt', 'w') as arquivo:
-                                            for codigo in bicicletas:
-                                                arquivo.write(
-                                                    f"{codigo},"
-                                                    f"{bicicletas[codigo]['marca']},"
-                                                    f"{bicicletas[codigo]['modelo']},"
-                                                    f"{bicicletas[codigo]['valor']},"
-                                                    f"{bicicletas[codigo]['quantidade']}\n"
-                                                    )
-                                    elif q == 4:
-                                        nova_quant = int(input('Digite a nova quantidade no estoque: '))
-                                        bicicletas[cod]["quantidade"] = nova_quant
-                                        with open('bicicletas.txt', 'w') as arquivo:
-                                            for codigo in bicicletas:
-                                                arquivo.write(
-                                                    f"{codigo},"
-                                                    f"{bicicletas[codigo]['marca']},"
-                                                    f"{bicicletas[codigo]['modelo']},"
-                                                    f"{bicicletas[codigo]['valor']},"
-                                                    f"{bicicletas[codigo]['quantidade']}\n"
-                                                    )
-                                    elif q == 5:
-                                        novo_cod = input('Novo código: ')
-                                        bicicletas[novo_cod] = bicicletas[cod]
-                                        del bicicletas[cod]
-                                        with open('bicicletas.txt', 'w') as arquivo:
-                                            for codigo in bicicletas:
-                                                arquivo.write(
-                                                    f"{codigo},"
-                                                    f"{bicicletas[codigo]['marca']},"
-                                                    f"{bicicletas[codigo]['modelo']},"
-                                                    f"{bicicletas[codigo]['valor']},"
-                                                    f"{bicicletas[codigo]['quantidade']}\n"
-                                                    )
-
-                        elif q == 2:
-                                    codigo = input('Digite o código do capacete: ')
-
-                                    if codigo in capacetes:
-                                        print('### CAPACETE ENCONTRADO ###')
-                                        print('-----------------------')
-                                        print(capacetes[cod]['marca'])
-                                        print(capacetes[cod]['modelo'])
-                                        print(capacetes[cod]['valor'])
-                                        print(capacetes[cod]['quantidade'])
-                                    else:
-                                        print('CAPACETE NÃO ENCONTRADO')
-
-                                    while q != 6:
                                         print('''
 ##############################                                  
 ### O QUE DESEJA ALTERAR ? ###
@@ -420,84 +192,147 @@ while resp != 0:
 ### 5 - CÓDIGO             ###
 ### 6 - VOLTAR             ###
 ##############################
-                                            ''')
+                                        ''')
+                                        q = int(input('QUAL OPÇÃO VOCÊ DESEJA: '))
                                         if q == 1:
-                                            nova_marca = input('Digite a nova marca do produto:')
-                                            capacetes[codigo]['marca'] = nova_marca
-                                            with open('capacetes.txt', 'w') as arquivo:
-                                                for codigo in capacetes:
-                                                    arquivo.write(
-                                                        f"{codigo},"
-                                                        f"{capacetes[codigo]['marca']},"
-                                                        f"{capacetes[codigo]['modelo']},"
-                                                        f"{capacetes[codigo]['valor']},"
-                                                        f"{capacetes[codigo]['quantidade']}\n"
-            )
+                                            os.system("clear")
+                                            nova_marca = input('Digite a nova marca da bicicleta: ')
+                                            bicicletas[codigo][0] = nova_marca
+                                            
                                         elif q == 2:
-                                            novo_modelo = input('Digite o novo modelo desejado: ')
-                                            capacetes[codigo]['modelo'] = novo_modelo
-                                            with open('capacetes.txt', 'w') as arquivo:
-                                                for codigo in capacetes:
-                                                    arquivo.write(
-                                                        f"{codigo},"
-                                                        f"{capacetes[codigo]['marca']},"
-                                                        f"{capacetes[codigo]['modelo']},"
-                                                        f"{capacetes[codigo]['valor']},"
-                                                        f"{capacetes[codigo]['quantidade']}\n"
-            )
+                                            novo_modelo = input('Digite o novo modelo da bicicleta: ')
+                                            bicicletas[codigo][1] = novo_modelo
+                                           
                                         elif q == 3:
-                                            novo_valor = float(input('Digite o novo valor: '))
-                                            capacetes[codigo]['valor'] = novo_valor
-                                            with open('capacetes.txt', 'w') as arquivo:
-                                                for codigo in capacetes:
-                                                    arquivo.write(
-                                                        f"{codigo},"
-                                                        f"{capacetes[codigo]['marca']},"
-                                                        f"{capacetes[codigo]['modelo']},"
-                                                        f"{capacetes[codigo]['valor']},"
-                                                        f"{capacetes[codigo]['quantidade']}\n"
-            )
+                                            novo_valor = float(input('Digite o novo valor: R$ '))
+                                            bicicletas[codigo][2] = novo_valor
+                                            
                                         elif q == 4:
-                                            nova_quant = int(input('Digite o novo preço deseja: '))
-                                            capacetes[codigo]['quantidade'] = nova_quant
-                                            with open('capacetes.txt', 'w') as arquivo:
-                                                for codigo in capacetes:
-                                                    arquivo.write(
-                                                        f"{codigo},"
-                                                        f"{capacetes[codigo]['marca']},"
-                                                        f"{capacetes[codigo]['modelo']},"
-                                                        f"{capacetes[codigo]['valor']},"
-                                                        f"{capacetes[codigo]['quantidade']}\n"
-            )
+                                            nova_quant = int(input('Digite a nova quantidade no estoque: '))
+                                            bicicletas[codigo][3] = nova_quant
+                                            
                                         elif q == 5:
-                                            novo_cod= input('Digite o novo códgio do produto: ')
-                                            capacetes[novo_cod] = capacetes[codigo]
-                                            del capacetes[codigo]
-                                            with open('capacetes.txt', 'w') as arquivo:
-                                                for codigo in capacetes:
-                                                    arquivo.write(
-                                                        f"{codigo},"
-                                                        f"{capacetes[codigo]['marca']},"
-                                                        f"{capacetes[codigo]['modelo']},"
-                                                        f"{capacetes[codigo]['valor']},"
-                                                        f"{capacetes[codigo]['quantidade']}\n"
-            )
+                                            novo_cod = input('Novo código: ')
+                                            bicicletas[novo_cod] = bicicletas[codigo]
+                                            del bicicletas[codigo]
+                                            codigo = novo_cod
+                                            
+                        elif q == 2:
+                                        codigo = input('Digite o código do capacete: ')
+                                        if codigo in capacetes:
+                                            print('### CAPACETE ENCONTRADO ###')
+                                            print('-----------------------')
+                                            print(capacetes[codigo][0])
+                                            print(capacetes[codigo][1])
+                                            print(capacetes[codigo][2])
+                                            print(capacetes[codigo][3])
+                                        else:
+                                            print('CAPACETE NÃO ENCONTRADO')
+
+                                        while q != 6:
+                                            print('''
+##############################                                  
+### O QUE DESEJA ALTERAR ? ###
+##############################
+### 1 - MARCA              ###
+### 2 - MODELO             ###
+### 3 - VALOR              ###
+### 4 - QUANTIDADE         ###
+### 5 - CÓDIGO             ###
+### 6 - VOLTAR             ###
+##############################
+                                                ''')
+                                            if q == 1:
+                                                nova_marca = input('Digite a nova marca do produto:')
+                                                capacetes[codigo][0] = nova_marca
+                                                
+                                            elif q == 2:
+                                                novo_modelo = input('Digite o novo modelo desejado: ')
+                                                capacetes[codigo][1] = novo_modelo
+                                               
+                                            elif q == 3:
+                                                novo_valor = float(input('Digite o novo valor: '))
+                                                capacetes[codigo][2] = novo_valor
+                                               
+                                            elif q == 4:
+                                                nova_quant = int(input('Digite o novo preço deseja: '))
+                                                capacetes[codigo][3] = nova_quant
+                                                
+                                            elif q == 5:
+                                                novo_cod= input('Digite o novo códgio do produto: ')
+                                                capacetes[novo_cod] = capacetes[codigo]
+                                                del capacetes[codigo]
+                                                cod = novo_cod
+                                                
 
                         elif q == 3:
-                                    codigo = input('Digite o código da sapatilha: ')
+                                        codigo = input('Digite o código da sapatilha: ')
+
+                                        if codigo in sapatilhas:
+                                            print('### CAPACETE ENCONTRADO ###')
+                                            print('-----------------------')
+                                            print(sapatilhas[codigo][0])
+                                            print(sapatilhas[codigo][1])
+                                            print(sapatilhas[codigo][2])
+                                            print(sapatilhas[codigo][3])
+                                        else:
+                                            print('SAPATILHA NÃO ENCONTRADO')
+
+                                        while q != 6:
+                                            print('''
+    ##############################                                  
+    ### O QUE DESEJA ALTERAR ? ###
+    ##############################
+    ### 1 - MARCA              ###
+    ### 2 - MODELO             ###
+    ### 3 - VALOR              ###
+    ### 4 - QUANTIDADE         ###
+    ### 5 - CÓDIGO             ###
+    ### 6 - VOLTAR             ###
+    ##############################
+                                                ''')
+                                            q = int(input('Digite a opção que vc deseja: '))
+
+
+                                            if q == 1:
+                                                nova_marca = input('Digite a nova marca do produto:')
+                                                sapatilhas[codigo][0] = nova_marca
+                                                
+
+                                            elif q == 2:
+                                                novo_modelo = input('Digite o novo modelo desejado: ')
+                                                sapatilhas[codigo][1] = novo_modelo
+                                                
+                                            elif q == 3:
+                                                novo_valor = float(input('Digite o novo valor: '))
+                                                sapatilhas[codigo][2] = novo_valor
+                                                
+                                            elif q == 4:
+                                                nova_quant = int(input('Digite o novo preço deseja: '))
+                                                sapatilhas[codigo][3] = nova_quant
+
+                                            elif q == 5:
+                                                novo_cod= input('Digite o novo códgio do produto: ')
+                                                sapatilhas[novo_cod] = sapatilhas[codigo]
+                                                del sapatilhas[codigo]
+                                                cod = novo_cod
+                                                
+
+                        elif q == 4:
+                                    codigo = input('Digite o código da roupa: ')
 
                                     if codigo in sapatilhas:
-                                        print('### CAPACETE ENCONTRADO ###')
-                                        print('-----------------------')
-                                        print(sapatilhas[cod]['marca'])
-                                        print(sapatilhas[cod]['modelo'])
-                                        print(sapatilhas[cod]['valor'])
-                                        print(sapatilhas[cod]['quantidade'])
+                                            print('### CAPACETE ENCONTRADO ###')
+                                            print('-----------------------')
+                                            print(sapatilhas[codigo][0])
+                                            print(sapatilhas[codigo][1])
+                                            print(sapatilhas[codigo][2])
+                                            print(sapatilhas[codigo][3])
                                     else:
-                                        print('SAPATILHA NÃO ENCONTRADO')
+                                            print('SAPATILHA NÃO ENCONTRADO')
 
                                     while q != 6:
-                                        print('''
+                                            print('''
 ##############################                                  
 ### O QUE DESEJA ALTERAR ? ###
 ##############################
@@ -508,165 +343,31 @@ while resp != 0:
 ### 5 - CÓDIGO             ###
 ### 6 - VOLTAR             ###
 ##############################
-                                            ''')
-                                        q = int(input('Digite a opção que vc deseja: '))
+                                                ''')
+                                            q = int(input('Digite a opção que vc deseja: '))    
+                                            if q == 1:
+                                                nova_marca = input('Digite a nova marca do produto:')
+                                                roupas[codigo][0] = nova_marca
+                                               
+                                            elif q == 2:
+                                                novo_tamanho = input('Digite o tamanho: ').upper()
+                                                roupas[codigo][1] = novo_tamanho
+                                                
 
+                                            elif q == 3:
+                                                novo_valor = float(input('Digite o novo valor : '))
+                                                roupas[codigo][2] = novo_valor
+                                               
 
-                                        if q == 1:
-                                            nova_marca = input('Digite a nova marca do produto:')
-                                            sapatilhas[codigo]['marca'] = nova_marca
-                                            with open('sapatilhas.txt', 'w') as arquivo:
-                                                for codigo in sapatilhas:
-                                                    arquivo.write(
-                                                        f"{codigo},"
-                                                        f"{sapatilhas[codigo]['marca']},"
-                                                        f"{sapatilhas[codigo]['modelo']},"
-                                                        f"{sapatilhas[codigo]['valor']},"
-                                                        f"{sapatilhas[codigo]['quantidade']}\n"
-            )
-
-                                        elif q == 2:
-                                            novo_modelo = input('Digite o novo modelo desejado: ')
-                                            sapatilhas[codigo]['modelo'] = novo_modelo
-                                            with open('sapatilhas.txt', 'w') as arquivo:
-                                                for codigo in sapatilhas:
-                                                    arquivo.write(
-                                                        f"{codigo},"
-                                                        f"{sapatilhas[codigo]['marca']},"
-                                                        f"{sapatilhas[codigo]['modelo']},"
-                                                        f"{sapatilhas[codigo]['valor']},"
-                                                        f"{sapatilhas[codigo]['quantidade']}\n"
-            )
-                                        elif q == 3:
-                                            novo_valor = float(input('Digite o novo valor: '))
-                                            sapatilhas[codigo]['valor'] = novo_valor
-                                            with open('sapatilhas.txt', 'w') as arquivo:
-                                                for codigo in sapatilhas:
-                                                    arquivo.write(
-                                                        f"{codigo},"
-                                                        f"{sapatilhas[codigo]['marca']},"
-                                                        f"{sapatilhas[codigo]['modelo']},"
-                                                        f"{sapatilhas[codigo]['valor']},"
-                                                        f"{sapatilhas[codigo]['quantidade']}\n"
-            )
-                                        elif q == 4:
-                                            nova_quant = int(input('Digite o novo preço deseja: '))
-                                            sapatilhas[codigo]['quantidade'] = nova_quant
-                                            with open('sapatilhas.txt', 'w') as arquivo:
-                                                for codigo in sapatilhas:
-                                                    arquivo.write(
-                                                        f"{codigo},"
-                                                        f"{sapatilhas[codigo]['marca']},"
-                                                        f"{sapatilhas[codigo]['modelo']},"
-                                                        f"{sapatilhas[codigo]['valor']},"
-                                                        f"{sapatilhas[codigo]['quantidade']}\n"
-            )
-
-                                        elif q == 5:
-                                            novo_cod= input('Digite o novo códgio do produto: ')
-                                            sapatilhas[novo_cod] = sapatilhas[codigo]
-                                            del sapatilhas[codigo]
-                                            with open('sapatilhas.txt', 'w') as arquivo:
-                                                for codigo in sapatilhas:
-                                                    arquivo.write(
-                                                        f"{codigo},"
-                                                        f"{sapatilhas[codigo]['marca']},"
-                                                        f"{sapatilhas[codigo]['modelo']},"
-                                                        f"{sapatilhas[codigo]['valor']},"
-                                                        f"{sapatilhas[codigo]['quantidade']}\n"
-            )
-
-                        elif q == 5:
-                                codigo = input('Digite o código da roupa: ')
-
-                                if codigo in sapatilhas:
-                                        print('### CAPACETE ENCONTRADO ###')
-                                        print('-----------------------')
-                                        print(sapatilhas[cod]['marca'])
-                                        print(sapatilhas[cod]['modelo'])
-                                        print(sapatilhas[cod]['valor'])
-                                        print(sapatilhas[cod]['quantidade'])
-                                else:
-                                        print('SAPATILHA NÃO ENCONTRADO')
-
-                                while q != 6:
-                                        print('''
-##############################                                  
-### O QUE DESEJA ALTERAR ? ###
-##############################
-### 1 - MARCA              ###
-### 2 - MODELO             ###
-### 3 - VALOR              ###
-### 4 - QUANTIDADE         ###
-### 5 - CÓDIGO             ###
-### 6 - VOLTAR             ###
-##############################
-                                            ''')
-                                        q = int(input('Digite a opção que vc deseja: '))    
-                                        if q == 1:
-                                            nova_marca = input('Digite a nova marca do produto:')
-                                            roupas[codigo]['marca'] = nova_marca
-                                            with open('sapatilhas.txt', 'w') as arquivo:
-                                                for codigo in sapatilhas:
-                                                    arquivo.write(
-                                                        f"{codigo},"
-                                                        f"{roupas[codigo]['marca']},"
-                                                        f"{roupas[codigo]['tamanho']},"
-                                                        f"{roupas[codigo]['valor']},"
-                                                        f"{roupas[codigo]['quantidade']}\n"
-            )
-                                        elif q == 2:
-                                            novo_tamanho = input('Digite o tamanho: ').upper()
-                                            roupas[codigo]['tamanho'] = novo_tamanho
-                                            with open('sapatilhas.txt', 'w') as arquivo:
-                                                for codigo in sapatilhas:
-                                                    arquivo.write(
-                                                        f"{codigo},"
-                                                        f"{roupas[codigo]['marca']},"
-                                                        f"{roupas[codigo]['tamanho']},"
-                                                        f"{roupas[codigo]['valor']},"
-                                                        f"{roupas[codigo]['quantidade']}\n"
-            )
-
-                                        elif q == 3:
-                                            novo_valor = float(input('Digite o novo valor : '))
-                                            roupas[codigo]['valor'] = novo_valor
-                                            with open('sapatilhas.txt', 'w') as arquivo:
-                                                for codigo in sapatilhas:
-                                                    arquivo.write(
-                                                        f"{codigo},"
-                                                        f"{roupas[codigo]['marca']},"
-                                                        f"{roupas[codigo]['tamanho']},"
-                                                        f"{roupas[codigo]['valor']},"
-                                                        f"{roupas[codigo]['quantidade']}\n"
-            )
-
-                                        elif q == 4:
-                                            nova_quant = int(input('Digite o novo preço deseja: '))
-                                            roupas[codigo]['quantidade'] = nova_quant
-                                            with open('sapatilhas.txt', 'w') as arquivo:
-                                                for codigo in sapatilhas:
-                                                    arquivo.write(
-                                                        f"{codigo},"
-                                                        f"{roupas[codigo]['marca']},"
-                                                        f"{roupas[codigo]['tamanho']},"
-                                                        f"{roupas[codigo]['valor']},"
-                                                        f"{roupas[codigo]['quantidade']}\n"
-            )
-
-                                        elif q == 5:
-                                            novo_cod= input('Digite o novo códgio do produto: ')
-                                            roupas[novo_cod] = roupas[codigo]
-                                            del roupas[codigo]
-                                            with open('sapatilhas.txt', 'w') as arquivo:
-                                                for codigo in sapatilhas:
-                                                    arquivo.write(
-                                                        f"{codigo},"
-                                                        f"{roupas[codigo]['marca']},"
-                                                        f"{roupas[codigo]['tamanho']},"
-                                                        f"{roupas[codigo]['valor']},"
-                                                        f"{roupas[codigo]['quantidade']}\n"
-            )
+                                            elif q == 4:
+                                                nova_quant = int(input('Digite o novo preço deseja: '))
+                                                roupas[codigo][3] = nova_quant
+                                                
+                                            elif q == 5:
+                                                novo_cod= input('Digite o novo códgio do produto: ')
+                                                roupas[novo_cod] = roupas[codigo]
+                                                del roupas[codigo]
+                                                cod = novo_cod
                                                                 
                 elif q == 4:
                     os.system('clear')
@@ -688,11 +389,11 @@ while resp != 0:
                             if cod in bicicletas:
                                 print('### BICICLETA ENCONTRADA ###')
                                 print('-------------------------------')
-                                print(bicicletas[cod]['cod'])
-                                print(bicicletas[cod]['marca'])
-                                print(bicicletas[cod]['modelo'])
-                                print(bicicletas[cod]['valor'])
-                                print(bicicletas[cod]['quantidade'])
+                                print(bicicletas[cod][0])
+                                print(bicicletas[cod][1])
+                                print(bicicletas[cod][2])
+                                print(bicicletas[cod][3])
+                                print(bicicletas[cod][4])
                             else:
                                  print('### BICICLETA NÃO ENCONTRADA')
                         elif q == 2:
@@ -701,10 +402,10 @@ while resp != 0:
                                 print('### CAPACETE ENCONTRADO ###')
                                 print('-------------------------------')
                                 print('Código:', cod)
-                                print('Marca:', capacetes[cod]['marca'])
-                                print('Modelo:', capacetes[cod]['modelo'])
-                                print('Valor: R$', capacetes[cod]['valor'])
-                                print('Quantidade:', capacetes[cod]['quantidade'])
+                                print('Marca:', capacetes[cod][0])
+                                print('Modelo:', capacetes[cod][1])
+                                print('Valor: R$', capacetes[cod][2])
+                                print('Quantidade:', capacetes[cod][3])
                             else:
                                 print('### CAPACETE NÃO ENCONTRADO ###')
                         elif q == 3:
@@ -713,10 +414,10 @@ while resp != 0:
                                 print('### SAPATILHA ENCONTRADA ###')
                                 print('-------------------------------')
                                 print('Código:', cod)
-                                print('Marca:', sapatilhas[cod]['marca'])
-                                print('Modelo:', sapatilhas[cod]['modelo'])
-                                print('Valor: R$', sapatilhas[cod]['valor'])
-                                print('Quantidade:', sapatilhas[cod]['quantidade'])
+                                print('Marca:', sapatilhas[cod][0])
+                                print('Modelo:', sapatilhas[cod][1])
+                                print('Valor: R$', sapatilhas[cod][2])
+                                print('Quantidade:', sapatilhas[cod][3])
                             else:
                                 print('### SAPATILHA NÃO ENCONTRADA ###')
                         elif q == 4:
@@ -725,10 +426,10 @@ while resp != 0:
                                 print('### ROUPA ENCONTRADA ###')
                                 print('-------------------------------')
                                 print('Código:', cod)
-                                print('Marca:', roupas[cod]['marca'])
-                                print('Tamanho:', roupas[cod]['tamanho'])
-                                print('Valor: R$', roupas[cod]['valor'])
-                                print('Quantidade:', roupas[cod]['quantidade'])
+                                print('Marca:', roupas[cod][0])
+                                print('Tamanho:', roupas[cod][1])
+                                print('Valor: R$', roupas[cod][2])
+                                print('Quantidade:', roupas[cod][3])
                             else:
                                 print('### ROUPA NÃO ENCONTRADA ###')
                         
@@ -779,22 +480,16 @@ while resp != 0:
                     tel = input('Digite o telefone do cliente; xx xxxxx-xxxx ')
                     cpf = input('Digite o cpf do cliente:XXX.XXX.XXX-XX ')
                     cod = input('Digite o código do cliente: ')
-                    clientes[cod] = {
-                    'código': cod,
-                    'nome': nome,
-                    'sobrenome': sobrenome,
-                    'telefone': tel,
-                    'cpf': cpf,
-                    }
+                    clientes[cod] = [nome, sobrenome, tel, cpf, cod]
                     print('CLIENTE CADASTRADO COM SUCESSO')
                 elif q == 2:
                     print('LISTANDO OS CLIENTES ....')
                     for cod in clientes:
-                        print('Código:', cod)
-                        print('Nome:', clientes[cod]['nome'])
-                        print('Sobrenome:', clientes[cod]['sobrenome'])
-                        print('Telefone:', clientes[cod]['telefone'])
-                        print('CPF:', clientes[cod]['cpf'])
+                        print('Codigo:', cod)
+                        print('Nome:', clientes[cod][0])
+                        print('Sobrenome:', clientes[cod][1])
+                        print('Telefone:', clientes[cod][2])
+                        print('CPF:', clientes[cod][3])
                         print('-------------------------------------')
                 elif q == 3:
                     print('''
@@ -803,11 +498,11 @@ while resp != 0:
                     cod = input('Digite o código do cliente: ')
                     if cod in clientes:
                         print('### CLIENTE ENCONTRADO ###')
-                        print('código:', cod) 
-                        print('Nome:', clientes[cod]['nome'])
-                        print('Sobrenome:',clientes[cod]['sobrenome'])
-                        print('Telefone:', clientes[cod]['telefone'])
-                        print('CPF:', clientes[cod]['cpf'])
+                        print(cod) 
+                        print('Nome:', clientes[cod][0])
+                        print('Sobrenome:',clientes[cod][1])
+                        print('Telefone:', clientes[cod][2])
+                        print('CPF:', clientes[cod][3])
                     else:
                          print('#### CLIENTE NÃO FOI ENCONTRADO ####')
                 elif q == 4:
@@ -820,11 +515,11 @@ while resp != 0:
                     if cod in clientes:
                         print(
                              '### CLIENTE ENCONTRADO ###')
-                        print('código:', cod) 
-                        print('Nome:', clientes[cod]['nome'])
-                        print('Sobrenome:',clientes[cod]['sobrenome'])
-                        print('Telefone:', clientes[cod]['telefone'])
-                        print('CPF:', clientes[cod]['cpf'])
+                        print(cod) 
+                        print('Nome:', clientes[cod][0])
+                        print('Sobrenome:',clientes[cod][1])
+                        print('Telefone:', clientes[cod][2])
+                        print('CPF:', clientes[cod][3])
                         print('')
                         while q != 6:
                             q = ' '
@@ -843,16 +538,16 @@ while resp != 0:
                                 
                             if q == 1:
                                         novo_nome = input('DIgite o novo nome: ')
-                                        clientes[cod]['nome'] = novo_nome
+                                        clientes[cod][0] = novo_nome
                             elif q == 2:
                                         novo_sobrenome = input('Digite o novo sobrenome desejado: ')
-                                        clientes[cod]['sobrenome'] = novo_sobrenome
+                                        clientes[cod][1] = novo_sobrenome
                             elif q == 3:
                                         novo_tel = input('DIgite o novo número XX XXXXX-XXX: ')
-                                        clientes[cod]['telefone']= novo_tel
+                                        clientes[cod][2]= novo_tel
                             elif q == 4: 
                                         novo_cpf = input('Digite o novo cpf XXX.XXX.XXX-XX:')
-                                        clientes[cod]['cpf'] = novo_cpf
+                                        clientes[cod][3] = novo_cpf
                             elif q == 5:
                                         novo_codigo = input('Digite o novo codigo:')
                                         clientes[novo_codigo] = clientes[cod]
@@ -872,6 +567,8 @@ while resp != 0:
                     del clientes[cod]
                     cod = novo_codigo
                     print('Código alterado com sucesso!')
+
+# MODULO DE VENDASSSSS
 
         elif resp == 3:
             os.system("clear")
@@ -894,7 +591,7 @@ while resp != 0:
                     cod_cliente = input('Digite o código do cliente: ')
                     if cod_cliente in clientes: 
                         print('Cliente encontrado')
-                        print(f"Seja bem vindo {clientes[cod_cliente]['nome']}")
+                        print(f"Seja bem vindo {clientes[cod][0]}")
                         while q != 5:
                             print('''
 #############################
@@ -911,14 +608,14 @@ while resp != 0:
                                 cod = input('Digite o código do da bicicleta: ')
                                 if cod in bicicletas:
                                     print('--------------------')
-                                    print('Codigo: ', bicicletas[cod]['codigo'])
-                                    print('Marca: ', bicicletas[cod]['marca'])
-                                    print('Modelo: ', bicicletas[cod]['modelo'])
-                                    print('Valor: ', bicicletas[cod]['valor'])
-                                    print('Quantidade: ', bicicletas[cod]['quantidade'])
+                                    print('Codigo: ', cod)
+                                    print('Marca: ', bicicletas[cod][0])
+                                    print('Modelo: ', bicicletas[cod][1])
+                                    print('Valor: ', bicicletas[cod][2])
+                                    print('Quantidade: ', bicicletas[cod][3])
                                     desejada = int(input('Quantas unidades você deseja: '))
-                                    if desejada <= bicicletas[cod]['quantidade']:
-                                        total = bicicletas[cod]['valor'] * desejada
+                                    if desejada <= bicicletas[cod][3]:
+                                        total = bicicletas[cod][2] * desejada
                                         print(f"O VALOR TOTAL FICARÁ DE R$ {total}")
                                         print('''
 #################################
@@ -933,63 +630,36 @@ while resp != 0:
                                         if pg == 1:
                                             print(f'O total ficou de R${total-((total*10)/100)}')
                                             print('### VENDA FINALIZADA ###')
-                                            bicicletas[cod]['quantidade']-= desejada
+                                            bicicletas[cod][3]-= desejada
                                             cod_venda= input('Digite o código da venda: ')
-                                            vendas[cod_venda]={
-                                                'cliente': cod_cliente,
-                                                'nome': clientes[cod_cliente]['nome'],
-                                                'produto': bicicletas[cod]['marca'],
-                                                'modelo': bicicletas[cod]['modelo'],
-                                                'valor': total,
-                                                'pagamento': 'PIX',
-                                                'datahora': data_hora,
-                                                'STATUS': 'ATIVA'
-                                            }
+                                            vendas[cod_venda]=[clientes[cod], clientes[cod][0], bicicletas[cod][1], bicicletas[cod][2], total, 'PIX', data_hora, 'ATIVA']
                                         elif pg == 2:
                                             print(f'O total ficou de R${total-((total*5)/100)}')
                                             print('### VENDA FINALIZADA ###')
-                                            bicicletas[cod]['quantidade']-= desejada
+                                            bicicletas[cod][3]-= desejada
                                             cod_venda= input('Digite o código da venda: ')
-                                            vendas[cod_venda]={
-                                                'cliente': cod_cliente,
-                                                'nome': clientes[cod_cliente]['nome'],
-                                                'produto': bicicletas[cod]['marca'],
-                                                'modelo': bicicletas[cod]['modelo'],
-                                                'valor': total,
-                                                'pagamento': 'ESPÉCIE',
-                                                'datahora': data_hora,
-                                                'STATUS': 'ATIVA'
-                                            }
+                                            vendas[cod_venda]=[clientes[cod], clientes[cod][0], bicicletas[cod][1], bicicletas[cod][2], total, 'ESPÉCIE', data_hora, 'ATIVA']
                                         elif pg == 3:
                                             vezes = int(input('Deseja dividir em quantas vezes: '))
                                             print(f'O VALOR FINAL FICOU DE {total} dividio em {vezes}x de R${total/vezes} sem juros')
                                             print('VENDA FINALIZADA')
                                             bicicletas[cod]['quantidade']-= desejada
                                             cod_venda= input('Digite o código da venda: ')
-                                            vendas[cod_venda]={
-                                                'cliente': cod_cliente,
-                                                'nome': clientes[cod_cliente]['nome'],
-                                                'produto': bicicletas[cod]['marca'],
-                                                'modelo': bicicletas[cod]['modelo'],
-                                                'valor': total,
-                                                'pagamento': 'CARTÃO',
-                                                'datahora': data_hora,
-                                                'STATUS': 'ATIVA'
-                                            }
+                                            vendas[cod_venda]=[clientes[cod], clientes[cod][0], bicicletas[cod][1], bicicletas[cod][2], total, 'CARTÃO', data_hora, 'ATIVA']
 
                                         
                             elif q == 2:
                                 cod = input('Digite o código da sapatilha: ')
                                 if cod in sapatilhas:
                                     print('--------------------')
-                                    print('Codigo: ', sapatilhas[cod]['codigo'])
-                                    print('Marca: ', sapatilhas[cod]['marca'])
-                                    print('Modelo: ', sapatilhas[cod]['modelo'])
-                                    print('Valor: ', sapatilhas[cod]['valor'])
-                                    print('Quantidade: ', sapatilhas[cod]['quantidade'])
+                                    print('Codigo: ', cod)
+                                    print('Marca: ', sapatilhas[cod][0])
+                                    print('Modelo: ', sapatilhas[cod][1])
+                                    print('Valor: ', sapatilhas[cod][2])
+                                    print('Quantidade: ', sapatilhas[cod][3])
                                     desejada = int(input('Quantas unidades você deseja: '))
-                                    if desejada <= sapatilhas[cod]['quantidade']:
-                                        total = sapatilhas[cod]['valor'] * desejada
+                                    if desejada <= sapatilhas[cod][3]:
+                                        total = sapatilhas[cod][2] * desejada
                                         print(f"O VALOR TOTAL FICARÁ DE R$ {total}")
                                         print('''
 #################################
@@ -1005,60 +675,33 @@ while resp != 0:
                                             print('### VENDA FINALIZADA ###')
                                             sapatilhas[cod]['quantidade'] -= desejada
                                             cod_venda= input('Digite o código da venda: ')
-                                            vendas[cod_venda] = {
-                                                'cliente': cod_cliente,
-                                                'nome': clientes[cod_cliente]['nome'],
-                                                'produto': sapatilhas[cod]['marca'],
-                                                'modelo': sapatilhas[cod]['modelo'],
-                                                'valor': total,
-                                                'pagamento': 'PIX',
-                                                'datahora': data_hora,
-                                                'STATUS': 'ATIVA'
-                                            }
+                                            vendas[cod_venda]=[clientes[cod], clientes[cod][0], sapatilhas[cod][1], sapatilhas[cod][2], total, 'PIX', data_hora, 'ATIVA']
                                         elif pg == 2:
                                             print(f'O total ficou de R$ {total - ((total * 5) / 100)}')
                                             print('### VENDA FINALIZADA ###')
                                             sapatilhas[cod]['quantidade'] -= desejada
                                             cod_venda= input('Digite o código da venda: ')
-                                            vendas[cod_venda] = {
-                                                'cliente': cod_cliente,
-                                                'nome': clientes[cod_cliente]['nome'],
-                                                'produto': sapatilhas[cod]['marca'],
-                                                'modelo': sapatilhas[cod]['modelo'],
-                                                'valor': total,
-                                                'pagamento': 'ESPÉCIE',
-                                                'datahora': data_hora,
-                                                'STATUS': 'ATIVA'
-                                            }
+                                            vendas[cod_venda]=[clientes[cod], clientes[cod][0], sapatilhas[cod][1], sapatilhas[cod][2], total, 'ESPÉCIE', data_hora, 'ATIVA']
                                         elif pg == 3:
                                             vezes = int(input('Deseja dividir em quantas vezes: '))
                                             print(f'O VALOR FINAL FICOU DE {total} dividido em {vezes}x de R$ {total/vezes}')
                                             print('VENDA FINALIZADA')
                                             sapatilhas[cod]['quantidade'] -= desejada
                                             cod_venda= input('Digite o código da venda: ')
-                                            vendas[cod_venda] = {
-                                                'cliente': cod_cliente,
-                                                'nome': clientes[cod_cliente]['nome'],
-                                                'produto': sapatilhas[cod]['marca'],
-                                                'modelo': sapatilhas[cod]['modelo'],
-                                                'valor': total,
-                                                'pagamento': 'CARTÃO',
-                                                'datahora': data_hora,
-                                                'STATUS': 'ATIVA'
-                                            }
+                                            vendas[cod_venda]=[clientes[cod], clientes[cod][0], sapatilhas[cod][1], sapatilhas[cod][2], total, 'CARTÃO', data_hora, 'ATIVA']
 
                             elif q == 3:
                                 cod = input('Digite o código do capacete: ')
                                 if cod in capacetes:
                                     print('--------------------')
-                                    print('Codigo: ', capacetes[cod]['codigo'])
-                                    print('Marca: ', capacetes[cod]['marca'])
-                                    print('Modelo: ', capacetes[cod]['modelo'])
-                                    print('Valor: ', capacetes[cod]['valor'])
-                                    print('Quantidade: ', capacetes[cod]['quantidade'])
+                                    print('Codigo: ', cod)
+                                    print('Marca: ', capacetes[cod][0])
+                                    print('Modelo: ', capacetes[cod][1])
+                                    print('Valor: ', capacetes[cod][2])
+                                    print('Quantidade: ', capacetes[cod][3])
                                     desejada = int(input('Quantas unidades você deseja: '))
-                                    if desejada <= capacetes[cod]['quantidade']:
-                                        total = capacetes[cod]['valor'] * desejada
+                                    if desejada <= capacetes[cod][3]:
+                                        total = capacetes[cod][2] * desejada
                                         print(f"O VALOR TOTAL FICARÁ DE R$ {total}")
                                         print('''
 #################################
@@ -1071,13 +714,13 @@ while resp != 0:
                                         if pg == 1:
                                             print(f'O total ficou de R$ {total - ((total * 10) / 100)}')
                                             print('### VENDA FINALIZADA ###')
-                                            capacetes[cod]['quantidade'] -= desejada
+                                            capacetes[cod][3] -= desejada
                                             cod_venda= input('Digite o código da venda: ')
                                             vendas[cod_venda] = {
                                                 'cliente': cod_cliente,
-                                                'nome': clientes[cod_cliente]['nome'],
-                                                'produto': capacetes[cod]['marca'],
-                                                'modelo': capacetes[cod]['modelo'],
+                                                'nome': clientes[cod_cliente][0],
+                                                'produto': capacetes[cod][1],
+                                                'modelo': capacetes[cod][2],
                                                 'valor': total,
                                                 'pagamento': 'PIX',
                                                 'datahora': data_hora,
@@ -1255,3 +898,4 @@ while resp != 0:
                 ''')
         else:
             print('OPÇÃO INVÁLIDA')
+print(bicicletas)
