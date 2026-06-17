@@ -698,7 +698,7 @@ while resp != 0:
                                     print('Marca: ', capacetes[cod][0])
                                     print('Modelo: ', capacetes[cod][1])
                                     print('Valor: ', capacetes[cod][2])
-                                    print('Quantidade: ', capacetes[cod][3])
+                                    print('Quantidade: ', capacetes[cod][4])
                                     desejada = int(input('Quantas unidades você deseja: '))
                                     if desejada <= capacetes[cod][3]:
                                         total = capacetes[cod][2] * desejada
