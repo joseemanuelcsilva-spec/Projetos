@@ -1,2 +1,0 @@
-r001,jose clothers,GG,250.5,3
-r002,Angelo Wear,GG,200.0,3
