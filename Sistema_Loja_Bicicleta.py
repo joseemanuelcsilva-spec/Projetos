@@ -18,7 +18,18 @@ try:
             bicicletas[codigo] = [marca, modelo, valor, quantidade]
     arq_bicicletas.close()
 except:
+    bicicletas = {
+         'b001':['caloi', 'adv', 200, 3],
+         'b002':['caloi', 'advsasas', 200, 3]
+    }
     print("Arquivo não encontrado.")
+    arq_bicicletas = open("bicicletas.txt", "wt", encoding="utf-8")
+    for codigo, dados in bicicletas.items():
+        arq_bicicletas.write(
+            f"{codigo},{dados[0]},{dados[1]},{dados[2]},{dados[3]}\n"
+        )
+    arq_bicicletas.close()
+    
 
 capacetes = {}
 try:
@@ -36,7 +47,16 @@ try:
     arq_capacetes.close()
 
 except:
+    capacetes = {
+         'c001':['']
+    }
     print("Arquivo de capacetes não encontrado.")
+    arq_capacetes = open("capacetes.txt", "wt", encoding="utf-8")
+    for codigo, dados in capacetes.items():
+        arq_capacetes.write(
+            f"{codigo},{dados[0]},{dados[1]},{dados[2]},{dados[3]}\n"
+        )
+    arq_capacetes.close()
 
 sapatilhas = {}
 try:
@@ -55,6 +75,13 @@ try:
 
 except:
     print("Arquivo de sapatilhas não encontrado.")
+    arq_sapatilhas = open("sapatilhas.txt", "wt", encoding="utf-8")
+    for codigo, dados in sapatilhas.items():
+        arq_sapatilhas.write(
+            f"{codigo},{dados[0]},{dados[1]},{dados[2]},{dados[3]}\n"
+        )
+    arq_sapatilhas.close()
+
 
 roupas = {}
 try:
@@ -74,6 +101,12 @@ try:
 
 except:
     print("Arquivo de roupas não encontrado.")
+    arq_roupas = open("roupas.txt", "wt", encoding="utf-8")
+    for codigo, dados in roupas.items():
+        arq_roupas.write(
+            f"{codigo},{dados[0]},{dados[1]},{dados[2]},{dados[3]}\n"
+        )
+    arq_roupas.close()
 
 clientes = {}
 try:
@@ -98,6 +131,12 @@ try:
 
 except:
     print("Arquivo de clientes não encontrado.")
+    rq_clientes = open("clientes.txt", "wt", encoding="utf-8")
+    for codigo, dados in clientes.items():
+        arq_clientes.write(
+            f"{codigo},{dados[0]},{dados[1]},{dados[2]},{dados[3]}\n"
+        )
+    arq_clientes.close()
 
 vendas = {}
 try:
@@ -126,6 +165,12 @@ try:
     arq_vendas.close()
 except:
     print("Arquivo de vendas não encontrado.")
+    arq_vendas = open("vendas.txt", "wt", encoding="utf-8")
+    for codigo, dados in vendas.items():
+        arq_vendas.write(
+            f"{codigo},{dados[0]},{dados[1]},{dados[2]},{dados[3]},{dados[4]},{dados[5]},{dados[6]}\n"
+        )
+    arq_vendas.close()
 
 while resp != 0:
         print('#'*31)
