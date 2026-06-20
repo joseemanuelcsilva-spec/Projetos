@@ -2,6 +2,7 @@ import os
 from datetime import datetime
 import time
 resp = ' '
+
 # Dicionários 
 bicicletas = {}
 try:
@@ -48,7 +49,7 @@ try:
 
 except:
     capacetes = {
-         'c001':['']
+         'c001':['Oggi', 'Superlight', 299,9, 10]
     }
     print("Arquivo de capacetes não encontrado.")
     arq_capacetes = open("capacetes.txt", "wt", encoding="utf-8")
@@ -999,7 +1000,7 @@ while resp != 0:
                 ''')
         elif resp == 0:
             print('''
-##### PROGRAMA ENCERRADO#####
+##### PROGRAMA ENCERRADO ##
                 ''')
         else:
             print('OPÇÃO INVÁLIDA')
