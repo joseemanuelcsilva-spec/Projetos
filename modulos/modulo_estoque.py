@@ -1,3 +1,8 @@
+import os
+bicicletas = {}
+capacetes = {}
+sapatilhas = {}
+roupas = {}
 def menu_estoque():
     q = ''
     while q != 6:
