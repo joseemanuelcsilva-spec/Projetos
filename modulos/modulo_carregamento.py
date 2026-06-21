@@ -126,7 +126,7 @@ def carregar_clientes():
 
     except:
         print("Arquivo de clientes não encontrado.")
-        rq_clientes = open("clientes.txt", "wt", encoding="utf-8")
+        arq_clientes = open("clientes.txt", "wt", encoding="utf-8")
         for codigo, dados in clientes.items():
             arq_clientes.write(
                 f"{codigo},{dados[0]},{dados[1]},{dados[2]},{dados[3]}\n"
