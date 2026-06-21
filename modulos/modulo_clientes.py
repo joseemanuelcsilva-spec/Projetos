@@ -1,3 +1,4 @@
+import os
 def menu_clientes():
         resp = ' '
         if resp == 2:
@@ -5,13 +6,13 @@ def menu_clientes():
             q = ' '
             while q != 6:
                     print('''
-    ###############################################
-    ############ 1 - CADASTRAR CLIENTES    ########
-    ############ 2 - LISTAR CLIENTES       ########      
-    ############ 3 - BUSCAR CLIENTES       ########     
-    ############ 4 - ATUALIZAR CADASTRO    ########
-    ############ 5 - REMOVER CADASTRO      ########
-    ############ 6 - VOLTAR                ########            
+###############################################
+############ 1 - CADASTRAR CLIENTES    ########
+############ 2 - LISTAR CLIENTES       ########      
+############ 3 - BUSCAR CLIENTES       ########     
+############ 4 - ATUALIZAR CADASTRO    ########
+############ 5 - REMOVER CADASTRO      ########
+############ 6 - VOLTAR                ########            
                     ''')
                     q = int(input('Qual opção você deseja: '))
                     if q == 1:
@@ -33,7 +34,7 @@ def menu_clientes():
                             print('-------------------------------------')
                     elif q == 3:
                         print('''
-    ##### PESQUISAR CLIENTE #####
+##### PESQUISAR CLIENTE #####
                             ''')
                         cod = input('Digite o código do cliente: ')
                         if cod in clientes:

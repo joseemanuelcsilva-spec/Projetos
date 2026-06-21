@@ -9,15 +9,15 @@ from arquivos import salvar_roupas
 from arquivos import salvar_clientes
 from arquivos import salvar_vendas
 
-from modulo_carregamento import carregar_bicicletas
-from modulo_carregamento import carregar_capacetes
-from modulo_carregamento import carregar_sapatilhas
-from modulo_carregamento import carregar_roupas
-from modulo_carregamento import carregar_clientes
-from modulo_carregamento import carregar_vendas
+from modulos.modulo_carregamento import carregar_bicicletas
+from modulos.modulo_carregamento import carregar_capacetes
+from modulos.modulo_carregamento import carregar_sapatilhas
+from modulos.modulo_carregamento import carregar_roupas
+from modulos.modulo_carregamento import carregar_clientes
+from modulos.modulo_carregamento import carregar_vendas
 
-from modulo_estoque import menu_estoque
-from modulo_clientes import menu_clientes   
+from modulos.modulo_estoque import menu_estoque
+from modulos.modulo_clientes import menu_clientes   
 
 bicicleta = carregar_bicicletas()
 capacete = carregar_capacetes()
@@ -43,7 +43,7 @@ while resp != 0:
         resp = int(input('Qual opção você deseja: '))
         if resp == 1:
             menu_estoque()
-        elif resp == 2:
+        if resp == 2:
             menu_clientes()
 
 
