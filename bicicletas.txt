@@ -1,0 +1,1 @@
+b001,caloi,adventure,1000.0,100

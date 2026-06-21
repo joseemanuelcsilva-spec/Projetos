@@ -1,9 +1,3 @@
-bicicletas = {}
-capacetes = {}
-sapatilhas = {}
-roupas = {}
-clientes = {}
-vendas = {}
 def salvar_bicicletas(bicicletas):
     arq_bicicletas = open("bicicletas.txt", "wt", encoding="utf-8")
     for codigo, dados in bicicletas.items():

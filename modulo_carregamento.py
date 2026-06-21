@@ -26,6 +26,7 @@ def carregar_bicicletas():
             )
         arq_bicicletas.close()
     return bicicletas
+
 def carregar_capacetes():
     capacetes = {}
     try:
@@ -41,8 +42,6 @@ def carregar_capacetes():
                 quantidade = int(dados[4])
                 capacetes[codigo] = [marca, modelo, valor, quantidade]
         arq_capacetes.close()
-
-
     except:
         capacetes = {
             'c001':['Oggi', 'Superlight', 299,9, 10]
@@ -55,6 +54,7 @@ def carregar_capacetes():
             )
         arq_capacetes.close()
     return capacetes
+
 def carregar_sapatilhas():
     sapatilhas = {}
     try:
@@ -80,6 +80,7 @@ def carregar_sapatilhas():
             )
         arq_sapatilhas.close()
     return sapatilhas
+
 def carregar_roupas():
     roupas = {}
     try:
@@ -106,6 +107,7 @@ def carregar_roupas():
             )
         arq_roupas.close()
     return roupas
+
 def carregar_clientes():
     clientes = {}
     try:
@@ -137,6 +139,7 @@ def carregar_clientes():
             )
         arq_clientes.close()
     return clientes
+
 def carregar_vendas():
     vendas = {}
     try:
@@ -171,4 +174,4 @@ def carregar_vendas():
                 f"{codigo},{dados[0]},{dados[1]},{dados[2]},{dados[3]},{dados[4]},{dados[5]},{dados[6]},{dados[7]}\n"
             )
         arq_vendas.close()
-    return vendas 
+    return vendas

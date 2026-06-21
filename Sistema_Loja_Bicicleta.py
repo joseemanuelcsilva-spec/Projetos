@@ -9,16 +9,16 @@ from arquivos import salvar_roupas
 from arquivos import salvar_clientes
 from arquivos import salvar_vendas
 
-from modulos.modulo_carregamento import carregar_bicicletas
-from modulos.modulo_carregamento import carregar_capacetes
-from modulos.modulo_carregamento import carregar_sapatilhas
-from modulos.modulo_carregamento import carregar_roupas
-from modulos.modulo_carregamento import carregar_clientes
-from modulos.modulo_carregamento import carregar_vendas
+from modulo_carregamento import carregar_bicicletas
+from modulo_carregamento import carregar_capacetes
+from modulo_carregamento import carregar_sapatilhas
+from modulo_carregamento import carregar_roupas
+from modulo_carregamento import carregar_clientes
+from modulo_carregamento import carregar_vendas
 
-from modulos.modulo_estoque import menu_estoque
-from modulos.modulo_clientes import menu_clientes   
-from modulos.modulo_venda import menu_venda
+from modulo_estoque import menu_estoque
+from modulo_clientes import menu_clientes   
+from modulo_venda import menu_venda
 
 bicicletas = carregar_bicicletas()
 capacetes = carregar_capacetes()
@@ -44,7 +44,7 @@ while resp != 0:
         resp = int(input('Qual opção você deseja: '))
 
         if resp == 1:
-            menu_estoque()
+            bicicletas, capacetes, sapatilhas, roupas = menu_estoque(bicicletas, capacetes, sapatilhas, roupas)
             
         if resp == 2:
             menu_clientes()
@@ -82,9 +82,6 @@ while resp != 0:
             print('''
 ##### PROGRAMA ENCERRADO ##
                 ''')
-        else:
-            print('OPÇÃO INVÁLIDA')
-
 salvar_bicicletas(bicicletas)
 salvar_capacetes(capacetes)
 salvar_sapatilhas(sapatilhas)
