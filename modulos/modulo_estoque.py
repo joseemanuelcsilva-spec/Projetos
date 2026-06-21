@@ -1,9 +1,6 @@
 def menu_estoque():
-        resp = ' '
-        if resp == 1:
-                os.system('cls' if os.name == 'nt' else 'clear')
-                q = ' '
-                while q != 6:
+    q = ''
+    while q != 6:
                     print('''
 ###############################################
 #         GERENCIAMENTO DE ESTOQUE            #

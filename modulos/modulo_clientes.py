@@ -1,10 +1,7 @@
 import os
 def menu_clientes():
-        resp = ' '
-        if resp == 2:
-            os.system('cls' if os.name == 'nt' else 'clear')
-            q = ' '
-            while q != 6:
+        q = ' '
+        while q != 6:
                     print('''
 ###############################################
 ############ 1 - CADASTRAR CLIENTES    ########

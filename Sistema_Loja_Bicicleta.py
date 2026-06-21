@@ -41,9 +41,10 @@ while resp != 0:
 ############ 0 - SAIR                  ########
                 ''')
         resp = int(input('Qual opção você deseja: '))
-        
+
         if resp == 1:
             menu_estoque()
+            
         if resp == 2:
             menu_clientes()
 
