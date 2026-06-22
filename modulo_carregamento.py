@@ -72,6 +72,9 @@ def carregar_sapatilhas():
         arq_sapatilhas.close()
 
     except:
+        sapatilhas = {
+            's001':['Olympikus', 'Corta vento', 399.99, 10]
+        }
         print("Arquivo de sapatilhas não encontrado.")
         arq_sapatilhas = open("sapatilhas.txt", "wt", encoding="utf-8")
         for codigo, dados in sapatilhas.items():
@@ -99,6 +102,9 @@ def carregar_roupas():
         arq_roupas.close()
 
     except:
+        roupas = {
+            'r001':['Nike', 'GG', 999.99, 5]
+        }
         print("Arquivo de roupas não encontrado.")
         arq_roupas = open("roupas.txt", "wt", encoding="utf-8")
         for codigo, dados in roupas.items():
@@ -132,6 +138,9 @@ def carregar_clientes():
         arq_clientes.close()
 
     except:
+        clientes = {
+            
+        }
         print("Arquivo de clientes não encontrado.")
         arq_clientes = open("clientes.txt", "wt", encoding="utf-8")
         for codigo, dados in clientes.items():

@@ -1,5 +1,6 @@
 import os
 import time
+from validar_cpf import validar_cpf
 def menu_clientes(clientes):
         q = ' '
         while q != 6:
@@ -17,7 +18,15 @@ def menu_clientes(clientes):
                         nome = input('Digite o nome do cliente: ')
                         sobrenome = input('Digite o sobrenome do cliente: ')
                         tel = input('Digite o telefone do cliente; xx xxxxx-xxxx ')
-                        cpf = input('Digite o cpf do cliente:XXX.XXX.XXX-XX ')
+                        cpf = input('Digite o cpf do cliente (Apenas Números): ')
+                        print('Validando cpf')
+                        time.sleep(2)
+                        while not validar_cpf(cpf):
+                            print('CPF INvalido')
+                            cpf = input('Digite o cpf do cliente (Apenas Números): ')
+                            print('Validando cpf')
+                            time.sleep(2)
+                        print('CPf Validado')
                         cod = input('Digite o código do cliente: ').upper()
                         status = 'ATIVO'
                         clientes[cod] = [nome, sobrenome, tel, cpf, status]
