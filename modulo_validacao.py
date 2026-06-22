@@ -32,3 +32,13 @@ def validar_cpf(cpf):
         return True 
     else:
         return False 
+    
+def validar_celular(telefone):
+    tel_limpo = telefone.replace("(", "").replace(")", "").replace("-", "").replace(" ", "").strip()
+    if len(tel_limpo) != 11 or not tel_limpo.isdigit():
+        return False
+    if tel_limpo[0] == "0":
+        return False
+    if tel_limpo[2] != "9":
+        return False
+    return True

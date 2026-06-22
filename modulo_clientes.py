@@ -1,6 +1,6 @@
 import os
 import time
-from validar_cpf import validar_cpf
+from modulo_validacao import validar_cpf, validar_celular
 def menu_clientes(clientes):
         q = ' '
         while q != 6:
@@ -18,6 +18,14 @@ def menu_clientes(clientes):
                         nome = input('Digite o nome do cliente: ')
                         sobrenome = input('Digite o sobrenome do cliente: ')
                         tel = input('Digite o telefone do cliente; xx xxxxx-xxxx ')
+                        print('Validando Número....')
+                        time.sleep(2)
+                        while not validar_celular(tel):
+                            print('Numero InValido')
+                            tel = input('Digite o telefone do cliente; xx xxxxx-xxxx ')
+                            print('Validando numero')
+                            time.sleep(2)
+                        print('Número válido')
                         cpf = input('Digite o cpf do cliente (Apenas Números): ')
                         print('Validando cpf')
                         time.sleep(2)
