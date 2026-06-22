@@ -2,12 +2,12 @@ import os
 from datetime import datetime
 import time
 
-from arquivos import salvar_bicicletas
-from arquivos import salvar_capacetes
-from arquivos import salvar_sapatilhas
-from arquivos import salvar_roupas
-from arquivos import salvar_clientes
-from arquivos import salvar_vendas
+from modulo_salvar import salvar_bicicletas
+from modulo_salvar import salvar_capacetes
+from modulo_salvar import salvar_sapatilhas
+from modulo_salvar import salvar_roupas
+from modulo_salvar import salvar_clientes
+from modulo_salvar import salvar_vendas
 
 from modulo_carregamento import carregar_bicicletas
 from modulo_carregamento import carregar_capacetes
