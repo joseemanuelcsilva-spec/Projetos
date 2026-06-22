@@ -1,1 +1,1 @@
-s001,specialized,pe de pano,999.99,100
+s001,specialized,pe de pano,999.99,99

@@ -1,1 +1,1 @@
-c001,oggi,superlight,299.99,10
+c001,oggi,superlight,299.99,9

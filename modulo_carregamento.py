@@ -149,18 +149,20 @@ def carregar_vendas():
             linha = linha.strip()
             if linha != "":
                 dados = linha.split(",")
-                cod_venda = dados[0]
-                cod_cliente = dados[1]
-                nome = dados[2]
-                produto = dados[3]
-                valor = float(dados[4])
-                pagamento = dados[5]
-                data_hora = dados[6]
-                status = dados[7]
+                cod_venda = dados[0]       
+                nome = dados[1]           
+                cod_cliente = dados[2]     
+                tipo_produto = dados[3]    
+                cod_produto = dados[4]     
+                valor = float(dados[5])    
+                pagamento = dados[6]       
+                data_hora = dados[7]       
+                status = dados[8]
                 vendas[cod_venda] = [
-                    cod_cliente,
                     nome,
-                    produto,
+                    cod_cliente,
+                    tipo_produto,
+                    cod_produto,
                     valor,
                     pagamento,
                     data_hora,
