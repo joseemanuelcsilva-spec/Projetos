@@ -121,13 +121,14 @@ def carregar_clientes():
                 sobrenome = dados[2]
                 telefone = dados[3]
                 cpf = dados[4]
+                status = dados[5]
                 clientes[codigo] = [
                     nome,
                     sobrenome,
                     telefone,
-                    cpf
+                    cpf, 
+                    status
                 ]
-
         arq_clientes.close()
 
     except:
@@ -135,7 +136,7 @@ def carregar_clientes():
         arq_clientes = open("clientes.txt", "wt", encoding="utf-8")
         for codigo, dados in clientes.items():
             arq_clientes.write(
-                f"{codigo},{dados[0]},{dados[1]},{dados[2]},{dados[3]}\n"
+                f"{codigo},{dados[0]},{dados[1]},{dados[2]},{dados[3]},{dados[4]}\n"
             )
         arq_clientes.close()
     return clientes

@@ -45,13 +45,10 @@ while resp != 0:
 
         if resp == 1:
             bicicletas, capacetes, sapatilhas, roupas = menu_estoque(bicicletas, capacetes, sapatilhas, roupas)
-            
         if resp == 2:
-            menu_clientes()
-
+            clientes = menu_clientes(clientes)
         elif resp == 3:
-            menu_venda()             
-                    
+            vendas, bicicletas, capacetes, sapatilhas, roupa, clientes = menu_venda(vendas, bicicletas, capacetes, sapatilhas, roupas, clientes)  
         elif resp == 4:
             os.system('cls' if os.name == 'nt' else 'clear')
             print('''
@@ -63,7 +60,6 @@ while resp != 0:
 ############ 5 - VOLTAR                    ########
                 ''')
             q = int(input('Qual opção você deseja: '))
-
         elif resp == 5:
             os.system('cls' if os.name == 'nt' else 'clear')
             print('''

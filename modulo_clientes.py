@@ -1,5 +1,6 @@
 import os
-def menu_clientes():
+import time
+def menu_clientes(clientes):
         q = ' '
         while q != 6:
                     print('''
@@ -17,8 +18,9 @@ def menu_clientes():
                         sobrenome = input('Digite o sobrenome do cliente: ')
                         tel = input('Digite o telefone do cliente; xx xxxxx-xxxx ')
                         cpf = input('Digite o cpf do cliente:XXX.XXX.XXX-XX ')
-                        cod = input('Digite o código do cliente: ')
-                        clientes[cod] = [nome, sobrenome, tel, cpf, cod]
+                        cod = input('Digite o código do cliente: ').upper()
+                        status = 'ATIVO'
+                        clientes[cod] = [nome, sobrenome, tel, cpf, status]
                         print('CLIENTE CADASTRADO COM SUCESSO')
                     elif q == 2:
                         print('LISTANDO OS CLIENTES ....')
@@ -28,54 +30,61 @@ def menu_clientes():
                             print('Sobrenome:', clientes[cod][1])
                             print('Telefone:', clientes[cod][2])
                             print('CPF:', clientes[cod][3])
+                            print('Status:', clientes[cod][4])
                             print('-------------------------------------')
                     elif q == 3:
                         print('''
+#############################                             
 ##### PESQUISAR CLIENTE #####
+#############################
                             ''')
-                        cod = input('Digite o código do cliente: ')
+                        cod = input('Digite o código do cliente: ').upper()
                         if cod in clientes:
                             print('### CLIENTE ENCONTRADO ###')
-                            print(cod) 
+                            print('-------------------------------------')
+                            print('Código:', cod) 
                             print('Nome:', clientes[cod][0])
                             print('Sobrenome:',clientes[cod][1])
                             print('Telefone:', clientes[cod][2])
                             print('CPF:', clientes[cod][3])
+                            print('Status:', clientes[cod][4])
+                            print('-------------------------------------')
                         else:
                             print('#### CLIENTE NÃO FOI ENCONTRADO ####')
                     elif q == 4:
                         print('''
-    ###############################
-    #### MÓDULO DE ATUALIZAÇÃO ####
-    ###############################
+###############################
+#### MÓDULO DE ATUALIZAÇÃO ####
+###############################
                             ''')
-                        cod = input('Digite o código do cliente: ')
+                        cod = input('Digite o código do cliente: ').upper()
                         if cod in clientes:
                             print(
                                 '### CLIENTE ENCONTRADO ###')
-                            print(cod) 
+                            print('-------------------------------------')
+                            print('Codigo:',cod) 
                             print('Nome:', clientes[cod][0])
                             print('Sobrenome:',clientes[cod][1])
                             print('Telefone:', clientes[cod][2])
                             print('CPF:', clientes[cod][3])
-                            print('')
+                            print('-------------------------------------')
                             while q != 6:
                                 q = ' '
                                 print('''
-    ##############################                              
-    ### O QUE DESEJA ALTERAR ? ###
-    ##############################
-    ### 1 - NOME               ###
-    ### 2 - SOBRENOME          ###
-    ### 3 - TELEFONE           ###
-    ### 4 - CPF                ###
-    ### 5 - CÓDIGO             ###
-    ### 6 - VOLTAR             ###
+##############################                              
+### O QUE DESEJA ALTERAR ? ###
+##############################
+### 1 - NOME               ###
+### 2 - SOBRENOME          ###
+### 3 - TELEFONE           ###
+### 4 - CPF                ###
+### 5 - CÓDIGO             ###
+### 6 - VOLTAR             ###
                                 ''')
                                 q = int(input('Qual opção você deseja: '))
                                     
                                 if q == 1:
-                                            novo_nome = input('DIgite o novo nome: ')
+                                            novo_nome = input('Digite o novo nome: ')
                                             clientes[cod][0] = novo_nome
                                 elif q == 2:
                                             novo_sobrenome = input('Digite o novo sobrenome desejado: ')
@@ -94,23 +103,23 @@ def menu_clientes():
                                             print('Código alterado com sucesso!')
                         else:
                             print('CLIENTE NÃO ENCONTRADO')
-                        
                     elif q == 5:
                         print('''
-    ###########################                          
-    ##### DELETAR CADASTRO ####
-    ###########################                          
+############################                          
+##### DESATIVAR CLIENTE ####
+############################                          
                             ''')
-                        codigo = input('Digite o código do cliente que você deseja deletar: ')
+                        codigo = input('Digite o código do cliente que você deseja desativar: ').upper()
                         if codigo in clientes:
-                            crtz = input('Tem certeza que deseja deletar o cliente [S/N]: ').upper()
+                            crtz = input('Tem certeza que deseja desativar o cliente [S/N]: ').upper()
                             if crtz == 'S':
-                                print('REMOVENDO CLIENTE ...')
+                                print('DESATIVANDO O CLIENTE ...')
                                 time.sleep(2)
-                                print('CLIENTE REMOVIDO')
-                                del clientes[codigo]
+                                print('CLIENTE DESATIVADO')
+                                clientes[cod][4] ='DESATIVADO'
                             else:
                                 codigo = input('Digite o codigo correto do cliente para remover: ') 
-                                del clientes[codigo]
+                                clientes[cod][4] ='DESATIVADO'
                         else:
                             print('### CLIENTE NÃO ENCONTRADO ###')
+        return clientes

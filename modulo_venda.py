@@ -1,7 +1,7 @@
 import time
 from datetime import datetime
 import os
-def menu_venda():
+def menu_venda(vendas, bicicletas, capacetes, sapatilhas, roupas, clientes):
    
     q = ' '
     while q != 5:
@@ -19,7 +19,7 @@ def menu_venda():
                 if q == 1:
                     os.system('cls' if os.name == 'nt' else 'clear')
                     print('#### VAMOS INCIAR UMA VENDA ####')
-                    cod_cliente = input('Digite o código do cliente: ')
+                    cod_cliente = input('Digite o código do cliente: ').upper()
                     if cod_cliente in clientes: 
                         print('Cliente encontrado')
                         print(f"Seja bem vindo {clientes[cod_cliente][0]}")
@@ -62,21 +62,22 @@ def menu_venda():
                                             print(f'O total ficou de R${total-((total*10)/100)}')
                                             print('### VENDA FINALIZADA ###')
                                             bicicletas[cod][3]-= desejada
-                                            cod_venda= input('Digite o código da venda: ')
+                                            cod_venda= input('Digite o código da venda: ').upper()
                                             vendas[cod_venda]=[clientes[cod_cliente][0], cod_cliente, 'BICICLETA', cod, total, 'PIX', data_hora, 'ATIVA']
                                         elif pg == 2:
                                             print(f'O total ficou de R${total-((total*5)/100)}')
                                             print('### VENDA FINALIZADA ###')
                                             bicicletas[cod][3]-= desejada
-                                            cod_venda= input('Digite o código da venda: ')
+                                            cod_venda= input('Digite o código da venda: ').upper()
                                             vendas[cod_venda]=[clientes[cod_cliente][0], cod_cliente, bicicletas[cod][1], bicicletas[cod], total, 'ESPÉCIE', data_hora, 'ATIVA']
                                         elif pg == 3:
                                             vezes = int(input('Deseja dividir em quantas vezes: '))
                                             print(f'O VALOR FINAL FICOU DE {total} dividio em {vezes}x de R${total/vezes} sem juros')
                                             print('VENDA FINALIZADA')
                                             bicicletas[cod][3]-= desejada
-                                            cod_venda= input('Digite o código da venda: ')
+                                            cod_venda= input('Digite o código da venda: ').upper()
                                             vendas[cod_venda]=[clientes[cod_cliente][0], cod_cliente, bicicletas[cod][1], bicicletas[cod][2], total, 'CARTÃO', data_hora, 'ATIVA']
+                    
 
                             elif q == 2:
                                 cod = input('Digite o código da sapatilha: ')
@@ -104,20 +105,20 @@ def menu_venda():
                                             print(f'O total ficou de R$ {total - ((total * 10) / 100)}')
                                             print('### VENDA FINALIZADA ###')
                                             sapatilhas[cod][3] -= desejada
-                                            cod_venda= input('Digite o código da venda: ')
+                                            cod_venda= input('Digite o código da venda: ').upper()
                                             vendas[cod_venda]=[clientes[cod_cliente][0], cod_cliente, sapatilhas[cod][1], sapatilhas[cod][2], total, 'PIX', data_hora, 'ATIVA']
                                         elif pg == 2:
                                             print(f'O total ficou de R$ {total - ((total * 5) / 100)}')
                                             print('### VENDA FINALIZADA ###')
                                             sapatilhas[cod][3] -= desejada
-                                            cod_venda= input('Digite o código da venda: ')
+                                            cod_venda= input('Digite o código da venda: ').upper()
                                             vendas[cod_venda]=[clientes[cod_cliente][0], cod_cliente, sapatilhas[cod][1], sapatilhas[cod][2], total, 'ESPÉCIE', data_hora, 'ATIVA']
                                         elif pg == 3:
                                             vezes = int(input('Deseja dividir em quantas vezes: '))
                                             print(f'O VALOR FINAL FICOU DE {total} dividido em {vezes}x de R$ {total/vezes}')
                                             print('VENDA FINALIZADA')
                                             sapatilhas[cod][3] -= desejada
-                                            cod_venda= input('Digite o código da venda: ')
+                                            cod_venda= input('Digite o código da venda: ').upper()
                                             vendas[cod_venda]=[clientes[cod_cliente][0], cod_cliente, sapatilhas[cod][1], sapatilhas[cod][2], total, 'CARTÃO', data_hora, 'ATIVA']
 
                             elif q == 3:
@@ -145,19 +146,20 @@ def menu_venda():
                                             print(f'O total ficou de R$ {total - ((total * 10) / 100)}')
                                             print('### VENDA FINALIZADA ###')
                                             capacetes[cod][3] -= desejada
-                                            cod_venda= input('Digite o código da venda: ')
+                                            cod_venda= input('Digite o código da venda: ').upper()
                                             vendas[cod_venda] = [clientes[cod_cliente][0], cod_cliente, capacetes[cod][1], capacetes[cod][2], total, 'PIX', data_hora, 'ATIVA']
                                         elif pg == 2:
                                             print(f'O total ficou de R$ {total - ((total * 5) / 100)}')
                                             print('### VENDA FINALIZADA ###')
                                             capacetes[cod][3] -= desejada
-                                            cod_venda= input('Digite o código da venda: ')
+                                            cod_venda= input('Digite o código da venda: ').upper()
                                             vendas[cod_venda] = [clientes[cod_cliente][0], cod_cliente, capacetes[cod][1], capacetes[cod][2], total, 'ESPÉCIE', data_hora, 'ATIVA']
                                         elif pg == 3:
                                             vezes = int(input('Deseja dividir em quantas vezes: '))
                                             print(f'O VALOR FINAL FICOU DE {total} dividido em {vezes}x de R$ {total/vezes}')
                                             print('VENDA FINALIZADA')
                                             capacetes[cod][3] -= desejada
+                                            cod_venda= input('Digite o código da venda: ').upper()
                                             vendas[cod_venda] = [clientes[cod_cliente][0], cod_cliente, capacetes[cod][1], capacetes[cod][2], total, 'CARTÃO', data_hora, 'ATIVA']
 
                             elif q == 4:
@@ -186,19 +188,24 @@ def menu_venda():
                                             print(f'O total ficou de R$ {total - ((total * 10) / 100)}')
                                             print('### VENDA FINALIZADA ###')
                                             roupas[cod][3] -= desejada
+                                            cod_venda= input('Digite o código da venda: ').upper()
                                             vendas[cod_venda] = [clientes[cod_cliente][0], cod_cliente, roupas[cod][1], roupas[cod][2], total, 'PIX', data_hora, 'ATIVA']
                                         elif pg == 2:
                                             print(f'O total ficou de R$ {total - ((total * 5) / 100)}')
                                             print('### VENDA FINALIZADA ###')
                                             roupas[cod][3] -= desejada
+                                            cod_venda= input('Digite o código da venda: ').upper()
                                             vendas[cod_venda] = [clientes[cod_cliente][0], cod_cliente, roupas[cod][1], roupas[cod][2], total, 'ESPÉCIE', data_hora, 'ATIVA']
                                         elif pg == 3:
                                             vezes = int(input('Deseja dividir em quantas vezes: '))
                                             print(f'O VALOR FINAL FICOU DE {total} dividido em {vezes}x de R$ {total/vezes}')
                                             print('VENDA FINALIZADA')            
                                             roupas[cod][3] -= desejada  
+                                            cod_venda= input('Digite o código da venda: ').upper()
                                             vendas[cod_venda] = [clientes[cod_cliente][0], cod_cliente, roupas[cod][1], roupas[cod][2], total, 'CARTÃO', data_hora, 'ATIVA']
-                    elif q == 2:
+                    else:
+                        print('cliente não encontrado')
+                elif q == 2:
                         for cod_venda in vendas:
                             print('------------------------')
                             print('Código da Venda:', cod_venda)
@@ -241,3 +248,6 @@ def menu_venda():
                         vendas[cod][6] = 'CANCELADA'
                     else:
                         print('VENDA NÃO ESTÁ NO NOSSO HISTÓRICO')
+
+        
+    return vendas, bicicletas, capacetes, sapatilhas, roupas, clientes
