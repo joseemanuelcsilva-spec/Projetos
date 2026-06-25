@@ -41,6 +41,7 @@ def menu_clientes(clientes):
                         print('CLIENTE CADASTRADO COM SUCESSO')
                     elif q == 2:
                         print('LISTANDO OS CLIENTES ....')
+                        time.sleep(2)
                         for cod in clientes:
                             print('Codigo:', cod)
                             print('Nome:', clientes[cod][0])
@@ -133,10 +134,10 @@ def menu_clientes(clientes):
                                 print('DESATIVANDO O CLIENTE ...')
                                 time.sleep(2)
                                 print('CLIENTE DESATIVADO')
-                                clientes[cod][4] ='DESATIVADO'
+                                clientes[codigo][4] ='DESATIVADO'
                             else:
                                 codigo = input('Digite o codigo correto do cliente para remover: ') 
-                                clientes[cod][4] ='DESATIVADO'
+                                clientes[codigo][4] ='DESATIVADO'
                         else:
                             print('### CLIENTE NÃO ENCONTRADO ###')
         return clientes

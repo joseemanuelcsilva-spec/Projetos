@@ -45,7 +45,7 @@ def carregar_capacetes():
         arq_capacetes.close()
     except:
         capacetes = {
-            'c001':['Oggi', 'Superlight', 299,9, 10, 'ATIVO']
+            'c001':['Oggi','Superlight', 299.9, 10, 'ATIVO']
         }
         arq_capacetes = open("capacetes.txt", "wt", encoding="utf-8")
         for codigo, dados in capacetes.items():
