@@ -2,7 +2,7 @@ def salvar_bicicletas(bicicletas):
     arq_bicicletas = open("bicicletas.txt", "wt", encoding="utf-8")
     for codigo, dados in bicicletas.items():
         arq_bicicletas.write(
-            f"{codigo},{dados[0]},{dados[1]},{dados[2]},{dados[3]}\n"
+            f"{codigo},{dados[0]},{dados[1]},{dados[2]},{dados[3]},{dados[4]}\n"
         )
     arq_bicicletas.close()
     
@@ -11,7 +11,7 @@ def salvar_capacetes(capacetes):
     arq_capacetes = open("capacetes.txt", "wt", encoding="utf-8")
     for codigo, dados in capacetes.items():
         arq_capacetes.write(
-            f"{codigo},{dados[0]},{dados[1]},{dados[2]},{dados[3]}\n"
+            f"{codigo},{dados[0]},{dados[1]},{dados[2]},{dados[3]},{dados[4]}\n"
         )
     arq_capacetes.close()
 
@@ -19,7 +19,7 @@ def salvar_sapatilhas(sapatilhas):
     arq_sapatilhas = open("sapatilhas.txt", "wt", encoding="utf-8")
     for codigo, dados in sapatilhas.items():
         arq_sapatilhas.write(
-            f"{codigo},{dados[0]},{dados[1]},{dados[2]},{dados[3]}\n"
+            f"{codigo},{dados[0]},{dados[1]},{dados[2]},{dados[3]},{dados[4]}\n"
         )
     arq_sapatilhas.close()
 
@@ -27,7 +27,7 @@ def salvar_roupas(roupas):
     arq_roupas = open("roupas.txt", "wt", encoding="utf-8")
     for codigo, dados in roupas.items():
         arq_roupas.write(
-            f"{codigo},{dados[0]},{dados[1]},{dados[2]},{dados[3]}\n"
+            f"{codigo},{dados[0]},{dados[1]},{dados[2]},{dados[3]},{dados[4]}\n"
         )
     arq_roupas.close()
 

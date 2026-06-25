@@ -11,18 +11,18 @@ def carregar_bicicletas():
                 modelo = dados[2]
                 valor = float(dados[3])
                 quantidade = int(dados[4])
-                bicicletas[codigo] = [marca, modelo, valor, quantidade]
+                status = dados[5]
+                bicicletas[codigo] = [marca, modelo, valor, quantidade, status]
         arq_bicicletas.close()
     except:
         bicicletas = {
-            'b001':['caloi', 'adv', 200, 3],
-            'b002':['caloi', 'advsasas', 200, 3]
+            'b001':['caloi', 'adv', 200, 3, 'ATIVO'],
+            'b002':['caloi', 'advsasas', 200, 3, 'ATIVO']
         }
-        print("Arquivo não encontrado.")
         arq_bicicletas = open("bicicletas.txt", "wt", encoding="utf-8")
         for codigo, dados in bicicletas.items():
             arq_bicicletas.write(
-                f"{codigo},{dados[0]},{dados[1]},{dados[2]},{dados[3]}\n"
+                f"{codigo},{dados[0]},{dados[1]},{dados[2]},{dados[3]},{dados[4]}\n"
             )
         arq_bicicletas.close()
     return bicicletas
@@ -40,17 +40,17 @@ def carregar_capacetes():
                 modelo = dados[2]
                 valor = float(dados[3])
                 quantidade = int(dados[4])
-                capacetes[codigo] = [marca, modelo, valor, quantidade]
+                status = dados[5]
+                capacetes[codigo] = [marca, modelo, valor, quantidade, status]
         arq_capacetes.close()
     except:
         capacetes = {
-            'c001':['Oggi', 'Superlight', 299,9, 10]
+            'c001':['Oggi', 'Superlight', 299,9, 10, 'ATIVO']
         }
-        print("Arquivo de capacetes não encontrado.")
         arq_capacetes = open("capacetes.txt", "wt", encoding="utf-8")
         for codigo, dados in capacetes.items():
             arq_capacetes.write(
-                f"{codigo},{dados[0]},{dados[1]},{dados[2]},{dados[3]}\n"
+                f"{codigo},{dados[0]},{dados[1]},{dados[2]},{dados[3]},{dados[4]}\n"
             )
         arq_capacetes.close()
     return capacetes
@@ -68,18 +68,19 @@ def carregar_sapatilhas():
                 modelo = dados[2]
                 valor = float(dados[3])
                 quantidade = int(dados[4])
-                sapatilhas[codigo] = [marca, modelo, valor, quantidade]
+                status = dados[5]
+                sapatilhas[codigo] = [marca, modelo, valor, quantidade, status]
         arq_sapatilhas.close()
 
     except:
         sapatilhas = {
-            's001':['Olympikus', 'Corta vento', 399.99, 10]
+            's001':['Olympikus', 'Corta vento', 399.99, 10, 'ATIVO']
         }
         print("Arquivo de sapatilhas não encontrado.")
         arq_sapatilhas = open("sapatilhas.txt", "wt", encoding="utf-8")
         for codigo, dados in sapatilhas.items():
             arq_sapatilhas.write(
-                f"{codigo},{dados[0]},{dados[1]},{dados[2]},{dados[3]}\n"
+                f"{codigo},{dados[0]},{dados[1]},{dados[2]},{dados[3]},{dados[4]}\n"
             )
         arq_sapatilhas.close()
     return sapatilhas
@@ -98,18 +99,19 @@ def carregar_roupas():
                 tamanho = dados[2]
                 valor = float(dados[3])
                 quantidade = int(dados[4])
-                roupas[codigo] = [marca, tamanho, valor, quantidade]
+                status = dados[5]
+                roupas[codigo] = [marca, tamanho, valor, quantidade, status]
         arq_roupas.close()
 
     except:
         roupas = {
-            'r001':['Nike', 'GG', 999.99, 5]
+            'r001':['Nike', 'GG', 999.99, 5, 'ATIVO']
         }
         print("Arquivo de roupas não encontrado.")
         arq_roupas = open("roupas.txt", "wt", encoding="utf-8")
         for codigo, dados in roupas.items():
             arq_roupas.write(
-                f"{codigo},{dados[0]},{dados[1]},{dados[2]},{dados[3]}\n"
+                f"{codigo},{dados[0]},{dados[1]},{dados[2]},{dados[3]},{dados[4]}\n"
             )
         arq_roupas.close()
     return roupas

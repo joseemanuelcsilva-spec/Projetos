@@ -10,7 +10,7 @@ def menu_estoque(bicicletas, capacetes, sapatilhas, roupas):
 ############ 2 - LISTAR PRODUTOS       ########      
 ############ 3 - ATUALIZAR PRODUTO     ########     
 ############ 4 - BUSCAR PRODUTO        ########
-############ 5 - REMOVER PRODUTO       ########
+############ 5 - DESATIVAR PRODUTO     ########
 ############ 6 - VOLTAR                ########            
             ''')
         q = int(input('Qual opção você deseja: '))
@@ -35,7 +35,8 @@ def menu_estoque(bicicletas, capacetes, sapatilhas, roupas):
                     valor = float(input('Digite o valor da Bicicleta: '))
                     cod = str(input('Digite o código da Bicicleta: '))
                     quant = int(input('Quantas unidades: '))
-                    bicicletas[cod] = [marca, modelo, valor, quant]
+                    status = 'ATIVO'
+                    bicicletas[cod] = [marca, modelo, valor, quant, status]
                     print('Produto cadastrado com sucesso!')
 
                 elif q == 2:
@@ -44,7 +45,8 @@ def menu_estoque(bicicletas, capacetes, sapatilhas, roupas):
                     valor = float(input('Digite o valor da capacete: '))
                     cod = str(input('Digite o código da capacete: '))
                     quant = int(input('Quantas unidades:  '))
-                    capacetes[cod] = [marca, modelo, valor, quant]
+                    status = 'ATIVO'
+                    capacetes[cod] = [marca, modelo, valor, quant, status]
                     print('Produto cadastrado com sucesso!')
                 
                 elif q == 3:
@@ -52,8 +54,9 @@ def menu_estoque(bicicletas, capacetes, sapatilhas, roupas):
                     modelo = input('Digite o modelo da sapatilha: ')
                     valor= float(input('Digite o valor da sapatilha: '))
                     cod= str(input('Digite o código da sapatilha: '))
-                    quant = int(input('Quantas unidades:  '))
-                    sapatilhas[cod] = [marca, modelo, valor, quant]
+                    quant = int(input('Quantas unidades: '))
+                    status = 'ATIVO'
+                    sapatilhas[cod] = [marca, modelo, valor, quant, status]
                     print('Produto cadastrado com sucesso!')
 
                 elif q == 4:
@@ -62,7 +65,8 @@ def menu_estoque(bicicletas, capacetes, sapatilhas, roupas):
                     tam = input('Digite o tamanho da roupa: ').upper()
                     cod = input('Digite o código da roupa: ')
                     quant = int(input('Quantas unidades:  '))
-                    roupas[cod] = [marca, tam, valor, quant]
+                    status = 'ATIVO'
+                    roupas[cod] = [marca, tam, valor, quant, status]
                     print('Produto cadastrado com sucesso!')
         
         elif q == 2:
@@ -87,6 +91,7 @@ def menu_estoque(bicicletas, capacetes, sapatilhas, roupas):
                         print('Modelo:', bicicletas[codigo][1])
                         print('Valor:', bicicletas[codigo][2])
                         print('Quantidade:', bicicletas[codigo][3])
+                        print('Status', bicicletas[codigo][4])
                         print('--------------------')
                 elif q == 2:
                     for codigo in capacetes:
@@ -95,6 +100,7 @@ def menu_estoque(bicicletas, capacetes, sapatilhas, roupas):
                         print('Modelo:', capacetes[codigo][1])
                         print('Valor:', capacetes[codigo][2])
                         print('Quantidade:', capacetes[codigo][3])
+                        print('Status', capacetes[codigo][4])
                         print('--------------------')
                 elif q == 3:
                     for codigo in sapatilhas:
@@ -103,6 +109,7 @@ def menu_estoque(bicicletas, capacetes, sapatilhas, roupas):
                         print('Modelo:',sapatilhas[codigo][1])
                         print('Valor:', sapatilhas[codigo][2])
                         print('Quantidade:', sapatilhas[codigo][3])
+                        print('Status', sapatilhas[codigo][4])
                         print('--------------------')
                 elif q == 4:
                     for codigo in roupas:
@@ -111,6 +118,7 @@ def menu_estoque(bicicletas, capacetes, sapatilhas, roupas):
                         print('Tamanho:', roupas[codigo][1])
                         print('Valor:', roupas[codigo][2])
                         print('Quantidade:', roupas[codigo][3])
+                        print('Status', roupas[codigo][4])
                         print('--------------------')
                         
         elif q == 3:
@@ -266,7 +274,6 @@ def menu_estoque(bicicletas, capacetes, sapatilhas, roupas):
 
                 elif q == 4:
                     codigo = input('Digite o código da roupa: ')
-                    # AJUSTE: Corrigido de sapatilhas para roupas
                     if codigo in roupas:
                         print('### ROUPA ENCONTRADA ###')
                         print('-----------------------')
@@ -329,10 +336,12 @@ def menu_estoque(bicicletas, capacetes, sapatilhas, roupas):
                     if cod in bicicletas:
                         print('### BICICLETA ENCONTRADA ###')
                         print('-------------------------------')
-                        print(bicicletas[cod][0])
-                        print(bicicletas[cod][1])
-                        print(bicicletas[cod][2])
-                        print(bicicletas[cod][3])
+                        print('Codigo', cod)
+                        print('Marca:', bicicletas[cod][0])
+                        print('Modelo', bicicletas[cod][1])
+                        print('Valor: R$',bicicletas[cod][2])
+                        print('Quantidade', bicicletas[cod][3])
+                        print('Status:', bicicletas[cod][4])
                     else:
                         print('### BICICLETA NÃO ENCONTRADA ###')
                 elif q == 2:
@@ -345,6 +354,7 @@ def menu_estoque(bicicletas, capacetes, sapatilhas, roupas):
                         print('Modelo:', capacetes[cod][1])
                         print('Valor: R$', capacetes[cod][2])
                         print('Quantidade:', capacetes[cod][3])
+                        print('Status:', capacetes[cod][4])
                     else:
                         print('### CAPACETE NÃO ENCONTRADO ###')
                 elif q == 3:
@@ -357,6 +367,7 @@ def menu_estoque(bicicletas, capacetes, sapatilhas, roupas):
                         print('Modelo:', sapatilhas[cod][1])
                         print('Valor: R$', sapatilhas[cod][2])
                         print('Quantidade:', sapatilhas[cod][3])
+                        print('Status:', sapatilhas[cod][4])
                     else:
                         print('### SAPATILHA NÃO ENCONTRADA ###')
                 elif q == 4:
@@ -369,6 +380,7 @@ def menu_estoque(bicicletas, capacetes, sapatilhas, roupas):
                         print('Tamanho:', roupas[cod][1])
                         print('Valor: R$', roupas[cod][2])
                         print('Quantidade:', roupas[cod][3])
+                        print('Status:', roupas[cod][4])
                     else:
                         print('### ROUPA NÃO ENCONTRADA ###')
                             
@@ -377,36 +389,36 @@ def menu_estoque(bicicletas, capacetes, sapatilhas, roupas):
             q = ' ' 
             while q != 5:
                 print('''
-#################################################
-## DESEJA REMOVER PRODUTO DE QUAL CATEGORIA ? ###
-#################################################
-## 1 - BICICLETAS                             ###
-## 2 - CAPACETES                              ###
-## 3 - SAPATILHAS                             ###
-## 4 - ROUPAS                                 ### 
-## 5 - SAIR                                   ###
+###################################################
+## DESEJA DESATIVAR PRODUTO DE QUAL CATEGORIA ? ###
+###################################################
+## 1 - BICICLETAS                               ###
+## 2 - CAPACETES                                ###
+## 3 - SAPATILHAS                               ###
+## 4 - ROUPAS                                   ### 
+## 5 - SAIR                                     ###
                 ''')
                 q = int(input('Qual opção você deseja: '))
                 if q == 1:
                     cod = input('Digite o código da bicicleta que você quer remover do estoque: ')
                     if cod in bicicletas:
-                        del bicicletas[cod]
-                        print('Bicicleta removida!')
+                        bicicletas[cod][4]= 'DESATIVADA'
+                        print('Bicicleta desativada!')
                 elif q == 2:
                     cod = input('Digite o código do capacete que você quer remover do estoque: ')  
                     if cod in capacetes:
-                        del capacetes[cod]                       
-                        print('Capacete removido!')
+                        capacetes[cod][4] = 'DESATIVADO'                       
+                        print('Capacete desativada!')
                 elif q == 3:
                     cod = input('Digite o código da sapatilha que você quer remover do estoque: ')
                     if cod in sapatilhas:
-                        del sapatilhas[cod]
-                        print('Sapatilha removida!')
+                        sapatilhas[cod][4] = 'DESATIVADO'
+                        print('Sapatilha desativada!')
                 elif q == 4: 
                     cod = input('Digite o código da roupa que você deseja remover: ')
                     if cod in roupas:
-                        del roupas[cod]
-                        print('Roupa removida!')
+                        roupas[cod][4]= 'DESATIVADO'
+                        print('Roupa desativada!')
             else:
                 print('Opção invalida')
     
