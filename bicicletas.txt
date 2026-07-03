@@ -1,3 +1,0 @@
-b001,caloi,adv,200.0,2,ATIVO
-b002,caloi,advsasas,200.0,3,ATIVO
-b003,mt,cross,980.0,10,ATIVO
