@@ -42,7 +42,6 @@ while resp != 0:
 ############ 0 - SAIR                  ########
                 ''')
         resp = int(input('Qual opção você deseja: '))
-
         if resp == 1:
             bicicletas, capacetes, sapatilhas, roupas = menu_estoque(bicicletas, capacetes, sapatilhas, roupas)
         if resp == 2:
@@ -78,6 +77,7 @@ while resp != 0:
             print('''
 ##### PROGRAMA ENCERRADO ##
                 ''')
+            
 salvar_bicicletas(bicicletas)
 salvar_capacetes(capacetes)
 salvar_sapatilhas(sapatilhas)
