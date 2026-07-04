@@ -1,7 +1,7 @@
 import os
 from time import sleep
 relatorios = {}
-def menu_relatorio(clientes):
+def menu_relatorio(clientes, bicicletas, capacetes):
     q = ' '
     while q != 4:
         print('''
@@ -78,9 +78,9 @@ def menu_relatorio(clientes):
                             print('CPF:', clientes[cod][3])
                             print('Status:', clientes[cod][4])
                         
-        if q == 2:
+        if q == 2: #RELATÓRIO PRODUTOS
             resp = ' '
-            while resp != 5:
+            while resp != 6:
                 print('''
 #######################################
 ###      RELATÓRIO  PRODUTOS        ###
@@ -93,6 +93,36 @@ def menu_relatorio(clientes):
 # 6 - SAIR                            #
                       ''')
                 resp = int(input('Qual opção você deseja: '))
+                q = ''
+                while q != 5:
+                    print('''
+##################################
+###         MENU PRODUTOS      ###
+##################################
+# 1 - LISTAR BICICLETAS          #
+# 2 - LISTAR CAPACETES           #
+# 3 - LISTAR SAPATILHAS          #
+# 4 - LISTAR ROUPAS              #
+# 5 - SAIR                       # 
+                          ''')
+                    q = int(input('Qual opção você deseja: '))
+                    if q == 1:
+                        for codigo in bicicletas:
+                            print('--------------------')
+                            print('Marca:', bicicletas[codigo][0])
+                            print('Modelo:', bicicletas[codigo][1])
+                            print('Valor:', bicicletas[codigo][2])
+                            print('Quantidade:', bicicletas[codigo][3])
+                            print('Status', bicicletas[codigo][4])
+                    if q == 2:
+                        for codigo in capacetes: 
+                            print('--------------------')
+                            print('Marca:', capacetes[codigo][0])
+                            print('Modelo:', capacetes[codigo][1])
+                            print('Valor:', capacetes[codigo][2])
+                            print('Quantidade:', capacetes[codigo][3])
+                            print('Status', capacetes[codigo][4])
+
 
         if q == 3:
             resp = ''
