@@ -2,23 +2,23 @@ import os
 from datetime import datetime
 import time
 
-from modulo_salvar import salvar_bicicletas
-from modulo_salvar import salvar_capacetes
-from modulo_salvar import salvar_sapatilhas
-from modulo_salvar import salvar_roupas
-from modulo_salvar import salvar_clientes
-from modulo_salvar import salvar_vendas
+from modulos.modulo_salvar import salvar_bicicletas
+from modulos.modulo_salvar import salvar_capacetes
+from modulos.modulo_salvar import salvar_sapatilhas
+from modulos.modulo_salvar import salvar_roupas
+from modulos.modulo_salvar import salvar_clientes
+from modulos.modulo_salvar import salvar_vendas
 
-from modulo_carregamento import carregar_bicicletas
-from modulo_carregamento import carregar_capacetes
-from modulo_carregamento import carregar_sapatilhas
-from modulo_carregamento import carregar_roupas
-from modulo_carregamento import carregar_clientes
-from modulo_carregamento import carregar_vendas
+from modulos.modulo_carregamento import carregar_bicicletas
+from modulos.modulo_carregamento import carregar_capacetes
+from modulos.modulo_carregamento import carregar_sapatilhas
+from modulos.modulo_carregamento import carregar_roupas
+from modulos.modulo_carregamento import carregar_clientes
+from modulos.modulo_carregamento import carregar_vendas
 
-from modulo_estoque import menu_estoque
-from modulo_clientes import menu_clientes   
-from modulo_venda import menu_venda
+from modulos.modulo_estoque import menu_estoque
+from modulos.modulo_clientes import menu_clientes   
+from modulos.modulo_venda import menu_venda
 from modulo_relatorio import menu_relatorio
 
 bicicletas = carregar_bicicletas()

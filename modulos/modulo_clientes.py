@@ -1,6 +1,6 @@
 import os
 import time
-from modulo_validacao import validar_cpf, validar_celular
+from modulos.modulo_validacao import validar_cpf, validar_celular
 def menu_clientes(clientes):
         q = ' '
         while q != 6:
