@@ -50,7 +50,7 @@ while resp != 0:
         if resp == 3:
             vendas, bicicletas, capacetes, sapatilhas, roupa, clientes = menu_venda(vendas, bicicletas, capacetes, sapatilhas, roupas, clientes)  
         if resp == 4:
-            relatorios = menu_relatorio()
+            relatorios = menu_relatorio(clientes)
         if resp == 5:
             os.system('cls' if os.name == 'nt' else 'clear')
             print('''

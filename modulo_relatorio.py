@@ -1,6 +1,7 @@
 import os
+from time import sleep
 relatorios = {}
-def menu_relatorio():
+def menu_relatorio(clientes):
     q = ' '
     while q != 4:
         print('''
@@ -27,7 +28,56 @@ def menu_relatorio():
 # 5 - SAIR                       #
                       ''')
                 resp = int(input('Digite a opção que deseja: '))
+                if resp == 1:
+                    print('Listando todos os clientes...')
+                    sleep(2)
+                    for cod in clientes:
+                        print('-------------------------------------')
+                        print('Codigo:', cod)
+                        print('Nome:', clientes[cod][0])
+                        print('Sobrenome:', clientes[cod][1])
+                        print('Telefone:', clientes[cod][2])
+                        print('CPF:', clientes[cod][3])
+                        print('Status:', clientes[cod][4])
+                if resp == 2:
+                    print('Listando Clientes Ativos...')
+                    sleep(2)
+                    for cod in clientes:
+                        if clientes[cod][4] == 'ATIVO':
+                            print('-------------------------------------')
+                            print('Codigo:', cod)
+                            print('Nome:', clientes[cod][0])
+                            print('Sobrenome:', clientes[cod][1])
+                            print('Telefone:', clientes[cod][2])
+                            print('CPF:', clientes[cod][3])
+                            print('Status:', clientes[cod][4])
                 
+                if resp == 3:
+                    print('Listando Clientes Desativados...')
+                    sleep(2)
+                    for cod in clientes:
+                        if clientes[cod][4] == 'DESATIVADO':
+                            print('-------------------------------------')
+                            print('Codigo:', cod)
+                            print('Nome:', clientes[cod][0])
+                            print('Sobrenome:', clientes[cod][1])
+                            print('Telefone:', clientes[cod][2])
+                            print('CPF:', clientes[cod][3])
+                            print('Status:', clientes[cod][4])
+                if resp == 4:
+                    p = input('Digite o nome do cliente que deseja: ').strip().upper()
+                    print('Listando...')
+                    sleep(2)
+                    for cod in clientes:
+                        if clientes[cod][0].upper().startswith(p):
+                            print('-------------------------------------')
+                            print('Codigo:', cod)
+                            print('Nome:', clientes[cod][0])
+                            print('Sobrenome:', clientes[cod][1])
+                            print('Telefone:', clientes[cod][2])
+                            print('CPF:', clientes[cod][3])
+                            print('Status:', clientes[cod][4])
+                        
         if q == 2:
             resp = ' '
             while resp != 5:
@@ -61,8 +111,5 @@ def menu_relatorio():
 # 7 - SAIR                            #
                       ''')
                 resp = int(input('Qual opção você deseja: '))
-
-
-
 
     return relatorios
