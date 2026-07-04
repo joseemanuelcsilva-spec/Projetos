@@ -1,0 +1,68 @@
+import os
+relatorios = {}
+def menu_relatorio():
+    q = ' '
+    while q != 4:
+        print('''
+#############################
+####       MENU          ####
+#############################
+# 1 - RELATÓRIO DE CLIENTES #
+# 2 - RELATÓRIO DE PRODUTOS #
+# 3 - RELATÓRIO DE VENDAS   #
+# 4 - SAIR                  #
+               ''')
+        q = int(input('Qual opção você deseja: '))
+        if q == 1:
+            resp = ' '
+            while resp != 5:
+                print('''
+##################################
+###    RELATÓRIO  CLIENTES     ###
+##################################
+# 1 - LISTAR CLIENTES            #
+# 2 - LISTAR CLIENTES ATIVOS     #
+# 3 - LISTAR CLIENTES INATIVOS   #
+# 4 - PESQUISAR CLIENTES         #
+# 5 - SAIR                       #
+                      ''')
+                resp = int(input('Digite a opção que deseja: '))
+                
+        if q == 2:
+            resp = ' '
+            while resp != 5:
+                print('''
+#######################################
+###      RELATÓRIO  PRODUTOS        ###
+#######################################
+# 1 - LISTAR PRODUTOS POR CATEGORIA   #
+# 2 - LISTAR PRODUTOS ATIVOS          #
+# 3 - LISTAR PRODUTOS INATIVOS        #
+# 4 - PESQUISAR PRODUTOS              #
+# 5 - PESQUISAR PRODUTOS PELO PREÇO   #
+# 6 - SAIR                            #
+                      ''')
+                resp = int(input('Qual opção você deseja: '))
+
+        if q == 3:
+            resp = ''
+            resp = ' '
+            while resp != 7:
+                print('''
+#######################################
+###        RELATÓRIO  VENDAS        ###
+#######################################
+# 1 - LISTAR TODAS AS VENDAS          #
+# 2 - FATURAMENTO TOTAL DO MÊS        #
+# 3 - LISTAR VENDAS POR PAGAMENTO     #
+# 4 - LISTAR VENDAS POR VALOR         #
+# 5 - LISTAR VENDAS POR CLIENTES      #
+# 6 - LISTAR VENDAS POR PRODUTOS      #
+# 7 - SAIR                            #
+                      ''')
+                resp = int(input('Qual opção você deseja: '))
+
+
+
+
+    return relatorios

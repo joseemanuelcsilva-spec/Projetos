@@ -19,6 +19,7 @@ from modulo_carregamento import carregar_vendas
 from modulo_estoque import menu_estoque
 from modulo_clientes import menu_clientes   
 from modulo_venda import menu_venda
+from modulo_relatorio import menu_relatorio
 
 bicicletas = carregar_bicicletas()
 capacetes = carregar_capacetes()
@@ -49,16 +50,7 @@ while resp != 0:
         if resp == 3:
             vendas, bicicletas, capacetes, sapatilhas, roupa, clientes = menu_venda(vendas, bicicletas, capacetes, sapatilhas, roupas, clientes)  
         if resp == 4:
-            os.system('cls' if os.name == 'nt' else 'clear')
-            print('''
-###################################################
-############ 1 - TOTAL FATURADOO           ########
-############ 2 - PRODUTO MAIS VENDIDO      ########      
-############ 3 - CLIENTES QUE MAIS COMPRAM ########     
-############ 4 - QUANTIDADE DE VENDAS      ########
-############ 5 - VOLTAR                    ########
-                ''')
-            q = int(input('Qual opção você deseja: '))
+            relatorios = menu_relatorio()
         if resp == 5:
             os.system('cls' if os.name == 'nt' else 'clear')
             print('''
