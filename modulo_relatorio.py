@@ -213,10 +213,10 @@ def menu_relatorio(clientes, bicicletas, capacetes, sapatilhas, roupas):
 ##################################
 ###    PRODUTOS DESATIVADOS    ###
 ##################################
-# 1 - BICICLETAS INATIVAS        #
-# 2 - CAPACETES INATIVAS         #
-# 3 - SAPATILHAS INATIVAS        #
-# 4 - ROUPAS INATIVAS            #
+# 1 - BICICLETAS DESATIVADAS     #
+# 2 - CAPACETES DESATIVADOS      #
+# 3 - SAPATILHAS DESATIVADAS     #
+# 4 - ROUPAS DESATIVADAS         #
 # 5 - SAIR                       #
                               ''')
                         q = int(input('Qual opção você deseja: '))

@@ -402,7 +402,7 @@ def menu_estoque(bicicletas, capacetes, sapatilhas, roupas):
                 if q == 1:
                     cod = input('Digite o código da bicicleta que você quer remover do estoque: ')
                     if cod in bicicletas:
-                        bicicletas[cod][4]= 'DESATIVADA'
+                        bicicletas[cod][4]= 'DESATIVADO'
                         print('Bicicleta desativada!')
                 elif q == 2:
                     cod = input('Digite o código do capacete que você quer remover do estoque: ')  
