@@ -48,9 +48,9 @@ while resp != 0:
         if resp == 2:
             clientes = menu_clientes(clientes)
         if resp == 3:
-            vendas, bicicletas, capacetes, sapatilhas, roupa, clientes = menu_venda(vendas, bicicletas, capacetes, sapatilhas, roupas, clientes)  
+            vendas = menu_venda(vendas, bicicletas, capacetes, sapatilhas, roupas, clientes)  
         if resp == 4:
-            relatorios = menu_relatorio(clientes)
+            relatorios = menu_relatorio(clientes, bicicletas, capacetes, sapatilhas, roupas)
         if resp == 5:
             os.system('cls' if os.name == 'nt' else 'clear')
             print('''
