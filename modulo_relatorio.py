@@ -92,7 +92,7 @@ def menu_relatorio(clientes, bicicletas, capacetes, sapatilhas, roupas):
 #######################################
 # 1 - LISTAR PRODUTOS POR CATEGORIA   #
 # 2 - LISTAR PRODUTOS ATIVOS          #
-# 3 - LISTAR PRODUTOS INATIVOS        #
+# 3 - LISTAR PRODUTOS DESATIVADOS     #
 # 4 - PESQUISAR PRODUTOS              #
 # 5 - PESQUISAR PRODUTOS PELO PREÇO   #
 # 6 - SAIR                            #
@@ -176,6 +176,7 @@ def menu_relatorio(clientes, bicicletas, capacetes, sapatilhas, roupas):
                                     print('Valor:', bicicletas[codigo][2])
                                     print('Quantidade:', bicicletas[codigo][3])
                                     print('Status', bicicletas[codigo][4])
+
                         if q == 2:
                             for codigo in capacetes:
                                 if capacetes[codigo][4] == 'ATIVO':
@@ -186,6 +187,7 @@ def menu_relatorio(clientes, bicicletas, capacetes, sapatilhas, roupas):
                                     print('Valor:', capacetes[codigo][2])
                                     print('Quantidade:', capacetes[codigo][3])
                                     print('Status', capacetes[codigo][4])
+
                         if q == 3:
                             for codigo in sapatilhas:
                                 if sapatilhas[codigo][4] == 'ATIVO':
@@ -196,6 +198,7 @@ def menu_relatorio(clientes, bicicletas, capacetes, sapatilhas, roupas):
                                     print('Valor:', sapatilhas[codigo][2])
                                     print('Quantidade:', sapatilhas[codigo][3])
                                     print('Status', sapatilhas[codigo][4])
+                       
                         if q == 4:
                             for codigo in roupas:
                                 if roupas[codigo][4] == 'ATIVO':
@@ -206,6 +209,7 @@ def menu_relatorio(clientes, bicicletas, capacetes, sapatilhas, roupas):
                                     print('Valor:', roupas[codigo][2])
                                     print('Quantidade:', roupas[codigo][3])
                                     print('Status', roupas[codigo][4])
+                        
                 if resp == 3:
                     q = ''
                     while q != 5:
@@ -230,6 +234,7 @@ def menu_relatorio(clientes, bicicletas, capacetes, sapatilhas, roupas):
                                     print('Valor:', bicicletas[codigo][2])
                                     print('Quantidade:', bicicletas[codigo][3])
                                     print('Status', bicicletas[codigo][4])
+
                         if q == 2:
                             for codigo in capacetes:
                                 if capacetes[codigo][4] == 'DESATIVADO':
@@ -240,6 +245,7 @@ def menu_relatorio(clientes, bicicletas, capacetes, sapatilhas, roupas):
                                     print('Valor:', capacetes[codigo][2])
                                     print('Quantidade:', capacetes[codigo][3])
                                     print('Status', capacetes[codigo][4])
+
                         if q == 3:
                             for codigo in sapatilhas:
                                 if sapatilhas[codigo][4] == 'DESATIVADO':
@@ -250,6 +256,7 @@ def menu_relatorio(clientes, bicicletas, capacetes, sapatilhas, roupas):
                                     print('Valor:', sapatilhas[codigo][2])
                                     print('Quantidade:', sapatilhas[codigo][3])
                                     print('Status', sapatilhas[codigo][4])
+
                         if q == 4:
                             for codigo in roupas:
                                 if roupas[codigo][4] == 'DESATIVADO':
@@ -260,8 +267,76 @@ def menu_relatorio(clientes, bicicletas, capacetes, sapatilhas, roupas):
                                     print('Valor:', roupas[codigo][2])
                                     print('Quantidade:', roupas[codigo][3])
                                     print('Status', roupas[codigo][4]) 
-    
 
+                if resp == 4:
+                    q = ''
+                    while q != 5:
+                        print('''
+####################################
+###         MENU PESQUISA        ###
+####################################
+# 1 - PESQUISAR BICICLETAS         #
+# 2 - PESQUISAR CAPACETES          #
+# 3 - PESQUISAR SAPATILHAS         #
+# 4 - PESQUISAR ROUPAS             #
+# 5 - SAIR                         #
+                              ''')
+                        q = int(input('Qual opção você deseja ?'))
+                        if q == 1:
+                            p = input('Digite o modelo da bicicleta: ').strip().upper()
+                            print('Pesquisando no estoque...')
+                            sleep(2)
+                            for codigo in bicicletas:
+                                if bicicletas[codigo][1].upper().startswith(p):
+                                    print('--------------------')
+                                    print('Codigo:', codigo)
+                                    print('Marca:', bicicletas[codigo][0])
+                                    print('Modelo:', bicicletas[codigo][1])
+                                    print('Valor:', bicicletas[codigo][2])
+                                    print('Quantidade:', bicicletas[codigo][3])
+                                    print('Status', bicicletas[codigo][4])
+                        if q == 2:
+                            p = input('Digite o modelo do capacete: ').strip().upper()
+                            print('Pesquisando no estoque...')
+                            sleep(2)
+                            for codigo in capacetes:
+                                if capacetes[codigo][1].upper().startswith(p):
+                                    print('--------------------')
+                                    print('Codigo:', codigo)
+                                    print('Marca:', capacetes[codigo][0])
+                                    print('Modelo:', capacetes[codigo][1])
+                                    print('Valor:', capacetes[codigo][2])
+                                    print('Quantidade:', capacetes[codigo][3])
+                                    print('Status', capacetes[codigo][4])
+                            
+                        if q == 3:
+                            p = input('Digite o modelo do sapatilha: ').strip().upper()
+                            print('Pesquisando no estoque...')
+                            sleep(2)
+                            for codigo in sapatilhas:
+                                if sapatilhas[codigo][1].upper().startswith(p):
+                                    print('--------------------')
+                                    print('Codigo:', codigo)
+                                    print('Marca:', sapatilhas[codigo][0])
+                                    print('Modelo:', sapatilhas[codigo][1])
+                                    print('Valor:', sapatilhas[codigo][2])
+                                    print('Quantidade:', sapatilhas[codigo][3])
+                                    print('Status', sapatilhas[codigo][4])
+                                
+                        if q == 4:
+                            p = input('Digite a marca da roupa: ').strip().upper()
+                            print('Pesquisando no estoque...')
+                            sleep(2)
+                            for codigo in roupas:
+                                if roupas[codigo][0].upper().startswith(p):
+                                    print('--------------------')   
+                                    print('Codigo:', codigo)
+                                    print('Marca:', roupas[codigo][0])
+                                    print('Modelo:', roupas[codigo][1])
+                                    print('Valor:', roupas[codigo][2])
+                                    print('Quantidade:', roupas[codigo][3])
+                                    print('Status', roupas[codigo][4])
+                                
         if q == 3:
             resp = ''
             resp = ' '
