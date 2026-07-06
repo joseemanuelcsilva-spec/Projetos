@@ -1,2 +1,1 @@
-b001,caloi,adv,200.0,3,ATIVO
-b002,caloi,advsasas,400.0,3,DESATIVADO
+b001,caloi,explore,3500.0,1,ATIVO

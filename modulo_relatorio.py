@@ -1,10 +1,10 @@
 import os
 from time import sleep
 relatorios = {}
-def menu_relatorio(clientes, bicicletas, capacetes, sapatilhas, roupas):
+def menu_relatorio(clientes, bicicletas, capacetes, sapatilhas, roupas, vendas):
     q = ' '
     while q != 4:
-        print('''
+        print('''   
 #############################
 ####       MENU          ####
 #############################
@@ -394,7 +394,6 @@ def menu_relatorio(clientes, bicicletas, capacetes, sapatilhas, roupas):
                                     print('Valor:', roupas[codigo][2])
                                     print('Quantidade:', roupas[codigo][3])
                                     print('Status', roupas[codigo][4])
-
         if q == 3:
             resp = ''
             while resp != 7:
@@ -402,7 +401,7 @@ def menu_relatorio(clientes, bicicletas, capacetes, sapatilhas, roupas):
 #######################################
 ###        RELATÓRIO  VENDAS        ###
 #######################################
-# 1 - LISTAR TODAS AS VENDAS          #
+# 1 - LISTAR VENDAS                   #
 # 2 - FATURAMENTO TOTAL DO MÊS        #
 # 3 - LISTAR VENDAS POR PAGAMENTO     #
 # 4 - LISTAR VENDAS POR VALOR         #
@@ -411,5 +410,180 @@ def menu_relatorio(clientes, bicicletas, capacetes, sapatilhas, roupas):
 # 7 - SAIR                            #
                       ''')
                 resp = int(input('Qual opção você deseja: '))
+                if resp == 1:
+                    q = ''
+                    while q != 4:
+                        print('''
+################################
+# 1 - LISTAR TODAS AS VENDAS   #
+# 2 - LISTAR VENDAS ATIVAS     #
+# 3 - LISTAR VENDAS CANCELADAS #
+# 4 - SAIR
+                              ''')
+                        q = int(input('Qual opção você deseja: '))
+                        if q == 1:
+                            print('Listando todas as vendas...')
+                            sleep(2)
+                            for cod_venda in vendas:
+                                    print('------------------------')
+                                    print('Código da Venda:', cod_venda)
+                                    print('Cliente:', vendas[cod_venda][0])
+                                    print('Código Cliente:', vendas[cod_venda][1])
+                                    print('Produto:', vendas[cod_venda][2])
+                                    print('Código Produto:', vendas[cod_venda][3])
+                                    print('Valor: R$', vendas[cod_venda][4])
+                                    print('Pagamento:', vendas[cod_venda][5])
+                                    print('Data/Hora:', vendas[cod_venda][6])
+                                    print('Status:', vendas[cod_venda][7])
+                        if q == 2:
+                            print('Listando apenas vendas ativas...')
+                            sleep(2)
+                            for cod_venda in vendas:
+                                if vendas[cod_venda][7] == 'ATIVA':
+                                    print('------------------------')
+                                    print('Código da Venda:', cod_venda)
+                                    print('Cliente:', vendas[cod_venda][0])
+                                    print('Código Cliente:', vendas[cod_venda][1])
+                                    print('Produto:', vendas[cod_venda][2])
+                                    print('Código Produto:', vendas[cod_venda][3])
+                                    print('Valor: R$', vendas[cod_venda][4])
+                                    print('Pagamento:', vendas[cod_venda][5])
+                                    print('Data/Hora:', vendas[cod_venda][6])
+                                    print('Status:', vendas[cod_venda][7])
+                        if q == 3:
+                            print('Listando apenas as vendas canceladas...')
+                            sleep(2)
+                            for cod_venda in vendas:
+                                if vendas[cod_venda][7] == 'CANCELADA':
+                                    print('------------------------')
+                                    print('Código da Venda:', cod_venda)
+                                    print('Cliente:', vendas[cod_venda][0])
+                                    print('Código Cliente:', vendas[cod_venda][1])
+                                    print('Produto:', vendas[cod_venda][2])
+                                    print('Código Produto:', vendas[cod_venda][3])
+                                    print('Valor: R$', vendas[cod_venda][4])
+                                    print('Pagamento:', vendas[cod_venda][5])
+                                    print('Data/Hora:', vendas[cod_venda][6])
+                                    print('Status:', vendas[cod_venda][7])
+                        
+                if resp == 2:
+                    faturamento = 0
+                    for cod_venda in vendas:
+                        if vendas[cod_venda][7] == 'ATIVA':
+                            faturamento += vendas[cod_venda][4]
+                    print(f'O faturamento total da loje nesse mês foi de R${faturamento:.2f}')
+
+                if resp == 3:
+                    q = ' '
+                    while q != 4:
+                        print('''
+###############################
+# 1 - VENDAS PIX              #
+# 2 - VENDAS ESPÉCIE          #
+# 3 - VENDAS CARTÃO           #
+# 4 - SAIR                    #
+                              ''')
+                        q = int(input('Qual opção você deseja: '))
+                        if q == 1:
+                            print('Listando as vendas com pagamento pelo PIX')
+                            for cod_venda in vendas:
+                                if vendas[cod_venda][5] == 'PIX':
+                                    print('------------------------')
+                                    print('Código da Venda:', cod_venda)
+                                    print('Cliente:', vendas[cod_venda][0])
+                                    print('Código Cliente:', vendas[cod_venda][1])
+                                    print('Produto:', vendas[cod_venda][2])
+                                    print('Código Produto:', vendas[cod_venda][3])
+                                    print('Valor: R$', vendas[cod_venda][4])
+                                    print('Pagamento:', vendas[cod_venda][5])
+                                    print('Data/Hora:', vendas[cod_venda][6])
+                                    print('Status:', vendas[cod_venda][7])
+                        if q == 2:
+                            print('Listando as vendas com pagamento em ESPÉCIE')
+                            for cod_venda in vendas:
+                                if vendas[cod_venda][5] == 'ESPÉCIE':
+                                    print('------------------------')
+                                    print('Código da Venda:', cod_venda)
+                                    print('Cliente:', vendas[cod_venda][0])
+                                    print('Código Cliente:', vendas[cod_venda][1])
+                                    print('Produto:', vendas[cod_venda][2])
+                                    print('Código Produto:', vendas[cod_venda][3])
+                                    print('Valor: R$', vendas[cod_venda][4])
+                                    print('Pagamento:', vendas[cod_venda][5])
+                                    print('Data/Hora:', vendas[cod_venda][6])
+                                    print('Status:', vendas[cod_venda][7])
+                        if q == 3:
+                            print('Listando as vendas com pagamento no CARTÃO')
+                            for cod_venda in vendas:
+                                if vendas[cod_venda][5] == 'CARTÃO':
+                                    print('------------------------')
+                                    print('Código da Venda:', cod_venda)
+                                    print('Cliente:', vendas[cod_venda][0])
+                                    print('Código Cliente:', vendas[cod_venda][1])
+                                    print('Produto:', vendas[cod_venda][2])
+                                    print('Código Produto:', vendas[cod_venda][3])
+                                    print('Valor: R$', vendas[cod_venda][4])
+                                    print('Pagamento:', vendas[cod_venda][5])
+                                    print('Data/Hora:', vendas[cod_venda][6])
+                                    print('Status:', vendas[cod_venda][7])
+                if resp == 4:
+                    print('#### FILTRAR VENDAS POR VALOR ####')
+                    v = int(input('Digite o valor R$: '))
+                    print('Filtrando ...')
+                    sleep(1)
+                    print('Listando ...')
+                    sleep(2)
+                    for cod_venda in vendas:
+                        if vendas[cod_venda][4] <= v:  
+                            print('------------------------')
+                            print('Código da Venda:', cod_venda)
+                            print('Cliente:', vendas[cod_venda][0])
+                            print('Código Cliente:', vendas[cod_venda][1])
+                            print('Produto:', vendas[cod_venda][2])
+                            print('Código Produto:', vendas[cod_venda][3])
+                            print('Valor: R$', vendas[cod_venda][4])
+                            print('Pagamento:', vendas[cod_venda][5])
+                            print('Data/Hora:', vendas[cod_venda][6])
+                            print('Status:', vendas[cod_venda][7])
+
+                if resp == 5:
+                    print('#### FILTRAR VENDAS POR CLIENTE ####')
+                    c = input('Digite o código do cliente: ').upper()
+                    print('Filtrando ...')
+                    sleep(1)
+                    print('Listando ...')
+                    sleep(2)
+                    for cod_venda in vendas:
+                        if vendas[cod_venda][1] == c:
+                            print('------------------------')
+                            print('Código da Venda:', cod_venda)
+                            print('Cliente:', vendas[cod_venda][0])
+                            print('Código Cliente:', vendas[cod_venda][1])
+                            print('Produto:', vendas[cod_venda][2])
+                            print('Código Produto:', vendas[cod_venda][3])
+                            print('Valor: R$', vendas[cod_venda][4])
+                            print('Pagamento:', vendas[cod_venda][5])
+                            print('Data/Hora:', vendas[cod_venda][6])
+                            print('Status:', vendas[cod_venda][7])
+                
+                if resp == 6:
+                    print('#### FILTRAR VENDAS POR PRODUTO ####')
+                    c = input('Digite o código do produto: ')
+                    print('Filtrando ...')
+                    sleep(1)
+                    print('Listando ...')
+                    sleep(2)
+                    for cod_venda in vendas:
+                        if vendas[cod_venda][3] == c:
+                            print('------------------------')
+                            print('Código da Venda:', cod_venda)
+                            print('Cliente:', vendas[cod_venda][0])
+                            print('Código Cliente:', vendas[cod_venda][1])
+                            print('Produto:', vendas[cod_venda][2])
+                            print('Código Produto:', vendas[cod_venda][3])
+                            print('Valor: R$', vendas[cod_venda][4])
+                            print('Pagamento:', vendas[cod_venda][5])
+                            print('Data/Hora:', vendas[cod_venda][6])
+                            print('Status:', vendas[cod_venda][7])
 
     return relatorios

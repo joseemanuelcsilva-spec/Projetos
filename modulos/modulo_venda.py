@@ -16,6 +16,7 @@ def menu_venda(vendas, bicicletas, capacetes, sapatilhas, roupas, clientes):
                 q = int(input('Qual opção você deseja: '))
                 agora = datetime.now()
                 data_hora = agora.strftime("%d/%m/%Y %H:%M:%S")
+
                 if q == 1:
                     os.system('cls' if os.name == 'nt' else 'clear')
                     print('#### VAMOS INCIAR UMA VENDA ####')
@@ -46,6 +47,7 @@ def menu_venda(vendas, bicicletas, capacetes, sapatilhas, roupas, clientes):
                                     print('Quantidade: ', bicicletas[cod][3])
                                     print('---------------------')
                                     desejada = int(input('Quantas unidades você deseja: '))
+
                                     if desejada <= bicicletas[cod][3]:
                                         total = bicicletas[cod][2] * desejada
                                         print(f"O VALOR TOTAL FICARÁ DE R$ {total}")
@@ -119,7 +121,7 @@ def menu_venda(vendas, bicicletas, capacetes, sapatilhas, roupas, clientes):
                                             print('VENDA FINALIZADA')
                                             sapatilhas[cod][3] -= desejada
                                             cod_venda= input('Digite o código da venda: ').upper()
-                                            vendas[cod_venda]=[clientes[cod_cliente][0], cod_cliente, 'SAPATILHA', cod, total, 'ESPÉCIE', data_hora, 'ATIVA']
+                                            vendas[cod_venda]=[clientes[cod_cliente][0], cod_cliente, 'SAPATILHA', cod, total, 'CARTÃO', data_hora, 'ATIVA']
 
                             elif q == 3:
                                 cod = input('Digite o código do capacete: ')
@@ -202,9 +204,10 @@ def menu_venda(vendas, bicicletas, capacetes, sapatilhas, roupas, clientes):
                                             print('VENDA FINALIZADA')            
                                             roupas[cod][3] -= desejada  
                                             cod_venda= input('Digite o código da venda: ').upper()
-                                            vendas[cod_venda] =  [clientes[cod_cliente][0], cod_cliente, 'ROUPAS', cod, total, 'ESPÉCIE', data_hora, 'ATIVA']
+                                            vendas[cod_venda] =  [clientes[cod_cliente][0], cod_cliente, 'ROUPAS', cod, total, 'CARTÃO', data_hora, 'ATIVA']
                     else:
                         print('cliente não encontrado')
+
                 elif q == 2:
                         for cod_venda in vendas:
                             print('------------------------')
@@ -217,7 +220,7 @@ def menu_venda(vendas, bicicletas, capacetes, sapatilhas, roupas, clientes):
                             print('Pagamento:', vendas[cod_venda][5])
                             print('Data/Hora:', vendas[cod_venda][6])
                             print('Status:', vendas[cod_venda][7])
-                            print('------------------------') 
+                            
                 elif q == 3:
                     print('''
 ##############################
@@ -238,7 +241,9 @@ def menu_venda(vendas, bicicletas, capacetes, sapatilhas, roupas, clientes):
                         print('Pagamento:', vendas[cod_venda][5])
                         print('Data/Hora:', vendas[cod_venda][6])
                         print('Status:', vendas[cod_venda][7])
-                        print('------------------------')      
+                    else:
+                        print('Venda não encontrada')
+          
                 elif q == 4:
                     print('######## CANCELAR VENDA #########')
                     cod = input('Digite o código da venda que você deseja cancelar: ').upper()
@@ -249,6 +254,5 @@ def menu_venda(vendas, bicicletas, capacetes, sapatilhas, roupas, clientes):
                         vendas[cod][7] = 'CANCELADA'
                     else:
                         print('VENDA NÃO ESTÁ NO NOSSO HISTÓRICO')
-
         
-    return vendas, bicicletas, capacetes, sapatilhas, roupas, clientes
+    return vendas
