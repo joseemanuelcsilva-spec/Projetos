@@ -336,10 +336,67 @@ def menu_relatorio(clientes, bicicletas, capacetes, sapatilhas, roupas):
                                     print('Valor:', roupas[codigo][2])
                                     print('Quantidade:', roupas[codigo][3])
                                     print('Status', roupas[codigo][4])
-                                
+                if resp == 5:
+                    q = ''
+                    while q != 5:
+                        print('''
+####################################
+###      PESQUISA POR PREÇOS     ###
+####################################
+# 1 - PREÇO BICLETAS               #
+# 2 - PREÇO CAPACETES              #
+# 3 - PREÇO SAPATILHAS             #
+# 4 - PREÇO ROUPAS                 #
+# 5 - SAIR                         #
+                              ''')
+                        q = int(input('Qual opção você deseja ?'))
+                        if q == 1:
+                            p = int(input('Informe o valor desejado: '))
+                            for codigo in bicicletas:
+                                if bicicletas[codigo][2] <= p:
+                                    print('--------------------')
+                                    print('Codigo:', codigo)
+                                    print('Marca:', bicicletas[codigo][0])
+                                    print('Modelo:', bicicletas[codigo][1])
+                                    print('Valor:', bicicletas[codigo][2])
+                                    print('Quantidade:', bicicletas[codigo][3])
+                                    print('Status', bicicletas[codigo][4])
+                        if q == 2:
+                            p = int(input('Informe o valor desejado: '))
+                            for codigo in capacetes:
+                                if capacetes[codigo][2] <= p:
+                                    print('--------------------')
+                                    print('Codigo:', codigo)
+                                    print('Marca:', capacetes[codigo][0])
+                                    print('Modelo:', capacetes[codigo][1])
+                                    print('Valor:', capacetes[codigo][2])
+                                    print('Quantidade:', capacetes[codigo][3])
+                                    print('Status', capacetes[codigo][4])
+                        if q == 3:
+                            p = int(input('Informe o valor desejado: '))
+                            for codigo in sapatilhas:
+                                if sapatilhas[codigo][2] <=p:
+                                    print('--------------------')
+                                    print('Codigo:', codigo)
+                                    print('Marca:', sapatilhas[codigo][0])
+                                    print('Modelo:', sapatilhas[codigo][1])
+                                    print('Valor:', sapatilhas[codigo][2])
+                                    print('Quantidade:', sapatilhas[codigo][3])
+                                    print('Status', sapatilhas[codigo][4])
+                        if q == 4:
+                            p = int(input('Informe o valor desejado: '))
+                            for codigo in roupas:
+                                if roupas[codigo][2] <= p:
+                                    print('--------------------')   
+                                    print('Codigo:', codigo)
+                                    print('Marca:', roupas[codigo][0])
+                                    print('Modelo:', roupas[codigo][1])
+                                    print('Valor:', roupas[codigo][2])
+                                    print('Quantidade:', roupas[codigo][3])
+                                    print('Status', roupas[codigo][4])
+
         if q == 3:
             resp = ''
-            resp = ' '
             while resp != 7:
                 print('''
 #######################################
