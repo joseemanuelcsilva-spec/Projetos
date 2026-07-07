@@ -19,7 +19,7 @@ from modulos.modulo_carregamento import carregar_vendas
 from modulos.modulo_estoque import menu_estoque
 from modulos.modulo_clientes import menu_clientes   
 from modulos.modulo_venda import menu_venda
-from modulo_relatorio import menu_relatorio
+from modulos.modulo_relatorio import menu_relatorio
 
 bicicletas = carregar_bicicletas()
 capacetes = carregar_capacetes()
