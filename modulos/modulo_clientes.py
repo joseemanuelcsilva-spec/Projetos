@@ -13,7 +13,10 @@ def menu_clientes(clientes):
 ############ 5 - REMOVER CADASTRO      ########
 ############ 6 - VOLTAR                ########            
                     ''')
-                    q = int(input('Qual opção você deseja: '))
+                    try: 
+                        q = int(input('Qual opção você deseja: '))
+                    except ValueError:
+                        print('Entrada inválida! Por favor, escolha um número de 1 a 6.')
                     if q == 1:
                         nome = input('Digite o nome do cliente: ')
                         sobrenome = input('Digite o sobrenome do cliente: ')
@@ -99,8 +102,10 @@ def menu_clientes(clientes):
 ### 5 - CÓDIGO             ###
 ### 6 - VOLTAR             ###
                                 ''')
-                                q = int(input('Qual opção você deseja: '))
-                                    
+                                try:
+                                    q = int(input('Qual opção você deseja: '))
+                                except ValueError:
+                                    print('Entrada inválida! Por favor, escolha um número de 1 a 6.')
                                 if q == 1:
                                             novo_nome = input('Digite o novo nome: ')
                                             clientes[cod][0] = novo_nome

@@ -13,7 +13,10 @@ def menu_relatorio(clientes, bicicletas, capacetes, sapatilhas, roupas, vendas):
 # 3 - RELATÓRIO DE VENDAS   #
 # 4 - SAIR                  #
                ''')
-        q = int(input('Qual opção você deseja: '))
+        try:
+            q = int(input('Qual opção você deseja: '))
+        except ValueError:
+            print('Entrada inválida! Por favor, escolha um número de 1 a 4.')
         if q == 1:
             os.system('cls' if os.name == 'nt' else 'clear')
             resp = ' '
@@ -28,7 +31,10 @@ def menu_relatorio(clientes, bicicletas, capacetes, sapatilhas, roupas, vendas):
 # 4 - PESQUISAR CLIENTES         #
 # 5 - SAIR                       #
                       ''')
-                resp = int(input('Digite a opção que deseja: '))
+                try:
+                    resp = int(input('Digite a opção que deseja: '))
+                except ValueError:
+                    print('Entrada inválida! Por favor, escolha um número de 1 a 5.')
                 if resp == 1:
                     os.system('cls' if os.name == 'nt' else 'clear')
                     print('Listando todos os clientes...')
@@ -83,7 +89,7 @@ def menu_relatorio(clientes, bicicletas, capacetes, sapatilhas, roupas, vendas):
                             print('CPF:', clientes[cod][3])
                             print('Status:', clientes[cod][4])
                         
-        if q == 2: #RELATÓRIO PRODUTOS
+        if q == 2: 
             resp = ' '
             while resp != 6:
                 print('''
@@ -97,7 +103,10 @@ def menu_relatorio(clientes, bicicletas, capacetes, sapatilhas, roupas, vendas):
 # 5 - PESQUISAR PRODUTOS PELO PREÇO   #
 # 6 - SAIR                            #
                       ''')
-                resp = int(input('Qual opção você deseja: '))
+                try:
+                    resp = int(input('Qual opção você deseja: '))
+                except ValueError:
+                    print('Entrada inválida! Por favor, escolha um número de 1 a 6.')
                 if resp == 1:
                     q = ''
                     while q != 5:
@@ -111,7 +120,10 @@ def menu_relatorio(clientes, bicicletas, capacetes, sapatilhas, roupas, vendas):
 # 4 - LISTAR ROUPAS              #
 # 5 - SAIR                       # 
                             ''')
-                        q = int(input('Qual opção você deseja: '))
+                        try:
+                            q = int(input('Qual opção você deseja: '))
+                        except ValueError:
+                            print('Entrada inválida! Por favor, escolha um número de 1 a 5.')
                         if q == 1:
                             os.system('cls' if os.name == 'nt' else 'clear')
                             for codigo in bicicletas:
@@ -165,7 +177,10 @@ def menu_relatorio(clientes, bicicletas, capacetes, sapatilhas, roupas, vendas):
 # 4 - ROUPAS ATIVAS              #
 # 5 - SAIR
                               ''')
-                        q = int(input('Qual opção você deseja: '))
+                        try:
+                            q = int(input('Qual opção você deseja: '))
+                        except ValueError:
+                            print('Entrada inválida! Por favor, escolha um número de 1 a 5')
                         if q == 1:
                             for codigo in bicicletas:
                                 if bicicletas[codigo][4] == 'ATIVO':
@@ -223,7 +238,10 @@ def menu_relatorio(clientes, bicicletas, capacetes, sapatilhas, roupas, vendas):
 # 4 - ROUPAS DESATIVADAS         #
 # 5 - SAIR                       #
                               ''')
-                        q = int(input('Qual opção você deseja: '))
+                        try:
+                            q = int(input('Qual opção você deseja: '))
+                        except ValueError:
+                            print('Entrada inválida! Por favor, escolha um número de 1 a 5.')
                         if q == 1:
                             for codigo in bicicletas:
                                 if bicicletas[codigo][4] == 'DESATIVADO':
@@ -281,7 +299,10 @@ def menu_relatorio(clientes, bicicletas, capacetes, sapatilhas, roupas, vendas):
 # 4 - PESQUISAR ROUPAS             #
 # 5 - SAIR                         #
                               ''')
-                        q = int(input('Qual opção você deseja ?'))
+                        try:
+                            q = int(input('Qual opção você deseja ?'))
+                        except ValueError:
+                            print('Entrada inválida! Por favor, escolha um número de 1 a 5.')
                         if q == 1:
                             p = input('Digite o modelo da bicicleta: ').strip().upper()
                             print('Pesquisando no estoque...')
@@ -349,7 +370,10 @@ def menu_relatorio(clientes, bicicletas, capacetes, sapatilhas, roupas, vendas):
 # 4 - PREÇO ROUPAS                 #
 # 5 - SAIR                         #
                               ''')
-                        q = int(input('Qual opção você deseja ?'))
+                        try:
+                            q = int(input('Qual opção você deseja ?'))
+                        except ValueError:
+                            print('Entrada inválida! Por favor, escolha um número de 1 a 5.')
                         if q == 1:
                             p = int(input('Informe o valor desejado: '))
                             for codigo in bicicletas:
@@ -409,7 +433,10 @@ def menu_relatorio(clientes, bicicletas, capacetes, sapatilhas, roupas, vendas):
 # 6 - LISTAR VENDAS POR PRODUTOS      #
 # 7 - SAIR                            #
                       ''')
-                resp = int(input('Qual opção você deseja: '))
+                try:
+                    resp = int(input('Qual opção você deseja: '))
+                except ValueError:
+                    print('Entrada inválida! Por favor, escolha um número de 1 a 7.')
                 if resp == 1:
                     q = ''
                     while q != 4:
@@ -420,7 +447,10 @@ def menu_relatorio(clientes, bicicletas, capacetes, sapatilhas, roupas, vendas):
 # 3 - LISTAR VENDAS CANCELADAS #
 # 4 - SAIR
                               ''')
-                        q = int(input('Qual opção você deseja: '))
+                        try:
+                            q = int(input('Qual opção você deseja: '))
+                        except ValueError:
+                            print('Entrada inválida! Por favor, escolha um número de 1 a 4.')
                         if q == 1:
                             print('Listando todas as vendas...')
                             sleep(2)
@@ -483,7 +513,10 @@ def menu_relatorio(clientes, bicicletas, capacetes, sapatilhas, roupas, vendas):
 # 3 - VENDAS CARTÃO           #
 # 4 - SAIR                    #
                               ''')
-                        q = int(input('Qual opção você deseja: '))
+                        try:
+                            q = int(input('Qual opção você deseja: '))
+                        except ValueError:
+                            print('Entrada inválida! Por favor, escolha um número de 1 a 4.')
                         if q == 1:
                             print('Listando as vendas com pagamento pelo PIX')
                             for cod_venda in vendas:

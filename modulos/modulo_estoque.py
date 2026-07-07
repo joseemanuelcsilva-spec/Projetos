@@ -13,8 +13,11 @@ def menu_estoque(bicicletas, capacetes, sapatilhas, roupas):
 ############ 5 - DESATIVAR PRODUTO     ########
 ############ 6 - VOLTAR                ########            
             ''')
-        q = int(input('Qual opção você deseja: '))
-
+        try:
+            q = int(input('Qual opção você deseja: '))
+        except ValueError:
+            print('Entrada inválida! Por favor, escolha um número de 1 a 6.')
+            q = ' '
         if q == 1:
             q = ' '
             while q != 5: 
@@ -28,7 +31,11 @@ def menu_estoque(bicicletas, capacetes, sapatilhas, roupas):
 ######### 4 - ROUPA DE CICLISMO      ###########
 ######### 5 - VOLTAR                 ###########
             ''')
-                q = int(input('Qual opção você deseja: '))
+                try:
+                    q = int(input('Qual opção você deseja: '))
+                except ValueError:
+                    print('Entrada inválida! Por favor, escolha um número de 1 a 5.')
+                    q = ''
                 if q == 1:
                     marca = input('Digite a marca da Bicicleta: ')
                     modelo = input('Digite o modelo da Bicicleta: ')
@@ -83,7 +90,10 @@ def menu_estoque(bicicletas, capacetes, sapatilhas, roupas):
 ######### 4 - ROUPA DE CICLISMO      ###########
 ######### 5 - VOLTAR                 ###########
                 ''')
-                q = int(input('Qual opção você deseja: '))
+                try:
+                    q = int(input('Qual opção você deseja: '))
+                except ValueError:
+                    print('Entrada inválida! Por favor, escolha um número de 1 a 5.') 
                 if q == 1:
                     for codigo in bicicletas:
                         print('--------------------')
@@ -135,7 +145,10 @@ def menu_estoque(bicicletas, capacetes, sapatilhas, roupas):
 ### 4 - ROUPAS           ###### 
 ### 5 - SAIR             ######
                 ''')
-                q = int(input('Qual opção você deseja:'))
+                try:
+                    q = int(input('Qual opção você deseja:'))
+                except ValueError:
+                    print('Entrada inválida! Por favor, escolha um número de 1 a 5.')
                 if q == 1:
                     codigo = input('Digite o código da bicicleta que você deseja alterar as informações:')
                     if codigo in bicicletas:
@@ -162,7 +175,10 @@ def menu_estoque(bicicletas, capacetes, sapatilhas, roupas):
 ### 6 - VOLTAR             ###
 ##############################
                         ''')
-                        q = int(input('QUAL OPÇÃO VOCÊ DESEJA: '))
+                        try:
+                            q = int(input('QUAL OPÇÃO VOCÊ DESEJA: '))
+                        except ValueError:
+                             print('Entrada inválida! Por favor, escolha um número de 1 a 6.')
                         if q == 1:
                             os.system('cls' if os.name == 'nt' else 'clear')
                             nova_marca = input('Digite a nova marca da bicicleta: ')
@@ -208,7 +224,10 @@ def menu_estoque(bicicletas, capacetes, sapatilhas, roupas):
 ### 6 - VOLTAR             ###
 ##############################
                         ''')
-                        q = int(input('QUAL OPÇÃO VOCÊ DESEJA: '))
+                        try:
+                            q = int(input('QUAL OPÇÃO VOCÊ DESEJA: '))
+                        except ValueError:
+                             print('Entrada inválida! Por favor, escolha um número de 1 a 6.')
                         if q == 1:
                             nova_marca = input('Digite a nova marca do produto:')
                             capacetes[codigo][0] = nova_marca
@@ -253,7 +272,10 @@ def menu_estoque(bicicletas, capacetes, sapatilhas, roupas):
 ### 6 - VOLTAR             ###
 ##############################
                         ''')
-                        q = int(input('Digite a opção que vc deseja: '))
+                        try:
+                            q = int(input('Digite a opção que vc deseja: '))
+                        except ValueError:
+                            print('Entrada inválida! Por favor, escolha um número de 1 a 6.')
                         if q == 1:
                             nova_marca = input('Digite a nova marca do produto:')
                             sapatilhas[codigo][0] = nova_marca
@@ -297,7 +319,10 @@ def menu_estoque(bicicletas, capacetes, sapatilhas, roupas):
 ### 6 - VOLTAR             ###
 ##############################
                         ''')
-                        q = int(input('Digite a opção que vc deseja: '))    
+                        try:
+                            q = int(input('Digite a opção que vc deseja: '))
+                        except ValueError:
+                            print('Entrada inválida! Por favor, escolha um número de 1 a 6.')    
                         if q == 1:
                             nova_marca = input('Digite a nova marca do produto:')
                             roupas[codigo][0] = nova_marca
@@ -330,7 +355,10 @@ def menu_estoque(bicicletas, capacetes, sapatilhas, roupas):
 ### 4 - ROUPAS          ###### 
 ### 5 - SAIR            ######
                 ''')
-                q = int(input('QUAL ESTOQUE VOCÊ QUER CONSULTAR ?'))
+                try:
+                    q = int(input('QUAL ESTOQUE VOCÊ QUER CONSULTAR ?'))
+                except ValueError:
+                     print('Entrada inválida! Por favor, escolha um número de 1 a 5.')
                 if q == 1:
                     cod = input('Digite o código da bicicleta: ')
                     if cod in bicicletas:
@@ -398,7 +426,10 @@ def menu_estoque(bicicletas, capacetes, sapatilhas, roupas):
 ## 4 - ROUPAS                                   ### 
 ## 5 - SAIR                                     ###
                 ''')
-                q = int(input('Qual opção você deseja: '))
+                try:
+                    q = int(input('Qual opção você deseja: '))
+                except ValueError:
+                    print('Entrada inválida! Por favor, escolha um número de 1 a 5.')
                 if q == 1:
                     cod = input('Digite o código da bicicleta que você quer remover do estoque: ')
                     if cod in bicicletas:

@@ -42,7 +42,11 @@ while resp != 0:
 ############ 5 - INFORMAÇÕES           ########
 ############ 0 - SAIR                  ########
                 ''')
-        resp = int(input('Qual opção você deseja: '))
+        try:
+            resp = int(input('Qual opção você deseja: '))
+        except ValueError:
+            print('Entrada inválida! Por favor, escolha um número de 1 a 5.')
+            resp = ''
         if resp == 1:
             bicicletas, capacetes, sapatilhas, roupas = menu_estoque(bicicletas, capacetes, sapatilhas, roupas)
         if resp == 2:

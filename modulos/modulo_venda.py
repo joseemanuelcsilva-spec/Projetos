@@ -13,7 +13,10 @@ def menu_venda(vendas, bicicletas, capacetes, sapatilhas, roupas, clientes):
 ############ 4 - CANCELAR VENDA        ########    
 ############ 5 - VOLTAR                ########       
                     ''')
-                q = int(input('Qual opção você deseja: '))
+                try:
+                    q = int(input('Qual opção você deseja: '))
+                except ValueError:
+                    print('Entrada inválida! Por favor, escolha um número de 1 a 5.')
                 agora = datetime.now()
                 data_hora = agora.strftime("%d/%m/%Y %H:%M:%S")
 
@@ -35,7 +38,10 @@ def menu_venda(vendas, bicicletas, capacetes, sapatilhas, roupas, clientes):
 ### 4 - ROUPA             ###
 ### 5 - VOLTAR            ###
                             ''')
-                            q = int(input('Digite a opção desejada: '))
+                            try:
+                                q = int(input('Digite a opção desejada: '))
+                            except ValueError:
+                                print('Entrada inválida! Por favor, escolha um número de 1 a 5.')
                             if q == 1:
                                 cod = input('Digite o código do da bicicleta: ')
                                 if cod in bicicletas:
@@ -58,8 +64,10 @@ def menu_venda(vendas, bicicletas, capacetes, sapatilhas, roupas, clientes):
 ### 2 - ESPÉCIE (5% OFF)      ###
 ### 3 - CARTÃO                ###
                                             ''')
-                                        
-                                        pg = int(input('Qual opção você deseja: '))
+                                        try:
+                                            pg = int(input('Qual opção você deseja: '))
+                                        except ValueError:
+                                            print('Entrada inválida! Por favor, escolha um número de 1 a 3.')
                                         if pg == 1:
                                             print(f'O total ficou de R${total-((total*10)/100)}')
                                             print('### VENDA FINALIZADA ###')
@@ -101,8 +109,10 @@ def menu_venda(vendas, bicicletas, capacetes, sapatilhas, roupas, clientes):
 ### 2 - ESPÉCIE (5% OFF)      ###
 ### 3 - CARTÃO                ###
                                         ''')
-
-                                        pg = int(input('Qual opção você deseja: '))
+                                        try:
+                                            pg = int(input('Qual opção você deseja: '))
+                                        except ValueError:
+                                            print('Entrada inválida! Por favor, escolha um número de 1 a 3.')
                                         if pg == 1:
                                             print(f'O total ficou de R$ {total - ((total * 10) / 100)}')
                                             print('### VENDA FINALIZADA ###')
@@ -143,7 +153,10 @@ def menu_venda(vendas, bicicletas, capacetes, sapatilhas, roupas, clientes):
 ### 2 - ESPÉCIE (5% OFF)      ###
 ### 3 - CARTÃO                ###
                                         ''')
-                                        pg = int(input('Qual opção você deseja: '))
+                                        try:
+                                            pg = int(input('Qual opção você deseja: '))
+                                        except ValueError:
+                                            print('Entrada inválida! Por favor, escolha um número de 1 a 3.')
                                         if pg == 1:
                                             print(f'O total ficou de R$ {total - ((total * 10) / 100)}')
                                             print('### VENDA FINALIZADA ###')
