@@ -51,6 +51,7 @@ def menu_relatorio(clientes, bicicletas, capacetes, sapatilhas, roupas, vendas):
                     os.system('cls' if os.name == 'nt' else 'clear')
                     print('Listando Clientes Ativos...')
                     sleep(2)
+                    ativo = 0 
                     for cod in clientes:
                         if clientes[cod][4] == 'ATIVO':
                             print('-------------------------------------')
@@ -60,11 +61,15 @@ def menu_relatorio(clientes, bicicletas, capacetes, sapatilhas, roupas, vendas):
                             print('Telefone:', clientes[cod][2])
                             print('CPF:', clientes[cod][3])
                             print('Status:', clientes[cod][4])
+                            ativo += 1
+                    if ativo == 0:
+                        print('Não temos nenhum cliente ativo no momento!!!')
                 
                 if resp == 3:
                     os.system('cls' if os.name == 'nt' else 'clear')
                     print('Listando Clientes Desativados...')
                     sleep(2)
+                    desativado = 0
                     for cod in clientes:
                         if clientes[cod][4] == 'DESATIVADO':
                             print('-------------------------------------')
@@ -74,6 +79,9 @@ def menu_relatorio(clientes, bicicletas, capacetes, sapatilhas, roupas, vendas):
                             print('Telefone:', clientes[cod][2])
                             print('CPF:', clientes[cod][3])
                             print('Status:', clientes[cod][4])
+                            desativado += 1
+                    if desativado == 0:
+                        print('Não temo nenhum cliente desativado!')
                 if resp == 4:
                     os.system('cls' if os.name == 'nt' else 'clear')
                     p = input('Digite o nome do cliente que deseja: ').strip().upper()
@@ -182,6 +190,7 @@ def menu_relatorio(clientes, bicicletas, capacetes, sapatilhas, roupas, vendas):
                         except ValueError:
                             print('Entrada inválida! Por favor, escolha um número de 1 a 5')
                         if q == 1:
+                            ativo = 0
                             for codigo in bicicletas:
                                 if bicicletas[codigo][4] == 'ATIVO':
                                     print('--------------------')
@@ -191,8 +200,12 @@ def menu_relatorio(clientes, bicicletas, capacetes, sapatilhas, roupas, vendas):
                                     print('Valor:', bicicletas[codigo][2])
                                     print('Quantidade:', bicicletas[codigo][3])
                                     print('Status', bicicletas[codigo][4])
+                                    ativo += 1
+                            if ativo == 0:
+                                print('Não temos nenhuma bicicleta ativa')
 
                         if q == 2:
+                            ativo = 0
                             for codigo in capacetes:
                                 if capacetes[codigo][4] == 'ATIVO':
                                     print('--------------------')
@@ -202,8 +215,12 @@ def menu_relatorio(clientes, bicicletas, capacetes, sapatilhas, roupas, vendas):
                                     print('Valor:', capacetes[codigo][2])
                                     print('Quantidade:', capacetes[codigo][3])
                                     print('Status', capacetes[codigo][4])
+                            if ativo == 0:
+                                print('Não temos nenhuma bicicleta ativa')
+                                
 
                         if q == 3:
+                            ativo = 0
                             for codigo in sapatilhas:
                                 if sapatilhas[codigo][4] == 'ATIVO':
                                     print('--------------------')
@@ -213,8 +230,11 @@ def menu_relatorio(clientes, bicicletas, capacetes, sapatilhas, roupas, vendas):
                                     print('Valor:', sapatilhas[codigo][2])
                                     print('Quantidade:', sapatilhas[codigo][3])
                                     print('Status', sapatilhas[codigo][4])
+                            if ativo == 0:
+                                print('Não temos nenhuma bicicleta ativa')
                        
                         if q == 4:
+                            ativo = 0
                             for codigo in roupas:
                                 if roupas[codigo][4] == 'ATIVO':
                                     print('--------------------')
@@ -224,8 +244,10 @@ def menu_relatorio(clientes, bicicletas, capacetes, sapatilhas, roupas, vendas):
                                     print('Valor:', roupas[codigo][2])
                                     print('Quantidade:', roupas[codigo][3])
                                     print('Status', roupas[codigo][4])
+                            if ativo == 0:
+                                print('Não temos nenhuma bicicleta ativa')
                         
-                if resp == 3:
+                if resp == 3: 
                     q = ''
                     while q != 5:
                         print('''
@@ -243,6 +265,7 @@ def menu_relatorio(clientes, bicicletas, capacetes, sapatilhas, roupas, vendas):
                         except ValueError:
                             print('Entrada inválida! Por favor, escolha um número de 1 a 5.')
                         if q == 1:
+                            desativado = 0
                             for codigo in bicicletas:
                                 if bicicletas[codigo][4] == 'DESATIVADO':
                                     print('--------------------')
@@ -252,8 +275,12 @@ def menu_relatorio(clientes, bicicletas, capacetes, sapatilhas, roupas, vendas):
                                     print('Valor:', bicicletas[codigo][2])
                                     print('Quantidade:', bicicletas[codigo][3])
                                     print('Status', bicicletas[codigo][4])
+                                    desativado += 1
+                            if desativado == 0:
+                                print('Todas as bicicletas estão ativas!!')
 
                         if q == 2:
+                            desativado = 0
                             for codigo in capacetes:
                                 if capacetes[codigo][4] == 'DESATIVADO':
                                     print('--------------------')
@@ -263,8 +290,12 @@ def menu_relatorio(clientes, bicicletas, capacetes, sapatilhas, roupas, vendas):
                                     print('Valor:', capacetes[codigo][2])
                                     print('Quantidade:', capacetes[codigo][3])
                                     print('Status', capacetes[codigo][4])
+                                    desativado += 1
+                            if desativado == 0:
+                                print('Todas os capacetes estão ativos!!')
 
                         if q == 3:
+                            desativado = 0
                             for codigo in sapatilhas:
                                 if sapatilhas[codigo][4] == 'DESATIVADO':
                                     print('--------------------')
@@ -274,8 +305,12 @@ def menu_relatorio(clientes, bicicletas, capacetes, sapatilhas, roupas, vendas):
                                     print('Valor:', sapatilhas[codigo][2])
                                     print('Quantidade:', sapatilhas[codigo][3])
                                     print('Status', sapatilhas[codigo][4])
+                                    desativado += 1
+                            if desativado == 0:
+                                print('Todas as sapatilhas estão ativas!!')
 
                         if q == 4:
+                            desativado = 0
                             for codigo in roupas:
                                 if roupas[codigo][4] == 'DESATIVADO':
                                     print('--------------------')
@@ -285,6 +320,9 @@ def menu_relatorio(clientes, bicicletas, capacetes, sapatilhas, roupas, vendas):
                                     print('Valor:', roupas[codigo][2])
                                     print('Quantidade:', roupas[codigo][3])
                                     print('Status', roupas[codigo][4]) 
+                                    desativado += 1
+                            if desativado == 0:
+                                print('Todas as roupas estão ativas!!')
 
                 if resp == 4:
                     q = ''
@@ -303,10 +341,12 @@ def menu_relatorio(clientes, bicicletas, capacetes, sapatilhas, roupas, vendas):
                             q = int(input('Qual opção você deseja ?'))
                         except ValueError:
                             print('Entrada inválida! Por favor, escolha um número de 1 a 5.')
+
                         if q == 1:
                             p = input('Digite o modelo da bicicleta: ').strip().upper()
                             print('Pesquisando no estoque...')
                             sleep(2)
+                            encontrado = 0
                             for codigo in bicicletas:
                                 if bicicletas[codigo][1].upper().startswith(p):
                                     print('--------------------')
@@ -316,10 +356,14 @@ def menu_relatorio(clientes, bicicletas, capacetes, sapatilhas, roupas, vendas):
                                     print('Valor:', bicicletas[codigo][2])
                                     print('Quantidade:', bicicletas[codigo][3])
                                     print('Status', bicicletas[codigo][4])
+                                    encontrado += 1
+                                if encontrado == 0:
+                                    print('Produto não encontrado !!!')
                         if q == 2:
                             p = input('Digite o modelo do capacete: ').strip().upper()
                             print('Pesquisando no estoque...')
                             sleep(2)
+                            encontrado = 0
                             for codigo in capacetes:
                                 if capacetes[codigo][1].upper().startswith(p):
                                     print('--------------------')
@@ -329,11 +373,15 @@ def menu_relatorio(clientes, bicicletas, capacetes, sapatilhas, roupas, vendas):
                                     print('Valor:', capacetes[codigo][2])
                                     print('Quantidade:', capacetes[codigo][3])
                                     print('Status', capacetes[codigo][4])
+                                    encontrado += 1
+                                if encontrado == 0:
+                                    print('Produto não encontrado !!!')
                             
                         if q == 3:
                             p = input('Digite o modelo do sapatilha: ').strip().upper()
                             print('Pesquisando no estoque...')
                             sleep(2)
+                            encontrado = 0
                             for codigo in sapatilhas:
                                 if sapatilhas[codigo][1].upper().startswith(p):
                                     print('--------------------')
@@ -343,11 +391,15 @@ def menu_relatorio(clientes, bicicletas, capacetes, sapatilhas, roupas, vendas):
                                     print('Valor:', sapatilhas[codigo][2])
                                     print('Quantidade:', sapatilhas[codigo][3])
                                     print('Status', sapatilhas[codigo][4])
+                                    encontrado += 1
+                                if encontrado == 0:
+                                    print('Produto não encontrado !!!')
                                 
                         if q == 4:
                             p = input('Digite a marca da roupa: ').strip().upper()
                             print('Pesquisando no estoque...')
                             sleep(2)
+                            encontrado = 0
                             for codigo in roupas:
                                 if roupas[codigo][0].upper().startswith(p):
                                     print('--------------------')   
@@ -357,6 +409,9 @@ def menu_relatorio(clientes, bicicletas, capacetes, sapatilhas, roupas, vendas):
                                     print('Valor:', roupas[codigo][2])
                                     print('Quantidade:', roupas[codigo][3])
                                     print('Status', roupas[codigo][4])
+                                    encontrado += 1
+                                if encontrado == 0:
+                                    print('Produto não encontrado !!!')
                 if resp == 5:
                     q = ''
                     while q != 5:
@@ -376,6 +431,7 @@ def menu_relatorio(clientes, bicicletas, capacetes, sapatilhas, roupas, vendas):
                             print('Entrada inválida! Por favor, escolha um número de 1 a 5.')
                         if q == 1:
                             p = int(input('Informe o valor desejado: '))
+                            encontrado = 0
                             for codigo in bicicletas:
                                 if bicicletas[codigo][2] <= p:
                                     print('--------------------')
@@ -385,8 +441,13 @@ def menu_relatorio(clientes, bicicletas, capacetes, sapatilhas, roupas, vendas):
                                     print('Valor:', bicicletas[codigo][2])
                                     print('Quantidade:', bicicletas[codigo][3])
                                     print('Status', bicicletas[codigo][4])
+                                    encontrado += 1
+                                if encontrado == 0:
+                                    print('Nenhum produto encontrado nessa faixa de preço !!!')
+                                    
                         if q == 2:
                             p = int(input('Informe o valor desejado: '))
+                            encontrado = 0
                             for codigo in capacetes:
                                 if capacetes[codigo][2] <= p:
                                     print('--------------------')
@@ -396,8 +457,13 @@ def menu_relatorio(clientes, bicicletas, capacetes, sapatilhas, roupas, vendas):
                                     print('Valor:', capacetes[codigo][2])
                                     print('Quantidade:', capacetes[codigo][3])
                                     print('Status', capacetes[codigo][4])
+                                    encontrado += 1
+                                if encontrado == 0:
+                                    print('Nenhum produto encontrado nessa faixa de preço !!!')
+
                         if q == 3:
                             p = int(input('Informe o valor desejado: '))
+                            encontrado = 0
                             for codigo in sapatilhas:
                                 if sapatilhas[codigo][2] <=p:
                                     print('--------------------')
@@ -407,8 +473,12 @@ def menu_relatorio(clientes, bicicletas, capacetes, sapatilhas, roupas, vendas):
                                     print('Valor:', sapatilhas[codigo][2])
                                     print('Quantidade:', sapatilhas[codigo][3])
                                     print('Status', sapatilhas[codigo][4])
+                                    encontrado += 1
+                                if encontrado == 0:
+                                    print('Nenhum produto encontrado nessa faixa de preço !!!')
                         if q == 4:
                             p = int(input('Informe o valor desejado: '))
+                            encontrado = 0
                             for codigo in roupas:
                                 if roupas[codigo][2] <= p:
                                     print('--------------------')   
@@ -418,6 +488,9 @@ def menu_relatorio(clientes, bicicletas, capacetes, sapatilhas, roupas, vendas):
                                     print('Valor:', roupas[codigo][2])
                                     print('Quantidade:', roupas[codigo][3])
                                     print('Status', roupas[codigo][4])
+                                    encontrado += 1
+                                if encontrado == 0:
+                                    print('Nenhum produto encontrado nessa faixa de preço !!!')
         if q == 3:
             resp = ''
             while resp != 7:
