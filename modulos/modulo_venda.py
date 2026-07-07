@@ -24,6 +24,7 @@ def menu_venda(vendas, bicicletas, capacetes, sapatilhas, roupas, clientes):
                     os.system('cls' if os.name == 'nt' else 'clear')
                     print('#### VAMOS INCIAR UMA VENDA ####')
                     cod_cliente = input('Digite o código do cliente: ').upper()
+
                     if cod_cliente in clientes: 
                         print('Cliente encontrado')
                         print(f"Seja bem vindo {clientes[cod_cliente][0]}")
@@ -87,7 +88,8 @@ def menu_venda(vendas, bicicletas, capacetes, sapatilhas, roupas, clientes):
                                             bicicletas[cod][3]-= desejada
                                             cod_venda= input('Digite o código da venda: ').upper()
                                             vendas[cod_venda]=[clientes[cod_cliente][0], cod_cliente, 'BICICLETA', cod, total, 'CARTÃO', data_hora, 'ATIVA']
-                    
+                                    else:
+                                        print('Não temos essa quantidade no estoque!!!')
 
                             elif q == 2:
                                 cod = input('Digite o código da sapatilha: ')
@@ -132,6 +134,8 @@ def menu_venda(vendas, bicicletas, capacetes, sapatilhas, roupas, clientes):
                                             sapatilhas[cod][3] -= desejada
                                             cod_venda= input('Digite o código da venda: ').upper()
                                             vendas[cod_venda]=[clientes[cod_cliente][0], cod_cliente, 'SAPATILHA', cod, total, 'CARTÃO', data_hora, 'ATIVA']
+                                    else:
+                                        print('Não temos essa quantidade no estoque!!!')
 
                             elif q == 3:
                                 cod = input('Digite o código do capacete: ')
@@ -176,6 +180,8 @@ def menu_venda(vendas, bicicletas, capacetes, sapatilhas, roupas, clientes):
                                             capacetes[cod][3] -= desejada
                                             cod_venda= input('Digite o código da venda: ').upper()
                                             vendas[cod_venda] = [clientes[cod_cliente][0], cod_cliente, 'CAPACETE', cod, total, 'CARTÃO', data_hora, 'ATIVA']
+                                    else:
+                                        print('Não temos essa quantidade no estoque!!!')
 
                             elif q == 4:
                                 cod = input('Digite o código da roupa: ')
@@ -218,12 +224,14 @@ def menu_venda(vendas, bicicletas, capacetes, sapatilhas, roupas, clientes):
                                             roupas[cod][3] -= desejada  
                                             cod_venda= input('Digite o código da venda: ').upper()
                                             vendas[cod_venda] =  [clientes[cod_cliente][0], cod_cliente, 'ROUPAS', cod, total, 'CARTÃO', data_hora, 'ATIVA']
+                                    else:
+                                        print('Não temos essa quantidade no estoque!!!')
                     else:
                         print('cliente não encontrado')
 
                 elif q == 2:
                         for cod_venda in vendas:
-                            print('------------------------')
+                            print('-------------------------------------')
                             print('Código da Venda:', cod_venda)
                             print('Cliente:', vendas[cod_venda][0])
                             print('Código Cliente:', vendas[cod_venda][1])

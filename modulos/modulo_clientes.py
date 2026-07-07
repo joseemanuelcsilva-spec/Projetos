@@ -27,7 +27,7 @@ def menu_clientes(clientes):
                             print('Numero Invalido')
                             tel = input('Digite o telefone do cliente (Apenas números): ')
                             print('Validando numero')
-                            time.sleep(2)
+                            time.sleep(1)
                         print('Número válido')
                         cpf = input('Digite o cpf do cliente (Apenas Números): ')
                         print('Validando cpf')
@@ -45,14 +45,19 @@ def menu_clientes(clientes):
                     elif q == 2:
                         print('LISTANDO OS CLIENTES ....')
                         time.sleep(2)
+                        encontrado = 0
                         for cod in clientes:
+                            print('-------------------------------------')
                             print('Codigo:', cod)
                             print('Nome:', clientes[cod][0])
                             print('Sobrenome:', clientes[cod][1])
                             print('Telefone:', clientes[cod][2])
                             print('CPF:', clientes[cod][3])
                             print('Status:', clientes[cod][4])
-                            print('-------------------------------------')
+                            encontrado += 1
+                        if encontrado == 0:
+                              print('Não temos nenhum clienten cadastrado no nosso sistema !!!')
+                            
                     elif q == 3:
                         print('''
 #############################                             
@@ -80,15 +85,14 @@ def menu_clientes(clientes):
                             ''')
                         cod = input('Digite o código do cliente: ').upper()
                         if cod in clientes:
-                            print(
-                                '### CLIENTE ENCONTRADO ###')
+                            print('### CLIENTE ENCONTRADO ###')
                             print('-------------------------------------')
                             print('Codigo:',cod) 
                             print('Nome:', clientes[cod][0])
                             print('Sobrenome:',clientes[cod][1])
                             print('Telefone:', clientes[cod][2])
                             print('CPF:', clientes[cod][3])
-                            print('-------------------------------------')
+
                             while q != 6:
                                 q = ' '
                                 print('''
@@ -119,7 +123,7 @@ def menu_clientes(clientes):
                                             novo_cpf = input('Digite o novo cpf XXX.XXX.XXX-XX:')
                                             clientes[cod][3] = novo_cpf
                                 elif q == 5:
-                                            novo_codigo = input('Digite o novo codigo:')
+                                            novo_codigo = input('Digite o novo codigo:').upper()
                                             clientes[novo_codigo] = clientes[cod]
                                             del clientes[cod]
                                             cod = novo_codigo

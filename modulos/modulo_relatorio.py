@@ -510,6 +510,7 @@ def menu_relatorio(clientes, bicicletas, capacetes, sapatilhas, roupas, vendas):
                     resp = int(input('Qual opção você deseja: '))
                 except ValueError:
                     print('Entrada inválida! Por favor, escolha um número de 1 a 7.')
+                    
                 if resp == 1:
                     q = ''
                     while q != 4:

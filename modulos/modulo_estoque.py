@@ -17,7 +17,7 @@ def menu_estoque(bicicletas, capacetes, sapatilhas, roupas):
             q = int(input('Qual opção você deseja: '))
         except ValueError:
             print('Entrada inválida! Por favor, escolha um número de 1 a 6.')
-            q = ' '
+
         if q == 1:
             q = ' '
             while q != 5: 
@@ -299,10 +299,11 @@ def menu_estoque(bicicletas, capacetes, sapatilhas, roupas):
                     if codigo in roupas:
                         print('### ROUPA ENCONTRADA ###')
                         print('-----------------------')
-                        print(roupas[codigo][0])
-                        print(roupas[codigo][1])
-                        print(roupas[codigo][2])
-                        print(roupas[codigo][3])
+                        print('Código: ', codigo)
+                        print('Marca: ',roupas[codigo][0])
+                        print('Tamanho: ',roupas[codigo][1])
+                        print('Valor: ',roupas[codigo][2])
+                        print('Quantidade: ',roupas[codigo][3])
                     else:
                         print('ROUPA NÃO ENCONTRADA')
 
@@ -435,21 +436,30 @@ def menu_estoque(bicicletas, capacetes, sapatilhas, roupas):
                     if cod in bicicletas:
                         bicicletas[cod][4]= 'DESATIVADO'
                         print('Bicicleta desativada!')
+                    else:
+                        print('Bicicleta não encontrada !!')
                 elif q == 2:
                     cod = input('Digite o código do capacete que você quer remover do estoque: ')  
                     if cod in capacetes:
                         capacetes[cod][4] = 'DESATIVADO'                       
                         print('Capacete desativada!')
+                    else:
+                        print('Capacete não encontrado !!!')
+                    
                 elif q == 3:
                     cod = input('Digite o código da sapatilha que você quer remover do estoque: ')
                     if cod in sapatilhas:
                         sapatilhas[cod][4] = 'DESATIVADO'
                         print('Sapatilha desativada!')
+                    else:
+                        print('Sapatilha não encontrada!!!')
                 elif q == 4: 
                     cod = input('Digite o código da roupa que você deseja remover: ')
                     if cod in roupas:
                         roupas[cod][4]= 'DESATIVADO'
                         print('Roupa desativada!')
+                    else:
+                        print('Roupa não encontrada!!')
             else:
                 print('Opção invalida')
     

@@ -48,7 +48,7 @@ while resp != 0:
             print('Entrada inválida! Por favor, escolha um número de 1 a 5.')
             resp = ''
         if resp == 1:
-            bicicletas, capacetes, sapatilhas, roupas = menu_estoque(bicicletas, capacetes, sapatilhas, roupas)
+            estoque = menu_estoque(bicicletas, capacetes, sapatilhas, roupas)
         if resp == 2:
             clientes = menu_clientes(clientes)
         if resp == 3:
