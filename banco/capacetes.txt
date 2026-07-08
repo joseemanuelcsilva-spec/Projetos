@@ -1,1 +1,1 @@
-c001,Oggi,Superlight,299.9,10,ATIVO
+c001,Oggi,Superlight,299.9,9,ATIVO

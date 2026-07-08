@@ -148,10 +148,15 @@ def menu_clientes(clientes):
                                 time.sleep(2)
                                 print('CLIENTE DESATIVADO')
                                 clientes[codigo][4] ='DESATIVADO'
-                            else:
+                            if crtz == 'N':
                                 codigo = input('Digite o codigo correto do cliente para remover: ') 
-                                for codigo in clientes:
+                                if codigo in clientes:
+                                    print('CLIENTE DESATIVADO')
                                     clientes[codigo][4] ='DESATIVADO'
+                                else:
+                                      print('CLiente não encontrado')
+                            else:
+                                  print('Resposta Inválida')
                         else:
                             print('### CLIENTE NÃO ENCONTRADO ###')
         return clientes
