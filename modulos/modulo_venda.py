@@ -44,6 +44,7 @@ def menu_venda(vendas, bicicletas, capacetes, sapatilhas, roupas, clientes):
                             except ValueError:
                                 print('Entrada inválida! Por favor, escolha um número de 1 a 5.')
                             if q == 1:
+                                os.system('cls' if os.name == 'nt' else 'clear')
                                 cod = input('Digite o código do da bicicleta: ')
                                 if cod in bicicletas:
                                     print('--------------------')
@@ -92,6 +93,7 @@ def menu_venda(vendas, bicicletas, capacetes, sapatilhas, roupas, clientes):
                                         print('Não temos essa quantidade no estoque!!!')
 
                             elif q == 2:
+                                os.system('cls' if os.name == 'nt' else 'clear')
                                 cod = input('Digite o código da sapatilha: ')
                                 if cod in sapatilhas:
                                     print('--------------------')
@@ -138,6 +140,7 @@ def menu_venda(vendas, bicicletas, capacetes, sapatilhas, roupas, clientes):
                                         print('Não temos essa quantidade no estoque!!!')
 
                             elif q == 3:
+                                os.system('cls' if os.name == 'nt' else 'clear')
                                 cod = input('Digite o código do capacete: ')
                                 if cod in capacetes:
                                     print('--------------------')
@@ -184,6 +187,7 @@ def menu_venda(vendas, bicicletas, capacetes, sapatilhas, roupas, clientes):
                                         print('Não temos essa quantidade no estoque!!!')
 
                             elif q == 4:
+                                os.system('cls' if os.name == 'nt' else 'clear')
                                 cod = input('Digite o código da roupa: ')
                                 if cod in roupas:
                                     print('--------------------')
@@ -230,6 +234,7 @@ def menu_venda(vendas, bicicletas, capacetes, sapatilhas, roupas, clientes):
                         print('cliente não encontrado')
 
                 elif q == 2:
+                        os.system('cls' if os.name == 'nt' else 'clear')
                         for cod_venda in vendas:
                             print('-------------------------------------')
                             print('Código da Venda:', cod_venda)
@@ -243,6 +248,7 @@ def menu_venda(vendas, bicicletas, capacetes, sapatilhas, roupas, clientes):
                             print('Status:', vendas[cod_venda][7])
                             
                 elif q == 3:
+                    os.system('cls' if os.name == 'nt' else 'clear')
                     print('''
 ##############################
 #######   BUSCAR VENDA  ######
@@ -266,6 +272,7 @@ def menu_venda(vendas, bicicletas, capacetes, sapatilhas, roupas, clientes):
                         print('Venda não encontrada')
           
                 elif q == 4:
+                    os.system('cls' if os.name == 'nt' else 'clear')
                     print('######## CANCELAR VENDA #########')
                     cod = input('Digite o código da venda que você deseja cancelar: ').upper()
                     if cod in vendas:

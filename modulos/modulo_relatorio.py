@@ -116,6 +116,7 @@ def menu_relatorio(clientes, bicicletas, capacetes, sapatilhas, roupas, vendas):
                 except ValueError:
                     print('Entrada inválida! Por favor, escolha um número de 1 a 6.')
                 if resp == 1:
+                    os.system('cls' if os.name == 'nt' else 'clear')
                     q = ''
                     while q != 5:
                         print('''
@@ -190,6 +191,7 @@ def menu_relatorio(clientes, bicicletas, capacetes, sapatilhas, roupas, vendas):
                         except ValueError:
                             print('Entrada inválida! Por favor, escolha um número de 1 a 5')
                         if q == 1:
+                            os.system('cls' if os.name == 'nt' else 'clear')
                             ativo = 0
                             for codigo in bicicletas:
                                 if bicicletas[codigo][4] == 'ATIVO':
@@ -205,6 +207,7 @@ def menu_relatorio(clientes, bicicletas, capacetes, sapatilhas, roupas, vendas):
                                 print('Não temos nenhuma bicicleta ativa')
 
                         if q == 2:
+                            os.system('cls' if os.name == 'nt' else 'clear')
                             ativo = 0
                             for codigo in capacetes:
                                 if capacetes[codigo][4] == 'ATIVO':
@@ -220,6 +223,7 @@ def menu_relatorio(clientes, bicicletas, capacetes, sapatilhas, roupas, vendas):
                                 
 
                         if q == 3:
+                            os.system('cls' if os.name == 'nt' else 'clear')
                             ativo = 0
                             for codigo in sapatilhas:
                                 if sapatilhas[codigo][4] == 'ATIVO':
@@ -234,6 +238,7 @@ def menu_relatorio(clientes, bicicletas, capacetes, sapatilhas, roupas, vendas):
                                 print('Não temos nenhuma bicicleta ativa')
                        
                         if q == 4:
+                            os.system('cls' if os.name == 'nt' else 'clear')
                             ativo = 0
                             for codigo in roupas:
                                 if roupas[codigo][4] == 'ATIVO':
@@ -265,6 +270,7 @@ def menu_relatorio(clientes, bicicletas, capacetes, sapatilhas, roupas, vendas):
                         except ValueError:
                             print('Entrada inválida! Por favor, escolha um número de 1 a 5.')
                         if q == 1:
+                            os.system('cls' if os.name == 'nt' else 'clear')
                             desativado = 0
                             for codigo in bicicletas:
                                 if bicicletas[codigo][4] == 'DESATIVADO':
@@ -280,6 +286,7 @@ def menu_relatorio(clientes, bicicletas, capacetes, sapatilhas, roupas, vendas):
                                 print('Todas as bicicletas estão ativas!!')
 
                         if q == 2:
+                            os.system('cls' if os.name == 'nt' else 'clear')
                             desativado = 0
                             for codigo in capacetes:
                                 if capacetes[codigo][4] == 'DESATIVADO':
@@ -295,6 +302,7 @@ def menu_relatorio(clientes, bicicletas, capacetes, sapatilhas, roupas, vendas):
                                 print('Todas os capacetes estão ativos!!')
 
                         if q == 3:
+                            os.system('cls' if os.name == 'nt' else 'clear')
                             desativado = 0
                             for codigo in sapatilhas:
                                 if sapatilhas[codigo][4] == 'DESATIVADO':
@@ -310,6 +318,7 @@ def menu_relatorio(clientes, bicicletas, capacetes, sapatilhas, roupas, vendas):
                                 print('Todas as sapatilhas estão ativas!!')
 
                         if q == 4:
+                            os.system('cls' if os.name == 'nt' else 'clear')
                             desativado = 0
                             for codigo in roupas:
                                 if roupas[codigo][4] == 'DESATIVADO':
@@ -343,6 +352,7 @@ def menu_relatorio(clientes, bicicletas, capacetes, sapatilhas, roupas, vendas):
                             print('Entrada inválida! Por favor, escolha um número de 1 a 5.')
 
                         if q == 1:
+                            os.system('cls' if os.name == 'nt' else 'clear')
                             p = input('Digite o modelo da bicicleta: ').strip().upper()
                             print('Pesquisando no estoque...')
                             sleep(2)
@@ -360,6 +370,7 @@ def menu_relatorio(clientes, bicicletas, capacetes, sapatilhas, roupas, vendas):
                                 if encontrado == 0:
                                     print('Produto não encontrado !!!')
                         if q == 2:
+                            os.system('cls' if os.name == 'nt' else 'clear')
                             p = input('Digite o modelo do capacete: ').strip().upper()
                             print('Pesquisando no estoque...')
                             sleep(2)
@@ -378,6 +389,7 @@ def menu_relatorio(clientes, bicicletas, capacetes, sapatilhas, roupas, vendas):
                                     print('Produto não encontrado !!!')
                             
                         if q == 3:
+                            os.system('cls' if os.name == 'nt' else 'clear')
                             p = input('Digite o modelo do sapatilha: ').strip().upper()
                             print('Pesquisando no estoque...')
                             sleep(2)
@@ -396,6 +408,7 @@ def menu_relatorio(clientes, bicicletas, capacetes, sapatilhas, roupas, vendas):
                                     print('Produto não encontrado !!!')
                                 
                         if q == 4:
+                            os.system('cls' if os.name == 'nt' else 'clear')
                             p = input('Digite a marca da roupa: ').strip().upper()
                             print('Pesquisando no estoque...')
                             sleep(2)
@@ -430,6 +443,7 @@ def menu_relatorio(clientes, bicicletas, capacetes, sapatilhas, roupas, vendas):
                         except ValueError:
                             print('Entrada inválida! Por favor, escolha um número de 1 a 5.')
                         if q == 1:
+                            os.system('cls' if os.name == 'nt' else 'clear')
                             p = int(input('Informe o valor desejado: '))
                             encontrado = 0
                             for codigo in bicicletas:
@@ -446,6 +460,7 @@ def menu_relatorio(clientes, bicicletas, capacetes, sapatilhas, roupas, vendas):
                                     print('Nenhum produto encontrado nessa faixa de preço !!!')
                                     
                         if q == 2:
+                            os.system('cls' if os.name == 'nt' else 'clear')
                             p = int(input('Informe o valor desejado: '))
                             encontrado = 0
                             for codigo in capacetes:
@@ -462,6 +477,7 @@ def menu_relatorio(clientes, bicicletas, capacetes, sapatilhas, roupas, vendas):
                                     print('Nenhum produto encontrado nessa faixa de preço !!!')
 
                         if q == 3:
+                            os.system('cls' if os.name == 'nt' else 'clear')
                             p = int(input('Informe o valor desejado: '))
                             encontrado = 0
                             for codigo in sapatilhas:
@@ -477,6 +493,7 @@ def menu_relatorio(clientes, bicicletas, capacetes, sapatilhas, roupas, vendas):
                                 if encontrado == 0:
                                     print('Nenhum produto encontrado nessa faixa de preço !!!')
                         if q == 4:
+                            os.system('cls' if os.name == 'nt' else 'clear')
                             p = int(input('Informe o valor desejado: '))
                             encontrado = 0
                             for codigo in roupas:
@@ -526,6 +543,7 @@ def menu_relatorio(clientes, bicicletas, capacetes, sapatilhas, roupas, vendas):
                         except ValueError:
                             print('Entrada inválida! Por favor, escolha um número de 1 a 4.')
                         if q == 1:
+                            os.system('cls' if os.name == 'nt' else 'clear')
                             print('Listando todas as vendas...')
                             sleep(2)
                             for cod_venda in vendas:
@@ -540,6 +558,7 @@ def menu_relatorio(clientes, bicicletas, capacetes, sapatilhas, roupas, vendas):
                                     print('Data/Hora:', vendas[cod_venda][6])
                                     print('Status:', vendas[cod_venda][7])
                         if q == 2:
+                            os.system('cls' if os.name == 'nt' else 'clear')
                             print('Listando apenas vendas ativas...')
                             sleep(2)
                             for cod_venda in vendas:
@@ -555,6 +574,7 @@ def menu_relatorio(clientes, bicicletas, capacetes, sapatilhas, roupas, vendas):
                                     print('Data/Hora:', vendas[cod_venda][6])
                                     print('Status:', vendas[cod_venda][7])
                         if q == 3:
+                            os.system('cls' if os.name == 'nt' else 'clear')
                             print('Listando apenas as vendas canceladas...')
                             sleep(2)
                             for cod_venda in vendas:
@@ -571,6 +591,7 @@ def menu_relatorio(clientes, bicicletas, capacetes, sapatilhas, roupas, vendas):
                                     print('Status:', vendas[cod_venda][7])
                         
                 if resp == 2:
+                    os.system('cls' if os.name == 'nt' else 'clear')
                     faturamento = 0
                     for cod_venda in vendas:
                         if vendas[cod_venda][7] == 'ATIVA':
@@ -592,6 +613,7 @@ def menu_relatorio(clientes, bicicletas, capacetes, sapatilhas, roupas, vendas):
                         except ValueError:
                             print('Entrada inválida! Por favor, escolha um número de 1 a 4.')
                         if q == 1:
+                            os.system('cls' if os.name == 'nt' else 'clear')
                             print('Listando as vendas com pagamento pelo PIX')
                             for cod_venda in vendas:
                                 if vendas[cod_venda][5] == 'PIX':
@@ -606,6 +628,7 @@ def menu_relatorio(clientes, bicicletas, capacetes, sapatilhas, roupas, vendas):
                                     print('Data/Hora:', vendas[cod_venda][6])
                                     print('Status:', vendas[cod_venda][7])
                         if q == 2:
+                            os.system('cls' if os.name == 'nt' else 'clear')
                             print('Listando as vendas com pagamento em ESPÉCIE')
                             for cod_venda in vendas:
                                 if vendas[cod_venda][5] == 'ESPÉCIE':
@@ -620,6 +643,7 @@ def menu_relatorio(clientes, bicicletas, capacetes, sapatilhas, roupas, vendas):
                                     print('Data/Hora:', vendas[cod_venda][6])
                                     print('Status:', vendas[cod_venda][7])
                         if q == 3:
+                            os.system('cls' if os.name == 'nt' else 'clear')
                             print('Listando as vendas com pagamento no CARTÃO')
                             for cod_venda in vendas:
                                 if vendas[cod_venda][5] == 'CARTÃO':
@@ -634,6 +658,7 @@ def menu_relatorio(clientes, bicicletas, capacetes, sapatilhas, roupas, vendas):
                                     print('Data/Hora:', vendas[cod_venda][6])
                                     print('Status:', vendas[cod_venda][7])
                 if resp == 4:
+                    os.system('cls' if os.name == 'nt' else 'clear')
                     print('#### FILTRAR VENDAS POR VALOR ####')
                     v = int(input('Digite o valor R$: '))
                     print('Filtrando ...')
@@ -654,6 +679,7 @@ def menu_relatorio(clientes, bicicletas, capacetes, sapatilhas, roupas, vendas):
                             print('Status:', vendas[cod_venda][7])
 
                 if resp == 5:
+                    os.system('cls' if os.name == 'nt' else 'clear')
                     print('#### FILTRAR VENDAS POR CLIENTE ####')
                     c = input('Digite o código do cliente: ').upper()
                     print('Filtrando ...')
@@ -674,6 +700,7 @@ def menu_relatorio(clientes, bicicletas, capacetes, sapatilhas, roupas, vendas):
                             print('Status:', vendas[cod_venda][7])
                 
                 if resp == 6:
+                    os.system('cls' if os.name == 'nt' else 'clear')
                     print('#### FILTRAR VENDAS POR PRODUTO ####')
                     c = input('Digite o código do produto: ')
                     print('Filtrando ...')

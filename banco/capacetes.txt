@@ -1,1 +1,1 @@
-c001,specialized,aling,500.0,4,ATIVO
+c001,Oggi,Superlight,299.9,10,ATIVO

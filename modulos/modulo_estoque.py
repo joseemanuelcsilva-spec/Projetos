@@ -19,6 +19,7 @@ def menu_estoque(bicicletas, capacetes, sapatilhas, roupas):
             print('Entrada inválida! Por favor, escolha um número de 1 a 6.')
 
         if q == 1:
+            os.system('cls' if os.name == 'nt' else 'clear')
             q = ' '
             while q != 5: 
                 print('''

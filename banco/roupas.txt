@@ -1,1 +1,1 @@
-r001,scott,GG,900.0,3,ATIVO
+r001,Nike,GG,999.99,5,ATIVO

@@ -16,8 +16,8 @@ def carregar_bicicletas():
         arq_bicicletas.close()
     except:
         bicicletas = {
-            'b001':['caloi', 'adv', 200, 3, 'ATIVO'],
-            'b002':['caloi', 'advsasas', 200, 3, 'ATIVO']
+            'b001':['caloi', 'explore', 200, 3, 'ATIVO'],
+            'b002':['caloi', 'speed', 200, 3, 'ATIVO']
         }
         arq_bicicletas = open("banco/bicicletas.txt", "wt", encoding="utf-8")
         for codigo, dados in bicicletas.items():

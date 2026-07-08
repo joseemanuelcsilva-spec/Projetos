@@ -43,6 +43,7 @@ def menu_clientes(clientes):
                         clientes[cod] = [nome, sobrenome, tel, cpf, status]
                         print('CLIENTE CADASTRADO COM SUCESSO')
                     elif q == 2:
+                        os.system('cls' if os.name == 'nt' else 'clear')
                         print('LISTANDO OS CLIENTES ....')
                         time.sleep(2)
                         encontrado = 0
@@ -59,6 +60,7 @@ def menu_clientes(clientes):
                               print('Não temos nenhum clienten cadastrado no nosso sistema !!!')
                             
                     elif q == 3:
+                        os.system('cls' if os.name == 'nt' else 'clear')
                         print('''
 #############################                             
 ##### PESQUISAR CLIENTE #####
@@ -78,6 +80,7 @@ def menu_clientes(clientes):
                         else:
                             print('#### CLIENTE NÃO FOI ENCONTRADO ####')
                     elif q == 4:
+                        os.system('cls' if os.name == 'nt' else 'clear')
                         print('''
 ###############################
 #### MÓDULO DE ATUALIZAÇÃO ####
@@ -131,6 +134,7 @@ def menu_clientes(clientes):
                         else:
                             print('CLIENTE NÃO ENCONTRADO')
                     elif q == 5:
+                        os.system('cls' if os.name == 'nt' else 'clear')
                         print('''
 ############################                          
 ##### DESATIVAR CLIENTE ####
@@ -146,7 +150,8 @@ def menu_clientes(clientes):
                                 clientes[codigo][4] ='DESATIVADO'
                             else:
                                 codigo = input('Digite o codigo correto do cliente para remover: ') 
-                                clientes[codigo][4] ='DESATIVADO'
+                                for codigo in clientes:
+                                    clientes[codigo][4] ='DESATIVADO'
                         else:
                             print('### CLIENTE NÃO ENCONTRADO ###')
         return clientes

@@ -1,1 +1,1 @@
-s001,specialized,ricon,800.0,5,ATIVO
+s001,Olympikus,Corta vento,399.99,10,ATIVO
