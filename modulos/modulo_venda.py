@@ -269,8 +269,8 @@ def menu_venda(vendas, bicicletas, capacetes, sapatilhas, roupas, clientes):
 #######   BUSCAR VENDA  ######
 ##############################
                            ''')
-                    cod = input('DIGITE O CÓDIGO DA VENDA QUE VOCÊ DESEJA CONSULTAR: ').upper() 
-                    if cod in vendas:
+                    cod_venda = input('DIGITE O CÓDIGO DA VENDA QUE VOCÊ DESEJA CONSULTAR: ').upper() 
+                    if cod_venda in vendas:
                         print('LISTANDO VENDA....')
                         time.sleep(1)
                         print('------------------------')
