@@ -40,7 +40,7 @@ while resp != 0:
 ############ 3 - GERENCIAR VENDAS      ########     
 ############ 4 - RELATÓRIOS            ########
 ############ 5 - INFORMAÇÕES           ########
-############ 0 - SAIR                  ########
+############ 0 - SAI                   ########
                 ''')
         try:
             resp = int(input('Qual opção você deseja: '))
